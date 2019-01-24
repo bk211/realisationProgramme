@@ -1,0 +1,13 @@
+#innclude <stdio.h>
+
+int main(){
+
+  int tab1[8];
+
+  for(int i=0;i<8;i++){
+    tab[i]=rand()%8;
+    
+  }
+  
+  return 0;
+}
