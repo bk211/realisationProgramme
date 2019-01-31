@@ -35,7 +35,9 @@ void rollDices(Player *p, int n){
     p->dices[p->wannaRoll[i]] = tirage(8) ;  //remplacer affectation par random 
    }
 }
-  
+
+/*
+// plus necessaire, deja initialise lors de la creation joueur
 void beginTurn(Player *p){
 
   for(int i = 0 ; i < 6 ; ++i){
@@ -43,23 +45,40 @@ void beginTurn(Player *p){
   }
   p->nbrRollRemain = 2 ; 
 }
+*/
+
+int boucle_de_saisie(int a, int b){
+    //retourne l'entier i ssi il est compris dans intervalle [a,b]
+    int i;
+    do{
+        fflush(stdin);
+        //necessaire pour eviter un bug de boucle infinie si utilisateur saisie un type non int comme une charactere par exemple
+        //meme si un char est un int...(scanf)
+        printf("merci de saisir un nombre compris entre %d et %d\n", a, b);
+        scanf("%d",&i);
+    }while( i <a || i>b ||sizeof(i) != sizeof(int) );
+    return i;
+}
 
 void displayDices(Player *p){
   for(int i = 0 ; i < 6 ; ++i){
     printf("%d ", p->dices[i]) ;
+    printf("... ");
+    sleep(1);
   }
   printf("\n") ;
 }
 
 void completeTurn(Player *p){
-  unsigned int v = 1 ;
+  int v = 1 ;
   int i = 0 ;
-  beginTurn(p) ;
+//  beginTurn(p) ;
   while(p->nbrRollRemain != 0){
     printf("Actual outcome :\n") ;
     displayDices(p) ;
     printf("Retoss some dice ? ") ;
-    scanf("%d", &v) ;
+    //scanf("%d", &v) ;
+    v = boucle_de_saisie(0,1) 
     if(v == 0) { p->nbrRollRemain = 0 ; } //TODO appeler l'affichage de la grille
     else{
       
