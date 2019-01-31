@@ -31,20 +31,19 @@ int tirage(int max){
 void rollDices(Player *p){
   srand((unsigned)time(NULL));//set Seed pour le tirage
   for(int i = 0 ; i < 8; ++i){
-    // int sub = va_arg(va, int) ;
     if (p->dicesAllowed[i]){
-      p->dices[p->wannaRoll[i]] = tirage(8) ;
+      p->dices[i] = tirage(8) ;
+      //printf(">>>de %d tire%d\n",i,p->dices[i] );
     }
   }
 }
 
-void beginTurn(Player *p){
+void refreshDices(Player *p){
 
-  for(int i = 0 ; i < 6 ; ++i){
+  for(int i = 0 ; i < 8 ; ++i){
     p->dices[i] = 0 ;
     p->dicesAllowed[i]=1;
-  }
-  p->nbrRollRemain = 6 ; 
+  } 
 }
 
 
@@ -62,20 +61,20 @@ int boucle_de_saisie(int a, int b){
 }
 
 void displayDices(Player *p){
-  for(int i = 0 ; i < 6 ; ++i){
+  for(int i = 0 ; i < 8 ; ++i){
     printf("%d ", p->dices[i]) ;
     printf("... ");
-    sleep(1);
+    //sleep(1);
   }
   printf("\n") ;
 }
 
 void askDices(Player *p){
-  for (int i = 0; i < 8; ++i)
+  for (int i = 0; i <8; ++i)
   {
-    if(p-> dicesAllowed[i]){
-      printf("voulez vous gardez le de %d ?\n",i );
-      p-> dicesAllowed[i]=boucle_de_saisie(0,1);
+    if(p-> dicesAllowed[i]==1){
+      printf("voulez vous relancer le de %d ?\n",i+1 );
+      p-> dicesAllowed[i]= boucle_de_saisie(0,1);
     } 
   }
 
@@ -84,43 +83,47 @@ void askDices(Player *p){
 
 void completeTurn(Player *p){
   int v = 1 ;
-  beginTurn(p) ;
+  refreshDices(p) ;
+  rollDices(p) ;   
+
+  p->nbrRollRemain -= 1 ;
   while(p->nbrRollRemain != 0){
-    if(p->nbrRollRemain !=6){
-      printf("Actual outcome :\n") ;
-      displayDices(p) ;
-      printf("Retoss some dice ? ") ;
-    }
+    printf("Actual outcome :\n") ;
+    displayDices(p) ;
+    printf("Retoss some dice ? ") ;
     //scanf("%d", &v) ;
     v = boucle_de_saisie(0,1) ;
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
-      displayScore(p);
+      //displayScore(p);
       } 
+    
 
     else{ //cas relance de
-      printf("Which one ? ") ;
+      if(p->nbrRollRemain !=6)printf("Which one ? ") ;
       askDices(p);
       p->nbrRollRemain -= 1 ;
       rollDices(p) ;
-      printf("You've toss %d dice(s) again :\nOUTCOME\n", i) ;
+      printf("You've toss some dice(s) again :\nOUTCOME\n") ;
       displayDices(p) ;
-      displayScore(p);
+      //displayScore(p);
       printf("Remaining try : %d\n", p->nbrRollRemain) ; 
     }
   }
   printf("Next turn\n") ;
 }
 
-
-int main (void){
-  //printf("NOTE : répondre par 1 ou 0 aux questions et pour selection des dès leurs indexs [1-7]\n\n"); 
-  Player *p ;
-  Player firstPlayer ;
-  p = &firstPlayer ;
-  //p->dices = malloc(sizeof(int) * 7) ;
-  if(p->dices == NULL) printf("p == Null !\n") ; 
-  completeTurn(p) ;
-  
-  return(0) ;
+void freePlayer(Player *p){
+  free(p->dices);
+  free(p->dicesAllowed);
+  free(p->tabScore);
 }
+void initPlayer(Player *p){
+  //askName();
+  p->dices = malloc(sizeof(int)*8);
+  p->dicesAllowed = malloc(sizeof(int)*8);
+  p->nbrRollRemain = 6 ;
+  p->score = 0;
+  p->tabScore = malloc(sizeof(int)*5);
+}
+

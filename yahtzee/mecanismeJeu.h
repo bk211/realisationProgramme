@@ -3,11 +3,15 @@
 #include <unistd.h>
 typedef struct Player Player ;
 struct Player {
-  int dices[8];
-  int dicesAllowed[8];
-  int wannaRoll[6] ;
+  int *dices;
+  int *dicesAllowed;
   int nbrRollRemain;
   int id ;
-  int map[12] ; //booleen de la grille
+  int *map; //booleen de la grille
   int score;
+  int *tabScore;
 } ;
+
+void initPlayer(Player *p);
+void completeTurn(Player *p);
+void freePlayer(Player *p);

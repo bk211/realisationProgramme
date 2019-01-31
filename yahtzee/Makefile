@@ -16,12 +16,12 @@ CFLAGS = -Wall
 CPPFLAGS = -I. #ajouter un chemin pour les includes
 LDFLAGS = -L/usr/lib -lm
 #définition des fichiers et dossiers
-PROGNAME = labysolver
+PROGNAME = Yahtzee
 PACKAGE=$(PROGNAME)
 VERSION = 1.0.0
 distdir = $(PACKAGE)-$(VERSION)
-HEADERS = 
-SOURCES = labysolver.c 
+HEADERS = mecanismeJeu.h
+SOURCES = main.c mecanismeJeu.c
 OBJS = $(SOURCES:.c=.o)
 DISTFILES = $(SOURCES) Makefile $(HEADERS)
 all: $(PROGNAME)
