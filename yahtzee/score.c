@@ -159,8 +159,8 @@ void testBrelan(int tab[8],int tab_score[5]) {
 }
 
 
-
 void testFullv1(int tab[8],int tab_score[5]){
+
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
   int i,j;
   for(i=0;i<8;i++) {
@@ -214,8 +214,10 @@ void testFullv1(int tab[8],int tab_score[5]){
     
 }
 
+
 void testFullv2(int tab[8],int tab_score[5]){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
+
   int i,j;
   for(i=0;i<8;i++) {
     
@@ -260,15 +262,17 @@ void testFullv2(int tab[8],int tab_score[5]){
 	      {
 		if(tab_occurence[j]==4)
 		  {
+
 		    tab_score[4]+=25;		    
+
 		  }
 	      }
 	  }
       }
     
 }
-
 void afficScore(int tab_score[5]){
+
   
 	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
 	       
@@ -282,6 +286,7 @@ void afficScore(int tab_score[5]){
       }
 
 int main() {
+
   int tab[8]={5,5,5,8,8,8,8};
   int tab_score[5]={0,0,0,0,0};
   testYahtzee(tab,tab_score);
@@ -291,6 +296,7 @@ int main() {
   testFullv1(tab,tab_score);
   testFullv2(tab,tab_score);
   afficScore(tab_score);
+
 }
 
 
