@@ -2,9 +2,11 @@
 #include<stdlib.h>
 #include<math.h>   //inutile en l'état
 #include<stdarg.h> //inutile en l'état
+#include <mecanismeJeu.h>
 
 //TODO rendre robuste face aux saisies utilisateur
 
+/*
 typedef struct Player Player ;
 
 struct Player {
@@ -15,12 +17,22 @@ struct Player {
   int id ;
   int map[12] ; //booleen de la grille
 } ;
+// deplace vers mecanismeJeu.h
+*/
+
+
+int tirage(int max){
+    /*tire au sort un nombre compris entre 0 inclus max; 
+    srand((unsigned)time(NULL));*/
+    rand();
+    return (double)(rand()/(double)(RAND_MAX) * (max))+1;
+}
 
 void rollDices(Player *p, int n){
-  
+  srand((unsigned)time(NULL));//set Seed pour le tirage
   for(int i = 0 ; i < n ; ++i){
     // int sub = va_arg(va, int) ;
-    p->dices[p->wannaRoll[i]] = 7 ;  //remplacer affectation par random 
+    p->dices[p->wannaRoll[i]] = tirage(8) ;  //remplacer affectation par random 
    }
 }
   
