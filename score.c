@@ -1,8 +1,7 @@
 #include<stdio.h>
 
-int testYahtzee(int tab[8]) {
+int testYahtzee(int tab[8],int tab3[5]) {
   int i;
-  int tab3[5];
   // verif Yahtzee
   if(tab[0] == tab[1] == tab[2] == tab[3] == tab[4] == tab[5] == tab[6])
     {
@@ -11,10 +10,9 @@ int testYahtzee(int tab[8]) {
     }
 }
 
-  int testPetiteSuite(int tab[8]) {
+int testPetiteSuite(int tab[8],int tab3[5]) {
     int i;
-    int tab3[5];
-  // verif petite suite
+      // verif petite suite
   for(i=0;i<8;i++){
         if(tab[i] == 1)
 	  {
@@ -54,9 +52,9 @@ int testYahtzee(int tab[8]) {
   }
   }
 
-   int testGrandeSuite(int tab[8]) {
+int testGrandeSuite(int tab[8],int tab3[5]) {
     int i;
-    int tab3[5];
+    
   // verif grande suite
    for(i=0;i<8;i++){
         if(tab[i] == 2)
@@ -97,10 +95,9 @@ int testYahtzee(int tab[8]) {
    }
    }
 
-int testBrelan(int tab[8]) {
+int testBrelan(int tab[8],int tab3[5]) {
   int tab_occurence[8]={0,0,0,0,0,0,0};
-  int tab3[5]={0,0,0,0,0};
-  int i,score =0;
+    int i,score =0;
 
   for(i=0;i<8;i++){ // somme de tout les dés
     score+=(tab[i]);
@@ -153,9 +150,8 @@ int testBrelan(int tab[8]) {
   }
 
 
-int TestFullv1(int tab[8]){
+int testFullv1(int tab[8],int tab3[5]){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int tab3[5]={0,0,0,0,0};
   int i,j;
   for(i=0;i<8;i++) {
     
@@ -209,9 +205,8 @@ int TestFullv1(int tab[8]){
     
 }
 
-int TestFullv2(int tab[8]){
+int testFullv2(int tab[8],int tab3[5]){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int tab3[5]={0,0,0,0,0};
   int i,j;
   for(i=0;i<8;i++) {
     
@@ -266,9 +261,10 @@ int TestFullv2(int tab[8]){
 }
   
 int main() {
-  int tab[8]={2,5,3,3,7,7,7};
-  int a=testBrelan(tab);
-  printf("voici brelan %d \n",a);
+  int tab[8]={3,3,3,7,7,7,7};
+  int tab3[5];
+  int a=testFullv2(tab,tab3);
+  printf("voici  %d \n",a);
 }
 
 
