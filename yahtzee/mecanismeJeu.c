@@ -73,9 +73,9 @@ void displayDices(Player *p){
 void askDices(Player *p){
   for (int i = 0; i < 8; ++i)
   {
-    if(Player-> dicesAllowed[i]){
+    if(p-> dicesAllowed[i]){
       printf("voulez vous gardez le de %d ?\n",i );
-      Player-> dicesAllowed[i]=boucle_de_saisie(0,1);
+      p-> dicesAllowed[i]=boucle_de_saisie(0,1);
     } 
   }
 
@@ -86,21 +86,21 @@ void completeTurn(Player *p){
   int v = 1 ;
   beginTurn(p) ;
   while(p->nbrRollRemain != 0){
-    printf("Actual outcome :\n") ;
-    displayDices(p) ;
-    printf("Retoss some dice ? ") ;
+    if(p->nbrRollRemain !=6){
+      printf("Actual outcome :\n") ;
+      displayDices(p) ;
+      printf("Retoss some dice ? ") ;
+    }
     //scanf("%d", &v) ;
     v = boucle_de_saisie(0,1) ;
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
-
-
       displayScore(p);
       } 
 
     else{ //cas relance de
       printf("Which one ? ") ;
-      void askDices(p){
+      askDices(p);
       p->nbrRollRemain -= 1 ;
       rollDices(p) ;
       printf("You've toss %d dice(s) again :\nOUTCOME\n", i) ;
@@ -111,7 +111,7 @@ void completeTurn(Player *p){
   }
   printf("Next turn\n") ;
 }
-}
+
 
 int main (void){
   //printf("NOTE : répondre par 1 ou 0 aux questions et pour selection des dès leurs indexs [1-7]\n\n"); 
