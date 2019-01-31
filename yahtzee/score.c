@@ -153,12 +153,7 @@ int testBrelan(int tab[8]) {
   }
 
 
-int TestFull(int tab[8]){
-
-/*fct test full 5+2
-    test 3+4 a faire 
-*/
-
+int TestFullv1(int tab[8]){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
   int tab3[5]={0,0,0,0,0};
   int i,j;
@@ -213,11 +208,67 @@ int TestFull(int tab[8]){
       }
     
 }
+
+int TestFullv2(int tab[8]){
+  int tab_occurence[8]={0,0,0,0,0,0,0,0};
+  int tab3[5]={0,0,0,0,0};
+  int i,j;
+  for(i=0;i<8;i++) {
+    
+    if(tab[i] == 1){
+      tab_occurence[0]+=1;
+    }
+    else if(tab[i] == 2)
+      {
+	tab_occurence[1]+=1;
+      }
+    else if(tab[i] == 3)
+      {
+	tab_occurence[2]+=1;
+      }
+    else if(tab[i] == 4)
+      {
+	tab_occurence[3]+=1;
+      }
+    else if(tab[i] == 5)
+      {
+	tab_occurence[4]+=1;
+      }
+    else if(tab[i] == 6)
+      {
+	tab_occurence[5]+=1;
+      }
+    else if(tab[i] == 7)
+      {
+	tab_occurence[6]+=1;
+      }
+    else if(tab[i] == 8)
+      {
+	tab_occurence[7]+=1;
+      }
+  }
+    
+    for(i=0;i<8;i++)
+      {
+	if(tab_occurence[i]==3)
+	  {
+	    for(j=0;j<8;j++)
+	      {
+		if(tab_occurence[j]==4)
+		  {
+		    tab3[4]+=1;
+		    return 25;
+		  }
+	      }
+	  }
+      }
+    
+}
   
 int main() {
-  int tab[8]={2,5,3,3,7,7,7};
-  int a=testBrelan(tab);
-  printf("voici brelan %d \n",a);
+  int tab[8]={3,3,3,3,7,7,7};
+  int a=TestFullv2(tab);
+  printf("%d \n",a);
 }
 
 
