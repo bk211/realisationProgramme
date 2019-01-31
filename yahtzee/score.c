@@ -271,9 +271,8 @@ void testFullv2(int tab[8],int tab_score[5]){
       }
     
 }
-void afficScore(int tab_score[5]){
-
-  
+void afficScore(int tab_score[5],int tab[8]){
+  int i,score=0,somme=0;
 	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
 	       
 	printf("voici le score pour Petite Suite : %d\n",tab_score[1]);
@@ -283,6 +282,17 @@ void afficScore(int tab_score[5]){
 	printf("voici le score pour Brelan : %d\n",tab_score[3]);
              
 	printf("voici le score pour Full : %d\n",tab_score[4]);
+	
+	for(i=0;i<8;i++){ // somme de tout les dés
+	  score+=(tab[i]);
+	}
+	
+	for(i=0;i<5;i++)
+	  {
+	    somme+=(tab_score[i]);
+	  }
+	somme+=score;
+	printf("voici le score total : %d\n",somme);
       }
 
 int main() {
@@ -295,7 +305,7 @@ int main() {
   testBrelan(tab,tab_score);
   testFullv1(tab,tab_score);
   testFullv2(tab,tab_score);
-  afficScore(tab_score);
+  afficScore(tab_score,tab);
 
 }
 
