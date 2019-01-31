@@ -7,7 +7,7 @@ int testYahtzee(int tab[8]) {
   if(tab[0] == tab[1] == tab[2] == tab[3] == tab[4] == tab[5] == tab[6])
     {
       return 50;
-      tab3[3]=+1;
+      tab3[0]+=1;
     }
 }
 
@@ -98,63 +98,121 @@ int testYahtzee(int tab[8]) {
    }
 
 int testBrelan(int tab[8]) {
-  int tab2[8]={0,0,0,0,0,0,0,0};
+  int tab_occurence[8]={0,0,0,0,0,0,0};
   int tab3[5]={0,0,0,0,0};
-  int i;
+  int i,score =0;
+
+  for(i=0;i<8;i++){ // somme de tout les dés
+    score+=(tab[i]);
+  }
+
   for(i=0;i<8;i++) {
     
     if(tab[i] == 1){
-      tab2[0]+=1;
+      tab_occurence[0]+=1;
     }
     else if(tab[i] == 2)
       {
-	tab2[1]+=1;
+	tab_occurence[1]+=1;
       }
     else if(tab[i] == 3)
       {
-	tab2[2]+=1;
+	tab_occurence[2]+=1;
       }
     else if(tab[i] == 4)
       {
-	tab2[3]+=1;
+	tab_occurence[3]+=1;
       }
     else if(tab[i] == 5)
       {
-	tab2[4]+=1;
+	tab_occurence[4]+=1;
       }
     else if(tab[i] == 6)
       {
-	tab2[5]+=1;
+	tab_occurence[5]+=1;
       }
     else if(tab[i] == 7)
       {
-	tab2[6]+=1;
+	tab_occurence[6]+=1;
       }
     else if(tab[i] == 8)
       {
-	tab2[7]+=1;
+	tab_occurence[7]+=1;
       }
   }
     
     for(i=0;i<8;i++)
       {
-	if(tab2[i]==3)
+	if(tab_occurence[i]==3)
 	  {
-	    tab3[0]+=1;
+	    tab3[3]+=1;
+	    return score;
 	  }
       }
-    for(i=0;i <5;i++)
+   
+  }
+
+
+int TestFull(int tab[8]){
+  int tab_occurence[8]={0,0,0,0,0,0,0,0};
+  int tab3[5]={0,0,0,0,0};
+  int i,j;
+  for(i=0;i<8;i++) {
+    
+    if(tab[i] == 1){
+      tab_occurence[0]+=1;
+    }
+    else if(tab[i] == 2)
       {
-	printf("%d\n",tab3[i]);
+	tab_occurence[1]+=1;
       }
-
+    else if(tab[i] == 3)
+      {
+	tab_occurence[2]+=1;
+      }
+    else if(tab[i] == 4)
+      {
+	tab_occurence[3]+=1;
+      }
+    else if(tab[i] == 5)
+      {
+	tab_occurence[4]+=1;
+      }
+    else if(tab[i] == 6)
+      {
+	tab_occurence[5]+=1;
+      }
+    else if(tab[i] == 7)
+      {
+	tab_occurence[6]+=1;
+      }
+    else if(tab[i] == 8)
+      {
+	tab_occurence[7]+=1;
+      }
+  }
+    
+    for(i=0;i<8;i++)
+      {
+	if(tab_occurence[i]==5)
+	  {
+	    for(j=0;j<8;j++)
+	      {
+		if(tab_occurence[j]==2)
+		  {
+		    tab3[4]+=1;
+		    return 25;
+		  }
+	      }
+	  }
+      }
+    
+}
   
-}
-
 int main() {
-  int tab[8]={1,2,3,4,7,7,7,5};
-  testBrelan(tab);
+  int tab[8]={2,5,3,3,7,7,7};
+  int a=testBrelan(tab);
+  printf("voici brelan %d \n",a);
 }
-
 
 
