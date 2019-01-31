@@ -1,20 +1,25 @@
 #include<stdio.h>
 
-int testYahtzee(int tab[8]) {
-  int i;
-  int tab3[5];
+void testYahtzee(int tab[8],int tab_score[5]) {
   // verif Yahtzee
-  if(tab[0] == tab[1] == tab[2] == tab[3] == tab[4] == tab[5] == tab[6])
-    {
-      return 50;
-      tab3[0]+=1;
+  if(tab[0] == tab[1]) {
+    if(tab[1] == tab[2]) {
+      if(tab[2] == tab[3]) {
+	if(tab[3] == tab[4]) {
+	  if(tab[4] == tab[5]) {
+	    if(tab[5] == tab[6]) {
+		tab_score[0]+= 50;
+	      }
+	      }
+	  }
+	}
+      }
     }
 }
 
-  int testPetiteSuite(int tab[8]) {
+void testPetiteSuite(int tab[8],int tab_score[5]) {
     int i;
-    int tab3[5];
-  // verif petite suite
+    // verif petite suite
   for(i=0;i<8;i++){
         if(tab[i] == 1)
 	  {
@@ -35,9 +40,7 @@ int testYahtzee(int tab[8]) {
 					     {
 					       for(i=0;i<8;i++){
 						 if(tab[i] == 7)
-						   {
-						     return 30;
-						     tab3[1]+=1;
+						   {						     			     	   tab_score[1]+=30;
 						   }
 					       }
 					     }
@@ -54,9 +57,9 @@ int testYahtzee(int tab[8]) {
   }
   }
 
-   int testGrandeSuite(int tab[8]) {
+void testGrandeSuite(int tab[8],int tab_score[5]) {
     int i;
-    int tab3[5];
+    
   // verif grande suite
    for(i=0;i<8;i++){
         if(tab[i] == 2)
@@ -79,8 +82,7 @@ int testYahtzee(int tab[8]) {
 					       for(i=0;i<8;i++){
 						 if(tab[i] == 8)
 						   {
-						     return 40;
-						     tab3[2]+=1;
+						     tab_score[2]+=40;
 						   }
 					       }
 					     }
@@ -97,10 +99,9 @@ int testYahtzee(int tab[8]) {
    }
    }
 
-int testBrelan(int tab[8]) {
+void testBrelan(int tab[8],int tab_score[5]) {
   int tab_occurence[8]={0,0,0,0,0,0,0};
-  int tab3[5]={0,0,0,0,0};
-  int i,score =0;
+    int i,score =0;
 
   for(i=0;i<8;i++){ // somme de tout les dés
     score+=(tab[i]);
@@ -145,22 +146,22 @@ int testBrelan(int tab[8]) {
       {
 	if(tab_occurence[i]==3)
 	  {
-	    tab3[3]+=1;
-	    return score;
+	    for(i=0;i<8;i++)
+	      {
+		if(tab_occurence[i] == 4)
+		  {
+		    return;
+		  }
+	      }
+	    tab_score[3]+=score;
 	  }
       }
-   
-  }
+}
 
 
-int TestFull(int tab[8]){
 
-/*fct test full 5+2
-    test 3+4 a faire 
-*/
-
+void testFullv1(int tab[8],int tab_score[5]){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int tab3[5]={0,0,0,0,0};
   int i,j;
   for(i=0;i<8;i++) {
     
@@ -205,19 +206,91 @@ int TestFull(int tab[8]){
 	      {
 		if(tab_occurence[j]==2)
 		  {
-		    tab3[4]+=1;
-		    return 25;
+		    tab_score[4]+=25;		    
 		  }
 	      }
 	  }
       }
     
 }
+
+void testFullv2(int tab[8],int tab_score[5]){
+  int tab_occurence[8]={0,0,0,0,0,0,0,0};
+  int i,j;
+  for(i=0;i<8;i++) {
+    
+    if(tab[i] == 1){
+      tab_occurence[0]+=1;
+    }
+    else if(tab[i] == 2)
+      {
+	tab_occurence[1]+=1;
+      }
+    else if(tab[i] == 3)
+      {
+	tab_occurence[2]+=1;
+      }
+    else if(tab[i] == 4)
+      {
+	tab_occurence[3]+=1;
+      }
+    else if(tab[i] == 5)
+      {
+	tab_occurence[4]+=1;
+      }
+    else if(tab[i] == 6)
+      {
+	tab_occurence[5]+=1;
+      }
+    else if(tab[i] == 7)
+      {
+	tab_occurence[6]+=1;
+      }
+    else if(tab[i] == 8)
+      {
+	tab_occurence[7]+=1;
+      }
+  }
+    
+    for(i=0;i<8;i++)
+      {
+	if(tab_occurence[i]==3)
+	  {
+	    for(j=0;j<8;j++)
+	      {
+		if(tab_occurence[j]==4)
+		  {
+		    tab_score[4]+=25;		    
+		  }
+	      }
+	  }
+      }
+    
+}
+
+void afficScore(int tab_score[5]){
   
+	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
+	       
+	printf("voici le score pour Petite Suite : %d\n",tab_score[1]);
+           
+	printf("voici le score pour Grande Suite : %d\n",tab_score[2]);
+             
+	printf("voici le score pour Brelan : %d\n",tab_score[3]);
+             
+	printf("voici le score pour Full : %d\n",tab_score[4]);
+      }
+
 int main() {
-  int tab[8]={2,5,3,3,7,7,7};
-  int a=testBrelan(tab);
-  printf("voici brelan %d \n",a);
+  int tab[8]={5,5,5,8,8,8,8};
+  int tab_score[5]={0,0,0,0,0};
+  testYahtzee(tab,tab_score);
+  testPetiteSuite(tab,tab_score);
+  testGrandeSuite(tab,tab_score);
+  testBrelan(tab,tab_score);
+  testFullv1(tab,tab_score);
+  testFullv2(tab,tab_score);
+  afficScore(tab_score);
 }
 
 
