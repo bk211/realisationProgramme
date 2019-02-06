@@ -7,9 +7,9 @@ struct Player {
   int *dicesAllowed;
   int nbrRollRemain;
   int id ;
-  int *map; //booleen de la grille
   int score;
   int *tabScore;
+
 } ;
 
 void initPlayer(Player *p);

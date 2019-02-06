@@ -1,9 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>   //inutile en l'état
-#include<stdarg.h> //inutile en l'état
 #include "mecanismeJeu.h"
-#include "score.c"
+#include "score.h"
 
 int tirage(int max){
     /*tire au sort un nombre compris entre 0 inclus max; 
@@ -45,12 +43,6 @@ int boucle_de_saisie(int a, int b){
 void displayDices(Player *p){
   for(int i = 0 ; i < 8 ; ++i){
     printf("%d ", p->dices[i]) ;
-    
-    for (int j = 0; j < i; ++j)
-    {
-      sleep(1);
-      printf("...\n");
-    }
   }
   
   printf("\n") ;
@@ -75,28 +67,27 @@ void completeTurn(Player *p){
 
   p->nbrRollRemain -= 1 ;
   while(p->nbrRollRemain != 0){
-    printf("Actual outcome :\n") ;
+    printf("Lancé de dée :\n") ;
     displayDices(p) ;
-    printf("Retoss some dice ? ") ;
+    printf("Voulez vous relancer des dées ? ") ;
     v = boucle_de_saisie(0,1) ;
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
-      //displayScore(p);
+      displayScore(p->tabScore,p->dices);
       } 
     
 
     else{ //cas relance de
-      if(p->nbrRollRemain !=6)printf("Which one ? ") ;
+      if(p->nbrRollRemain !=6)printf("lequelles one ? ") ;
       askDices(p);
       p->nbrRollRemain -= 1 ;
       rollDices(p) ;
-      printf("You've toss some dice(s) again :\nOUTCOME\n") ;
-      displayDices(p) ;
-      //displayScore(p);
-      printf("Remaining try : %d\n", p->nbrRollRemain) ; 
+      printf("Vous avez relancé des dées :\n") ;
+      displayScore(p->tabScore,p->dices);
+      printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
     }
   }
-  printf("Next turn\n") ;
+  printf("Tour du prochain joueur\n") ;
 }
 
 void freePlayer(Player *p){
@@ -110,6 +101,10 @@ void initPlayer(Player *p){
   p->dicesAllowed = malloc(sizeof(int)*8);
   p->nbrRollRemain = 6 ;
   p->score = 0;
-  p->tabScore = malloc(sizeof(int)*5);
+  p->tabScore = malloc(sizeof(int)*6);
+  for (int i = 0; i < 6; ++i)
+  {
+  	p->tabScore[i]= 0;
+  }
 }
 

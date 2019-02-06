@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "score.h"
 
 void testYahtzee(int *tab,int *tab_score) {
   // verif Yahtzee
@@ -285,7 +285,7 @@ void testCombinatoire(int *tab_score, int *tab_dee){
 
 
 
-int displayScore(int* tab_score,int *tab){
+void displayScore(int* tab_score,int *tab){
 	int i,score=0,somme=0;
 
 
@@ -316,6 +316,18 @@ int displayScore(int* tab_score,int *tab){
 
 	printf("voici le score total : %d\n",somme);
 
-	return somme;
+	tab_score[6] = somme;
     }
 
+
+void compareScore(int a, int b){
+	if(a > b){
+		printf("Bravo! le joueur 1 remporte la partie\n");
+	}
+	else if (b > a){
+		printf("Bravo! le joueur 2 remporte la partie\n");
+	}
+	else{
+		printf("Match nul\n");	
+	}	
+}

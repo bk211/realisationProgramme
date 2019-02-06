@@ -21,7 +21,7 @@ PACKAGE=$(PROGNAME)
 VERSION = 1.0.0
 distdir = $(PACKAGE)-$(VERSION)
 HEADERS = mecanismeJeu.h
-SOURCES = main.c mecanismeJeu.c
+SOURCES = main.c mecanismeJeu.c score.c
 OBJS = $(SOURCES:.c=.o)
 DISTFILES = $(SOURCES) Makefile $(HEADERS)
 all: $(PROGNAME)
