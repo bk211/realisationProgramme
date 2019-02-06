@@ -271,8 +271,25 @@ void testFullv2(int tab[8],int tab_score[5]){
       }
     
 }
-void afficScore(int tab_score[5],int tab[8]){
-  int i,score=0,somme=0;
+
+void testCombinatoire(int tab_score*, int tab_dee){
+	/*test et remplit le tableau des score*/
+	testYahtzee(tab_dee,tab_score);
+	testPetiteSuite(tab_dee,tab_score);
+	testGrandeSuite(tab_dee,tab_score);
+	testBrelan(tab_dee,tab_score);
+	testFullv1(tab_dee,tab_score);
+	testFullv2(tab_dee,tab_score);
+}
+
+
+
+
+int displayScore(int tab_score[5],int tab[8]){
+	int i,score=0,somme=0;
+
+
+
 	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
 	       
 	printf("voici le score pour Petite Suite : %d\n",tab_score[1]);
@@ -286,14 +303,19 @@ void afficScore(int tab_score[5],int tab[8]){
 	for(i=0;i<8;i++){ // somme de tout les dés
 	  score+=(tab[i]);
 	}
+
+	printf("voici le score des dés :%d\n",score);
 	
 	for(i=0;i<5;i++)
 	  {
 	    somme+=(tab_score[i]);
 	  }
 	somme+=score;
+
 	printf("voici le score total : %d\n",somme);
-      }
+
+	return somme;
+    }
 
 int main() {
 

@@ -3,23 +3,7 @@
 #include<math.h>   //inutile en l'état
 #include<stdarg.h> //inutile en l'état
 #include "mecanismeJeu.h"
-
-//TODO rendre robuste face aux saisies utilisateur
-
-/*
-typedef struct Player Player ;
-
-struct Player {
-  
-  int *dices ;
-  int wannaRoll[6] ;
-  int nbrRollRemain ;
-  int id ;
-  int map[12] ; //booleen de la grille
-} ;
-// deplace vers mecanismeJeu.h
-*/
-
+#include "score.c"
 
 int tirage(int max){
     /*tire au sort un nombre compris entre 0 inclus max; 
@@ -52,8 +36,6 @@ int boucle_de_saisie(int a, int b){
     int i;
     do{
         fflush(stdin);
-        //necessaire pour eviter un bug de boucle infinie si utilisateur saisie un type non int comme une charactere par exemple
-        //meme si un char est un int...(scanf)
         printf("merci de saisir un nombre compris entre %d et %d\n", a, b);
         scanf("%d",&i);
     }while( i <a || i>b ||sizeof(i) != sizeof(int) );
@@ -63,9 +45,14 @@ int boucle_de_saisie(int a, int b){
 void displayDices(Player *p){
   for(int i = 0 ; i < 8 ; ++i){
     printf("%d ", p->dices[i]) ;
-    printf("... ");
-    //sleep(1);
+    
+    for (int j = 0; j < i; ++j)
+    {
+      sleep(1);
+      printf("...\n");
+    }
   }
+  
   printf("\n") ;
 }
 
@@ -91,7 +78,6 @@ void completeTurn(Player *p){
     printf("Actual outcome :\n") ;
     displayDices(p) ;
     printf("Retoss some dice ? ") ;
-    //scanf("%d", &v) ;
     v = boucle_de_saisie(0,1) ;
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
