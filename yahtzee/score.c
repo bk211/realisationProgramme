@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void testYahtzee(int tab[8],int tab_score[5]) {
+void testYahtzee(int *tab,int *tab_score) {
   // verif Yahtzee
   if(tab[0] == tab[1]) {
     if(tab[1] == tab[2]) {
@@ -17,7 +17,7 @@ void testYahtzee(int tab[8],int tab_score[5]) {
     }
 }
 
-void testPetiteSuite(int tab[8],int tab_score[5]) {
+void testPetiteSuite(int *tab,int *tab_score) {
     int i;
     // verif petite suite
   for(i=0;i<8;i++){
@@ -57,7 +57,7 @@ void testPetiteSuite(int tab[8],int tab_score[5]) {
   }
   }
 
-void testGrandeSuite(int tab[8],int tab_score[5]) {
+void testGrandeSuite(int *tab,int *tab_score) {
     int i;
     
   // verif grande suite
@@ -99,7 +99,7 @@ void testGrandeSuite(int tab[8],int tab_score[5]) {
    }
    }
 
-void testBrelan(int tab[8],int tab_score[5]) {
+void testBrelan(int *tab,int *tab_score) {
   int tab_occurence[8]={0,0,0,0,0,0,0};
     int i,score =0;
 
@@ -159,7 +159,7 @@ void testBrelan(int tab[8],int tab_score[5]) {
 }
 
 
-void testFullv1(int tab[8],int tab_score[5]){
+void testFullv1(int *tab,int* tab_score){
 
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
   int i,j;
@@ -215,7 +215,7 @@ void testFullv1(int tab[8],int tab_score[5]){
 }
 
 
-void testFullv2(int tab[8],int tab_score[5]){
+void testFullv2(int *tab,int* tab_score){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
 
   int i,j;
@@ -272,7 +272,7 @@ void testFullv2(int tab[8],int tab_score[5]){
     
 }
 
-void testCombinatoire(int tab_score*, int tab_dee){
+void testCombinatoire(int *tab_score, int *tab_dee){
 	/*test et remplit le tableau des score*/
 	testYahtzee(tab_dee,tab_score);
 	testPetiteSuite(tab_dee,tab_score);
@@ -285,10 +285,12 @@ void testCombinatoire(int tab_score*, int tab_dee){
 
 
 
-int displayScore(int tab_score[5],int tab[8]){
+int displayScore(int* tab_score,int *tab){
 	int i,score=0,somme=0;
 
 
+
+	testCombinatoire(tab_score,tab);
 
 	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
 	       
@@ -316,19 +318,4 @@ int displayScore(int tab_score[5],int tab[8]){
 
 	return somme;
     }
-
-int main() {
-
-  int tab[8]={5,5,5,8,8,8,8};
-  int tab_score[5]={0,0,0,0,0};
-  testYahtzee(tab,tab_score);
-  testPetiteSuite(tab,tab_score);
-  testGrandeSuite(tab,tab_score);
-  testBrelan(tab,tab_score);
-  testFullv1(tab,tab_score);
-  testFullv2(tab,tab_score);
-  afficScore(tab_score,tab);
-
-}
-
 
