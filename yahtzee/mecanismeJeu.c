@@ -34,6 +34,7 @@ int boucle_de_saisie(int a, int b){
     int i;
     do{
         fflush(stdin);
+        
         printf("merci de saisir un nombre compris entre %d et %d\n", a, b);
         scanf("%d",&i);
     }while( i <a || i>b ||sizeof(i) != sizeof(int) );
@@ -50,8 +51,9 @@ void displayDices(Player *p){
 
 void askDices(Player *p){
   for (int i = 0; i <8; ++i)
-  {
+  {displayDices(p);
     if(p-> dicesAllowed[i]==1){
+      
       printf("voulez vous relancer le de %d ?\n",i+1 );
       p-> dicesAllowed[i]= boucle_de_saisie(0,1);
     } 
@@ -67,10 +69,11 @@ void completeTurn(Player *p){
 
   p->nbrRollRemain -= 1 ;
   while(p->nbrRollRemain != 0){
-    printf("Lancé de dée :\n") ;
+    printf("Lance de dees :\n") ;
     displayDices(p) ;
-    printf("Voulez vous relancer des dées ? ") ;
+    printf("Voulez vous relancer des dees ? ") ;
     v = boucle_de_saisie(0,1) ;
+    displayDices(p);
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
       displayScore(p->tabScore,p->dices);
@@ -82,7 +85,8 @@ void completeTurn(Player *p){
       askDices(p);
       p->nbrRollRemain -= 1 ;
       rollDices(p) ;
-      printf("Vous avez relancé des dées :\n") ;
+      displayDices(p);
+      printf("Vous avez relancer des dees :\n") ;
       displayScore(p->tabScore,p->dices);
       printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
     }
@@ -97,6 +101,8 @@ void freePlayer(Player *p){
 }
 void initPlayer(Player *p){
   //askName();
+ 
+ 
   p->dices = malloc(sizeof(int)*8);
   p->dicesAllowed = malloc(sizeof(int)*8);
   p->nbrRollRemain = 6 ;
