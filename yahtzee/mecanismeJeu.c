@@ -54,7 +54,7 @@ void askDices(Player *p){
   {displayDices(p);
     if(p-> dicesAllowed[i]==1){
       
-      printf("voulez vous relancer le de %d ?\n",i+1 );
+      printf("voulez vous relancer le de %d ?\n",p->dices[i] );
       p-> dicesAllowed[i]= boucle_de_saisie(0,1);
     } 
   }
