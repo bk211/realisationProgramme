@@ -1,4 +1,12 @@
 #include "score.h"
+/**
+ * \brief      Verifie si la figure Yahtzee est présente
+ * \details    Si la premiere des est équivalente a la suivante,on verifie si la suivante est équivalente à la prochaine de celle ci, ainsi de suite
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ * 
+ */
 
 void testYahtzee(int *tab,int *tab_score) {
   // verif Yahtzee
@@ -17,6 +25,14 @@ void testYahtzee(int *tab,int *tab_score) {
     }
 }
 
+/**
+ * \brief      Verifie si la figure PetiteSuite est présente
+ * \details    S'il y a une des qui vaut 1, on regard s'il y a une des qui vaut 2, ainsi de suite jusqu'a 7,si 7 est présent, alors on a une PetiteSuite
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ 
+ */
 void testPetiteSuite(int *tab,int *tab_score) {
     int i;
     // verif petite suite
@@ -56,6 +72,15 @@ void testPetiteSuite(int *tab,int *tab_score) {
 	  }
   }
   }
+
+/**
+ * \brief      Verifie si la figure GrandeSuite est présente
+ * \details    S'il y a une des qui vaut 2, on regard s'il y a une des qui vaut 3, ainsi de suite jusqu'a 8, si 8 est présent, alors il y a GrandeSuite
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ 
+ */
 
 void testGrandeSuite(int *tab,int *tab_score) {
     int i;
@@ -98,6 +123,15 @@ void testGrandeSuite(int *tab,int *tab_score) {
 	  }
    }
    }
+
+/**
+ * \brief      Verifie si la figure Brelan est présente
+ * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il n'y a pas d'occurence de 4, alors on a un Brelan . 
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ 
+ */
 
 void testBrelan(int *tab,int *tab_score) {
   int tab_occurence[8]={0,0,0,0,0,0,0};
@@ -159,6 +193,15 @@ void testBrelan(int *tab,int *tab_score) {
 }
 
 
+/**
+ * \brief      Verifie si la figure Full type1 est présente (5des identique + 2des identiques)
+ * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 5 dans le tableau d'occurence ET qu'il y a une occurence de 2, alors on a un Full type1 . 
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ 
+ */
+
 void testFullv1(int *tab,int* tab_score){
 
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
@@ -214,6 +257,15 @@ void testFullv1(int *tab,int* tab_score){
     
 }
 
+
+/**
+ * \brief      Verifie si la figure Full type2 est présente (3des identique + 4des identiques)
+ * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il y a une occurence de 4, alors on a un Full type2 . 
+ *                  
+ * \param    *tab               tableau content les des.
+ * \param    *tab_score         tableau dans lequel on insere le score.
+ 
+ */
 
 void testFullv2(int *tab,int* tab_score){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
@@ -272,6 +324,17 @@ void testFullv2(int *tab,int* tab_score){
     
 }
 
+
+/**
+ * \brief      Appel a tout les fonctions de verification de figure
+ * \details    Appel tout les fonctions de verification de figure et remplissage
+du tableau de score
+ *                  
+ * \param    *tab_score        tableau contenant les scores
+ * \param    *tab_dess         tableau contenant les des
+ 
+ */
+
 void testCombinatoire(int *tab_score, int *tab_dee){
 	/*test et remplit le tableau des score*/
 	testYahtzee(tab_dee,tab_score);
@@ -284,6 +347,15 @@ void testCombinatoire(int *tab_score, int *tab_dee){
 
 
 
+
+/**
+ * \brief      Affiche les scores
+ * \details    Appel la fonction TestCombinatoire qui s'occupe de remplir le tableau des score, puis affiche les scores
+ *                  
+ * \param    *tab_score        tableau contenant les scores
+ * \param    *tab              tableau contenant les des
+ 
+ */
 
 void displayScore(int* tab_score,int *tab){
 	int i,score=0,somme=0;
@@ -319,6 +391,15 @@ void displayScore(int* tab_score,int *tab){
 	tab_score[6] = somme;
     }
 
+
+/**
+ * \brief      Fonction qui décide qui l'emporte
+ * \details    Compare le score des deux joueurs et affiche le gagnant ou match nul
+ *                  
+ * \param    a        score du joueur 1
+ * \param    b        score du joueur 2
+ 
+ */
 
 void compareScore(int a, int b){
 	if(a > b){
