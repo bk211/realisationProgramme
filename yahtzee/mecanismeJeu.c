@@ -73,7 +73,7 @@ void completeTurn(Player *p){
     displayDices(p) ;
     printf("Voulez vous relancer des dees ? ") ;
     v = boucle_de_saisie(0,1) ;
-    displayDices(p);
+    
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
       displayScore(p->tabScore,p->dices);
@@ -85,7 +85,7 @@ void completeTurn(Player *p){
       askDices(p);
       p->nbrRollRemain -= 1 ;
       rollDices(p) ;
-      displayDices(p);
+      
       printf("Vous avez relancer des dees :\n") ;
       displayScore(p->tabScore,p->dices);
       printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
