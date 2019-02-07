@@ -11,6 +11,7 @@
 #include<stdlib.h>
 #include "mecanismeJeu.h"
 #include "score.h"
+#include "metsaisit.c"
 /**
  *\fn int tirage(int max)
  * \brief      donne la valeur de dée
@@ -39,6 +40,7 @@ void rollDices(Player *p){
       //printf(">>>de %d tire%d\n",i,p->dices[i] );
     }
   }
+  p->nbrRollRemain-=1;
 }
 /**
  *\fn void refreshDices(Player *p)
@@ -113,35 +115,29 @@ void askDices(Player *p){
  * \param    p le joueur.
  */
 void completeTurn(Player *p){
-  int v = 1 ;
-  refreshDices(p) ;
-  rollDices(p) ;   
-
-  p->nbrRollRemain -= 1 ;
-  while(p->nbrRollRemain != 0){
+  //refreshDices(p) ;
+  //rollDices(p) ;   
+  resetpartie(p)//< a faire
+  int end = 0,answer=1;
+  do{
     printf("Lance de dees :\n") ;
-    displayDices(p) ;
-    printf("Voulez vous relancer des dees ? ") ;
-    v = boucle_de_saisie(0,1) ;
-
-    if(v == 0) { // cas fin de lance
-      p->nbrRollRemain = 0 ; 
-      displayScore(p->tabScore,p->dices);
-      } 
-    
-
-    else{ //cas relance de
-      if(p->nbrRollRemain !=6)printf("lequelles one ? ") ;
-      askDices(p);
-      p->nbrRollRemain -= 1 ;
-      rollDices(p) ;
-      
-      printf("Vous avez relancer des dees :\n") ;
-      displayScore(p->tabScore,p->dices);
-      printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
+    rollDices(p) ;   
+    displayDices(p) ; 
+    printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
+    if(p->nbrRollRemain>0){
+        printf("Voulez vous relancer des dees ? ") ;
+        answer = boucle_de_saisie(0,1) ;
+        if(!answer){
+            p->nbrRollRemain =0;
+        }
+        else{
+            askDices(p);
+        }
     }
-  }
-  printf("Tour du prochain joueur\n") ;
+  }while(p->nbrRollRemain != 0)
+    // fin des lance il doit choisir une case du tabScoreFinal a remplir
+  saisitScore(p);//
+  displayScoreFinal(p->tabScoreFinal);//affiche son score final
 }
 
 /**
