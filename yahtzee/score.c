@@ -10,13 +10,19 @@
 
 void testYahtzee(int *tab,int *tab_score) {
   // verif Yahtzee
+  int choix;
   if(tab[0] == tab[1]) {
     if(tab[1] == tab[2]) {
       if(tab[2] == tab[3]) {
 	if(tab[3] == tab[4]) {
 	  if(tab[4] == tab[5]) {
 	    if(tab[5] == tab[6]) {
+	      printf("Il y a un Yahtzee de %d, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n",tab[0]);
+	      scanf("%d\n",&choix);
+	      if(choix == 1)
+		{
 		tab_score[0]+= 50;
+		}
 	      }
 	      }
 	  }
@@ -35,6 +41,7 @@ void testYahtzee(int *tab,int *tab_score) {
  */
 void testPetiteSuite(int *tab,int *tab_score) {
     int i;
+    int choix;
     // verif petite suite
   for(i=0;i<8;i++){
         if(tab[i] == 1)
@@ -56,7 +63,13 @@ void testPetiteSuite(int *tab,int *tab_score) {
 					     {
 					       for(i=0;i<8;i++){
 						 if(tab[i] == 7)
-						   {						     			     	   tab_score[1]+=30;
+						   {
+						     printf("Il y a une PetiteSuite, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n");
+						     scanf("%d\n",&choix);
+						     if(choix == 1)
+						       {
+						     tab_score[1]+=30;
+						       }
 						   }
 					       }
 					     }
@@ -84,6 +97,7 @@ void testPetiteSuite(int *tab,int *tab_score) {
 
 void testGrandeSuite(int *tab,int *tab_score) {
     int i;
+    int choix;
     
   // verif grande suite
    for(i=0;i<8;i++){
@@ -107,7 +121,12 @@ void testGrandeSuite(int *tab,int *tab_score) {
 					       for(i=0;i<8;i++){
 						 if(tab[i] == 8)
 						   {
+						      printf("Il y a une GrandeSuite, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n");
+						      scanf("%d\n",&choix);
+						      if(choix == 1)
+							{
 						     tab_score[2]+=40;
+							}
 						   }
 					       }
 					     }
@@ -136,6 +155,8 @@ void testGrandeSuite(int *tab,int *tab_score) {
 void testBrelan(int *tab,int *tab_score) {
   int tab_occurence[8]={0,0,0,0,0,0,0};
     int i,score =0;
+    int choix;
+    int brelan;
 
   for(i=0;i<8;i++){ // somme de tout les dés
     score+=(tab[i]);
@@ -180,6 +201,7 @@ void testBrelan(int *tab,int *tab_score) {
       {
 	if(tab_occurence[i]==3)
 	  {
+	    brelan=i+1;
 	    for(i=0;i<8;i++)
 	      {
 		if(tab_occurence[i] == 4)
@@ -187,7 +209,12 @@ void testBrelan(int *tab,int *tab_score) {
 		    return;
 		  }
 	      }
-	    tab_score[3]+=score;
+	    printf("Il y a un Brelan de %d, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n",brelan);
+	     scanf("%d\n",&choix);
+	     if(choix == 1)
+	       {
+		 tab_score[3]+=score;
+	       }
 	  }
       }
 }
@@ -206,6 +233,8 @@ void testFullv1(int *tab,int* tab_score){
 
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
   int i,j;
+  int choix;
+  int full1,full2;
   for(i=0;i<8;i++) {
     
     if(tab[i] == 1){
@@ -245,11 +274,18 @@ void testFullv1(int *tab,int* tab_score){
       {
 	if(tab_occurence[i]==5)
 	  {
+	    full1=i+1;
 	    for(j=0;j<8;j++)
 	      {
 		if(tab_occurence[j]==2)
 		  {
-		    tab_score[4]+=25;		    
+		    full2=j+1;
+		    printf("Il y a un Full de %d et %d, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n",full1,full2);
+		    scanf("%d\n",&choix);
+		    if(choix == 1)
+		      {
+			tab_score[4]+=25;
+		      }
 		  }
 	      }
 	  }
@@ -269,8 +305,9 @@ void testFullv1(int *tab,int* tab_score){
 
 void testFullv2(int *tab,int* tab_score){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-
+  int choix;
   int i,j;
+  int full1,full2;
   for(i=0;i<8;i++) {
     
     if(tab[i] == 1){
@@ -310,13 +347,18 @@ void testFullv2(int *tab,int* tab_score){
       {
 	if(tab_occurence[i]==3)
 	  {
+	    full1=i+1;
 	    for(j=0;j<8;j++)
 	      {
 		if(tab_occurence[j]==4)
 		  {
-
-		    tab_score[4]+=25;		    
-
+		    full2=j+1;
+		    printf("Il y a un Full de %d et %d, voulez vous le garder ? : Tappez 1 pour garder sinon 0\n",full1,full2);
+		     scanf("%d\n",&choix);
+		     if(choix == 1)
+		       {
+			 tab_score[4]+=25;		    
+		       }
 		  }
 	      }
 	  }
