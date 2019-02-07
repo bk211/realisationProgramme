@@ -1,15 +1,36 @@
+/**
+ * \file         mecanismedJeu.c
+ * \author    groupe3
+ * \version   1.0
+ * \date       07 fevrier 2019
+ * \brief       Gére le mecanisme de jeu.
+ *
+ *                  
+ */
 #include<stdio.h>
 #include<stdlib.h>
 #include "mecanismeJeu.h"
 #include "score.h"
-
+/**
+ *\fn int tirage(int max)
+ * \brief      donne la valeur de dée
+ * \details                
+ * \param    max         le maximum
+ * \return    Un int représentant la valeur de dée.
+ */
 int tirage(int max){
     /*tire au sort un nombre compris entre 0 inclus max; 
     srand((unsigned)time(NULL));*/
     rand();
     return (double)(rand()/(double)(RAND_MAX) * (max))+1;
 }
-
+/**
+ *\fn void rollDices(Player *p)
+ * \brief       la coup de jeu
+ * \details      fait le coup de 7 deés
+ *      
+ * \param    p        le joueur
+ **/
 void rollDices(Player *p){
   srand((unsigned)time(NULL));//set Seed pour le tirage
   for(int i = 0 ; i < 8; ++i){
@@ -19,7 +40,12 @@ void rollDices(Player *p){
     }
   }
 }
-
+/**
+ *\fn void refreshDices(Player *p)
+ * \brief      initialise les dées 
+ * \details    initialize toute les dées a 0.
+ * \param    p       le joueur.
+ */
 void refreshDices(Player *p){
 
   for(int i = 0 ; i < 8 ; ++i){
@@ -28,9 +54,16 @@ void refreshDices(Player *p){
   } 
 }
 
-
+/**
+ *\fn int boucle_de_saisie(int a, int b)
+ * \brief      controle de saisie de clavier.
+ * \details    retourne l'entier i ssi il est compris dans intervalle [a,b].
+ * \param    a    la valeur 0 
+ * \param    a    la valeur 1
+ * \return    Un int.
+ */
 int boucle_de_saisie(int a, int b){
-    //retourne l'entier i ssi il est compris dans intervalle [a,b]
+    //
     int i;
     do{
         fflush(stdin);
@@ -41,6 +74,12 @@ int boucle_de_saisie(int a, int b){
     return i;
 }
 
+/**
+ *\fn void displayDices(Player *p)
+ * \brief      affichage des dées.
+ * \details   afficher tout les dées.
+ * \param    p le joueur.
+ */
 void displayDices(Player *p){
   for(int i = 0 ; i < 8 ; ++i){
     printf("%d ", p->dices[i]) ;
@@ -49,6 +88,12 @@ void displayDices(Player *p){
   printf("\n") ;
 }
 
+/**
+ *\fn void askDices(Player *p)
+ * \brief      relance les dées 
+ * \details    demande au joueur s'il veurt relancer le dée.
+ * \param    p le joueur.
+ */
 void askDices(Player *p){
   for (int i = 0; i <8; ++i)
   {displayDices(p);
@@ -61,7 +106,12 @@ void askDices(Player *p){
 
 }
 
-
+/**
+ *\fn void completeTurn(Player *p)
+ * \brief      lance une partie de jeu.
+ * \details    fait une partie de jeu .
+ * \param    p le joueur.
+ */
 void completeTurn(Player *p){
   int v = 1 ;
   refreshDices(p) ;
@@ -73,7 +123,7 @@ void completeTurn(Player *p){
     displayDices(p) ;
     printf("Voulez vous relancer des dees ? ") ;
     v = boucle_de_saisie(0,1) ;
-    
+
     if(v == 0) { // cas fin de lance
       p->nbrRollRemain = 0 ; 
       displayScore(p->tabScore,p->dices);
@@ -94,11 +144,23 @@ void completeTurn(Player *p){
   printf("Tour du prochain joueur\n") ;
 }
 
+/**
+ *\fn void freePlayer(Player *p)
+ * \brief      libére la memoire.
+ * \details    libere la memoire allouer pour les joueurs .
+ * \param    p le joueur.
+ */
 void freePlayer(Player *p){
   free(p->dices);
   free(p->dicesAllowed);
   free(p->tabScore);
 }
+/**
+ *\fn void initPlayer(Player *p)
+ * \brief      initialise les joueurs .
+ * \details    initialise la memoire allouer pour les joueurs .
+ * \param    p le joueur.
+ */
 void initPlayer(Player *p){
   //askName();
  
