@@ -1,0 +1,398 @@
+\hypertarget{mecanismeJeu_8c}{}\section{mecanisme\+Jeu.\+c File Reference}
+\label{mecanismeJeu_8c}\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mecanisme\+Jeu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+Include dependency graph for mecanisme\+Jeu.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mecanismeJeu_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mecanismeJeu_8c_aedc55fd9756d84e32e3f03e04f964076}{tirage} (int max)
+\item 
+void \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{roll\+Dices} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+void \hyperlink{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}{refresh\+Dices} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+int \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\+\_\+de\+\_\+saisie} (int a, int b)
+\item 
+void \hyperlink{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}{display\+Dices} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+void \hyperlink{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}{ask\+Dices} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+void \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{complete\+Turn} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+void \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{free\+Player} (\hyperlink{structPlayer}{Player} $\ast$p)
+\item 
+void \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{init\+Player} (\hyperlink{structPlayer}{Player} $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}\label{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!ask\+Dices@{ask\+Dices}}
+\index{ask\+Dices@{ask\+Dices}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{ask\+Dices()}{askDices()}}
+{\footnotesize\ttfamily void ask\+Dices (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file mecanisme\+Jeu.\+c.
+
+
+
+References boucle\+\_\+de\+\_\+saisie().
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+51                         \{
+52   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <8; ++i)
+53   \{
+54     \textcolor{keywordflow}{if}(p-> dicesAllowed[i]==1)\{
+55       printf(\textcolor{stringliteral}{"voulez vous relancer le de %d ?\(\backslash\)n"},i+1 );
+56       p-> dicesAllowed[i]= \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1);
+57     \} 
+58   \}
+59 
+60 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}\label{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!boucle\+\_\+de\+\_\+saisie@{boucle\+\_\+de\+\_\+saisie}}
+\index{boucle\+\_\+de\+\_\+saisie@{boucle\+\_\+de\+\_\+saisie}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{boucle\+\_\+de\+\_\+saisie()}{boucle\_de\_saisie()}}
+{\footnotesize\ttfamily int boucle\+\_\+de\+\_\+saisie (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file mecanisme\+Jeu.\+c.
+
+
+
+Referenced by ask\+Dices(), and complete\+Turn().
+
+
+\begin{DoxyCode}
+32                                   \{
+33     \textcolor{comment}{//retourne l'entier i ssi il est compris dans intervalle [a,b]}
+34     \textcolor{keywordtype}{int} i;
+35     \textcolor{keywordflow}{do}\{
+36         fflush(stdin);
+37         printf(\textcolor{stringliteral}{"merci de saisir un nombre compris entre %d et %d\(\backslash\)n"}, a, b);
+38         scanf(\textcolor{stringliteral}{"%d"},&i);
+39     \}\textcolor{keywordflow}{while}( i <a || i>b ||\textcolor{keyword}{sizeof}(i) != \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) );
+40     \textcolor{keywordflow}{return} i;
+41 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}\label{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!complete\+Turn@{complete\+Turn}}
+\index{complete\+Turn@{complete\+Turn}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{complete\+Turn()}{completeTurn()}}
+{\footnotesize\ttfamily void complete\+Turn (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file mecanisme\+Jeu.\+c.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+63                             \{
+64   \textcolor{keywordtype}{int} v = 1 ;
+65   \hyperlink{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}{refreshDices}(p) ;
+66   \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;   
+67 
+68   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
+69   \textcolor{keywordflow}{while}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} != 0)\{
+70     printf(\textcolor{stringliteral}{"Lancé de dée :\(\backslash\)n"}) ;
+71     \hyperlink{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}{displayDices}(p) ;
+72     printf(\textcolor{stringliteral}{"Voulez vous relancer des dées ? "}) ;
+73     v = \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1) ;
+74     \textcolor{keywordflow}{if}(v == 0) \{ \textcolor{comment}{// cas fin de lance}
+75       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 0 ; 
+76       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+77       \} 
+78     
+79 
+80     \textcolor{keywordflow}{else}\{ \textcolor{comment}{//cas relance de}
+81       \textcolor{keywordflow}{if}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} !=6)printf(\textcolor{stringliteral}{"lequelles one ? "}) ;
+82       \hyperlink{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}{askDices}(p);
+83       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
+84       \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;
+85       printf(\textcolor{stringliteral}{"Vous avez relancé des dées :\(\backslash\)n"}) ;
+86       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+87       printf(\textcolor{stringliteral}{"Essaies restante : %d\(\backslash\)n"}, p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain}) ; 
+88     \}
+89   \}
+90   printf(\textcolor{stringliteral}{"Tour du prochain joueur\(\backslash\)n"}) ;
+91 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}\label{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!display\+Dices@{display\+Dices}}
+\index{display\+Dices@{display\+Dices}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{display\+Dices()}{displayDices()}}
+{\footnotesize\ttfamily void display\+Dices (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file mecanisme\+Jeu.\+c.
+
+
+
+References Player\+::dices.
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+43                             \{
+44   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 8 ; ++i)\{
+45     printf(\textcolor{stringliteral}{"%d "}, p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i]) ;
+46   \}
+47   
+48   printf(\textcolor{stringliteral}{"\(\backslash\)n"}) ;
+49 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}\label{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!free\+Player@{free\+Player}}
+\index{free\+Player@{free\+Player}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{free\+Player()}{freePlayer()}}
+{\footnotesize\ttfamily void free\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file mecanisme\+Jeu.\+c.
+
+
+
+References Player\+::dices, Player\+::dices\+Allowed, and Player\+::tab\+Score.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+93                           \{
+94   free(p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+95   free(p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed});
+96   free(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore});
+97 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}\label{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!init\+Player@{init\+Player}}
+\index{init\+Player@{init\+Player}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{init\+Player()}{initPlayer()}}
+{\footnotesize\ttfamily void init\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file mecanisme\+Jeu.\+c.
+
+
+
+References Player\+::dices, Player\+::dices\+Allowed, Player\+::nbr\+Roll\+Remain, Player\+::score, and Player\+::tab\+Score.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+98                           \{
+99   \textcolor{comment}{//askName();}
+100   p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
+101   p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
+102   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 6 ;
+103   p->\hyperlink{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}{score} = 0;
+104   p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*6);
+105   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)
+106   \{
+107     p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[i]= 0;
+108   \}
+109 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}\label{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!refresh\+Dices@{refresh\+Dices}}
+\index{refresh\+Dices@{refresh\+Dices}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{refresh\+Dices()}{refreshDices()}}
+{\footnotesize\ttfamily void refresh\+Dices (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file mecanisme\+Jeu.\+c.
+
+
+
+References Player\+::dices, and Player\+::dices\+Allowed.
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+23                             \{
+24 
+25   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 8 ; ++i)\{
+26     p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i] = 0 ;
+27     p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed}[i]=1;
+28   \} 
+29 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}\label{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!roll\+Dices@{roll\+Dices}}
+\index{roll\+Dices@{roll\+Dices}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{roll\+Dices()}{rollDices()}}
+{\footnotesize\ttfamily void roll\+Dices (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file mecanisme\+Jeu.\+c.
+
+
+
+References Player\+::dices, Player\+::dices\+Allowed, and tirage().
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+13                          \{
+14   srand((\textcolor{keywordtype}{unsigned})time(NULL));\textcolor{comment}{//set Seed pour le tirage}
+15   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 8; ++i)\{
+16     \textcolor{keywordflow}{if} (p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed}[i])\{
+17       p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i] = \hyperlink{mecanismeJeu_8c_aedc55fd9756d84e32e3f03e04f964076}{tirage}(8) ;
+18       \textcolor{comment}{//printf(">>>de %d tire%d\(\backslash\)n",i,p->dices[i] );}
+19     \}
+20   \}
+21 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mecanismeJeu_8c_aedc55fd9756d84e32e3f03e04f964076}\label{mecanismeJeu_8c_aedc55fd9756d84e32e3f03e04f964076}} 
+\index{mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}!tirage@{tirage}}
+\index{tirage@{tirage}!mecanisme\+Jeu.\+c@{mecanisme\+Jeu.\+c}}
+\subsubsection{\texorpdfstring{tirage()}{tirage()}}
+{\footnotesize\ttfamily int tirage (\begin{DoxyParamCaption}\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file mecanisme\+Jeu.\+c.
+
+
+
+Referenced by roll\+Dices().
+
+
+\begin{DoxyCode}
+6                    \{
+7     \textcolor{comment}{/*tire au sort un nombre compris entre 0 inclus max; }
+8 \textcolor{comment}{    srand((unsigned)time(NULL));*/}
+9     rand();
+10     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})(rand()/(double)(RAND\_MAX) * (max))+1;
+11 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mecanismeJeu_8c_aedc55fd9756d84e32e3f03e04f964076_icgraph}
+\end{center}
+\end{figure}

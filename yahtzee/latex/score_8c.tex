@@ -1,0 +1,601 @@
+\hypertarget{score_8c}{}\section{score.\+c File Reference}
+\label{score_8c}\index{score.\+c@{score.\+c}}
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+Include dependency graph for score.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{score_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{score_8c_a05f60c35ae862a429e026d4410326bd0}{test\+Yahtzee} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_abb5b3478ba11cc275d9e53d024a3842a}{test\+Petite\+Suite} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_a00fb7cc0b89113a887c8cba45a47910a}{test\+Grande\+Suite} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_ab37e17a8d1ec2908a09f6a690ba25388}{test\+Brelan} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_ae2a977f6be696efb8370167ae21268dd}{test\+Fullv1} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_adc172179b41ffc44c1c39c50a4b922e1}{test\+Fullv2} (int $\ast$tab, int $\ast$tab\+\_\+score)
+\item 
+void \hyperlink{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f}{test\+Combinatoire} (int $\ast$tab\+\_\+score, int $\ast$tab\+\_\+dee)
+\item 
+void \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{display\+Score} (int $\ast$tab\+\_\+score, int $\ast$tab)
+\item 
+void \hyperlink{score_8c_aeeb20f2b14b47a496fadd754abda5317}{compare\+Score} (int a, int b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{score_8c_aeeb20f2b14b47a496fadd754abda5317}\label{score_8c_aeeb20f2b14b47a496fadd754abda5317}} 
+\index{score.\+c@{score.\+c}!compare\+Score@{compare\+Score}}
+\index{compare\+Score@{compare\+Score}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{compare\+Score()}{compareScore()}}
+{\footnotesize\ttfamily void compare\+Score (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 323 of file score.\+c.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+323                                \{
+324     \textcolor{keywordflow}{if}(a > b)\{
+325         printf(\textcolor{stringliteral}{"Bravo! le joueur 1 remporte la partie\(\backslash\)n"});
+326     \}
+327     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (b > a)\{
+328         printf(\textcolor{stringliteral}{"Bravo! le joueur 2 remporte la partie\(\backslash\)n"});
+329     \}
+330     \textcolor{keywordflow}{else}\{
+331         printf(\textcolor{stringliteral}{"Match nul\(\backslash\)n"});  
+332     \}   
+333 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{score_8c_aeeb20f2b14b47a496fadd754abda5317_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_a54d088aca7937ae9e67dabbe160f5254}\label{score_8c_a54d088aca7937ae9e67dabbe160f5254}} 
+\index{score.\+c@{score.\+c}!display\+Score@{display\+Score}}
+\index{display\+Score@{display\+Score}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{display\+Score()}{displayScore()}}
+{\footnotesize\ttfamily void display\+Score (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab\+\_\+score,  }\item[{int $\ast$}]{tab }\end{DoxyParamCaption})}
+
+
+
+Definition at line 288 of file score.\+c.
+
+
+
+References test\+Combinatoire().
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+288                                           \{
+289     \textcolor{keywordtype}{int} i,score=0,somme=0;
+290 
+291 
+292 
+293     \hyperlink{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f}{testCombinatoire}(tab\_score,tab);
+294 
+295     printf(\textcolor{stringliteral}{"voici le score pour Yatzee : %d\(\backslash\)n"},tab\_score[0]);
+296            
+297     printf(\textcolor{stringliteral}{"voici le score pour Petite Suite : %d\(\backslash\)n"},tab\_score[1]);
+298            
+299     printf(\textcolor{stringliteral}{"voici le score pour Grande Suite : %d\(\backslash\)n"},tab\_score[2]);
+300              
+301     printf(\textcolor{stringliteral}{"voici le score pour Brelan : %d\(\backslash\)n"},tab\_score[3]);
+302              
+303     printf(\textcolor{stringliteral}{"voici le score pour Full : %d\(\backslash\)n"},tab\_score[4]);
+304     
+305     \textcolor{keywordflow}{for}(i=0;i<8;i++)\{ \textcolor{comment}{// somme de tout les dés}
+306       score+=(tab[i]);
+307     \}
+308 
+309     printf(\textcolor{stringliteral}{"voici le score des dés :%d\(\backslash\)n"},score);
+310     
+311     \textcolor{keywordflow}{for}(i=0;i<5;i++)
+312       \{
+313         somme+=(tab\_score[i]);
+314       \}
+315     somme+=score;
+316 
+317     printf(\textcolor{stringliteral}{"voici le score total : %d\(\backslash\)n"},somme);
+318 
+319     tab\_score[6] = somme;
+320     \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_a54d088aca7937ae9e67dabbe160f5254_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{score_8c_a54d088aca7937ae9e67dabbe160f5254_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_ab37e17a8d1ec2908a09f6a690ba25388}\label{score_8c_ab37e17a8d1ec2908a09f6a690ba25388}} 
+\index{score.\+c@{score.\+c}!test\+Brelan@{test\+Brelan}}
+\index{test\+Brelan@{test\+Brelan}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Brelan()}{testBrelan()}}
+{\footnotesize\ttfamily void test\+Brelan (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+102                                          \{
+103   \textcolor{keywordtype}{int} tab\_occurence[8]=\{0,0,0,0,0,0,0\};
+104     \textcolor{keywordtype}{int} i,score =0;
+105 
+106   \textcolor{keywordflow}{for}(i=0;i<8;i++)\{ \textcolor{comment}{// somme de tout les dés}
+107     score+=(tab[i]);
+108   \}
+109 
+110   \textcolor{keywordflow}{for}(i=0;i<8;i++) \{
+111     
+112     \textcolor{keywordflow}{if}(tab[i] == 1)\{
+113       tab\_occurence[0]+=1;
+114     \}
+115     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 2)
+116       \{
+117     tab\_occurence[1]+=1;
+118       \}
+119     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 3)
+120       \{
+121     tab\_occurence[2]+=1;
+122       \}
+123     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 4)
+124       \{
+125     tab\_occurence[3]+=1;
+126       \}
+127     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 5)
+128       \{
+129     tab\_occurence[4]+=1;
+130       \}
+131     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 6)
+132       \{
+133     tab\_occurence[5]+=1;
+134       \}
+135     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 7)
+136       \{
+137     tab\_occurence[6]+=1;
+138       \}
+139     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 8)
+140       \{
+141     tab\_occurence[7]+=1;
+142       \}
+143   \}
+144     
+145     \textcolor{keywordflow}{for}(i=0;i<8;i++)
+146       \{
+147     \textcolor{keywordflow}{if}(tab\_occurence[i]==3)
+148       \{
+149         \textcolor{keywordflow}{for}(i=0;i<8;i++)
+150           \{
+151         \textcolor{keywordflow}{if}(tab\_occurence[i] == 4)
+152           \{
+153             \textcolor{keywordflow}{return};
+154           \}
+155           \}
+156         tab\_score[3]+=score;
+157       \}
+158       \}
+159 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_ab37e17a8d1ec2908a09f6a690ba25388_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f}\label{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f}} 
+\index{score.\+c@{score.\+c}!test\+Combinatoire@{test\+Combinatoire}}
+\index{test\+Combinatoire@{test\+Combinatoire}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Combinatoire()}{testCombinatoire()}}
+{\footnotesize\ttfamily void test\+Combinatoire (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab\+\_\+score,  }\item[{int $\ast$}]{tab\+\_\+dee }\end{DoxyParamCaption})}
+
+
+
+Definition at line 275 of file score.\+c.
+
+
+
+References test\+Brelan(), test\+Fullv1(), test\+Fullv2(), test\+Grande\+Suite(), test\+Petite\+Suite(), and test\+Yahtzee().
+
+
+
+Referenced by display\+Score().
+
+
+\begin{DoxyCode}
+275                                                    \{
+276     \textcolor{comment}{/*test et remplit le tableau des score*/}
+277     \hyperlink{score_8c_a05f60c35ae862a429e026d4410326bd0}{testYahtzee}(tab\_dee,tab\_score);
+278     \hyperlink{score_8c_abb5b3478ba11cc275d9e53d024a3842a}{testPetiteSuite}(tab\_dee,tab\_score);
+279     \hyperlink{score_8c_a00fb7cc0b89113a887c8cba45a47910a}{testGrandeSuite}(tab\_dee,tab\_score);
+280     \hyperlink{score_8c_ab37e17a8d1ec2908a09f6a690ba25388}{testBrelan}(tab\_dee,tab\_score);
+281     \hyperlink{score_8c_ae2a977f6be696efb8370167ae21268dd}{testFullv1}(tab\_dee,tab\_score);
+282     \hyperlink{score_8c_adc172179b41ffc44c1c39c50a4b922e1}{testFullv2}(tab\_dee,tab\_score);
+283 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_ae2a977f6be696efb8370167ae21268dd}\label{score_8c_ae2a977f6be696efb8370167ae21268dd}} 
+\index{score.\+c@{score.\+c}!test\+Fullv1@{test\+Fullv1}}
+\index{test\+Fullv1@{test\+Fullv1}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Fullv1()}{testFullv1()}}
+{\footnotesize\ttfamily void test\+Fullv1 (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 162 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+162                                         \{
+163 
+164   \textcolor{keywordtype}{int} tab\_occurence[8]=\{0,0,0,0,0,0,0,0\};
+165   \textcolor{keywordtype}{int} i,j;
+166   \textcolor{keywordflow}{for}(i=0;i<8;i++) \{
+167     
+168     \textcolor{keywordflow}{if}(tab[i] == 1)\{
+169       tab\_occurence[0]+=1;
+170     \}
+171     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 2)
+172       \{
+173     tab\_occurence[1]+=1;
+174       \}
+175     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 3)
+176       \{
+177     tab\_occurence[2]+=1;
+178       \}
+179     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 4)
+180       \{
+181     tab\_occurence[3]+=1;
+182       \}
+183     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 5)
+184       \{
+185     tab\_occurence[4]+=1;
+186       \}
+187     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 6)
+188       \{
+189     tab\_occurence[5]+=1;
+190       \}
+191     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 7)
+192       \{
+193     tab\_occurence[6]+=1;
+194       \}
+195     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 8)
+196       \{
+197     tab\_occurence[7]+=1;
+198       \}
+199   \}
+200     
+201     \textcolor{keywordflow}{for}(i=0;i<8;i++)
+202       \{
+203     \textcolor{keywordflow}{if}(tab\_occurence[i]==5)
+204       \{
+205         \textcolor{keywordflow}{for}(j=0;j<8;j++)
+206           \{
+207         \textcolor{keywordflow}{if}(tab\_occurence[j]==2)
+208           \{
+209             tab\_score[4]+=25;           
+210           \}
+211           \}
+212       \}
+213       \}
+214     
+215 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_ae2a977f6be696efb8370167ae21268dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_adc172179b41ffc44c1c39c50a4b922e1}\label{score_8c_adc172179b41ffc44c1c39c50a4b922e1}} 
+\index{score.\+c@{score.\+c}!test\+Fullv2@{test\+Fullv2}}
+\index{test\+Fullv2@{test\+Fullv2}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Fullv2()}{testFullv2()}}
+{\footnotesize\ttfamily void test\+Fullv2 (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 218 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+218                                         \{
+219   \textcolor{keywordtype}{int} tab\_occurence[8]=\{0,0,0,0,0,0,0,0\};
+220 
+221   \textcolor{keywordtype}{int} i,j;
+222   \textcolor{keywordflow}{for}(i=0;i<8;i++) \{
+223     
+224     \textcolor{keywordflow}{if}(tab[i] == 1)\{
+225       tab\_occurence[0]+=1;
+226     \}
+227     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 2)
+228       \{
+229     tab\_occurence[1]+=1;
+230       \}
+231     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 3)
+232       \{
+233     tab\_occurence[2]+=1;
+234       \}
+235     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 4)
+236       \{
+237     tab\_occurence[3]+=1;
+238       \}
+239     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 5)
+240       \{
+241     tab\_occurence[4]+=1;
+242       \}
+243     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 6)
+244       \{
+245     tab\_occurence[5]+=1;
+246       \}
+247     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 7)
+248       \{
+249     tab\_occurence[6]+=1;
+250       \}
+251     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(tab[i] == 8)
+252       \{
+253     tab\_occurence[7]+=1;
+254       \}
+255   \}
+256     
+257     \textcolor{keywordflow}{for}(i=0;i<8;i++)
+258       \{
+259     \textcolor{keywordflow}{if}(tab\_occurence[i]==3)
+260       \{
+261         \textcolor{keywordflow}{for}(j=0;j<8;j++)
+262           \{
+263         \textcolor{keywordflow}{if}(tab\_occurence[j]==4)
+264           \{
+265 
+266             tab\_score[4]+=25;           
+267 
+268           \}
+269           \}
+270       \}
+271       \}
+272     
+273 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_adc172179b41ffc44c1c39c50a4b922e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_a00fb7cc0b89113a887c8cba45a47910a}\label{score_8c_a00fb7cc0b89113a887c8cba45a47910a}} 
+\index{score.\+c@{score.\+c}!test\+Grande\+Suite@{test\+Grande\+Suite}}
+\index{test\+Grande\+Suite@{test\+Grande\+Suite}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Grande\+Suite()}{testGrandeSuite()}}
+{\footnotesize\ttfamily void test\+Grande\+Suite (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+60                                               \{
+61     \textcolor{keywordtype}{int} i;
+62     
+63   \textcolor{comment}{// verif grande suite}
+64    \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+65         \textcolor{keywordflow}{if}(tab[i] == 2)
+66       \{
+67         \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+68           \textcolor{keywordflow}{if}(tab[i] == 3)
+69          \{
+70            \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+71              \textcolor{keywordflow}{if}(tab[i] == 4)
+72                 \{
+73               \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+74                 \textcolor{keywordflow}{if}(tab[i] == 5)
+75                    \{
+76                  \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+77                    \textcolor{keywordflow}{if}(tab[i] == 6)
+78                       \{
+79                     \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+80                       \textcolor{keywordflow}{if}(tab[i] == 7)
+81                          \{
+82                            \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+83                          \textcolor{keywordflow}{if}(tab[i] == 8)
+84                            \{
+85                              tab\_score[2]+=40;
+86                            \}
+87                            \}
+88                          \}
+89                     \}
+90                       \}
+91                  \}
+92                    \}
+93               \}
+94             \}
+95            \}
+96          \}
+97         \}
+98       \}
+99    \}
+100    \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_a00fb7cc0b89113a887c8cba45a47910a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_abb5b3478ba11cc275d9e53d024a3842a}\label{score_8c_abb5b3478ba11cc275d9e53d024a3842a}} 
+\index{score.\+c@{score.\+c}!test\+Petite\+Suite@{test\+Petite\+Suite}}
+\index{test\+Petite\+Suite@{test\+Petite\+Suite}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Petite\+Suite()}{testPetiteSuite()}}
+{\footnotesize\ttfamily void test\+Petite\+Suite (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+20                                               \{
+21     \textcolor{keywordtype}{int} i;
+22     \textcolor{comment}{// verif petite suite}
+23   \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+24         \textcolor{keywordflow}{if}(tab[i] == 1)
+25       \{
+26         \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+27           \textcolor{keywordflow}{if}(tab[i] == 2)
+28          \{
+29            \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+30              \textcolor{keywordflow}{if}(tab[i] == 3)
+31                 \{
+32               \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+33                 \textcolor{keywordflow}{if}(tab[i] == 4)
+34                    \{
+35                  \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+36                    \textcolor{keywordflow}{if}(tab[i] == 5)
+37                       \{
+38                     \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+39                       \textcolor{keywordflow}{if}(tab[i] == 6)
+40                          \{
+41                            \textcolor{keywordflow}{for}(i=0;i<8;i++)\{
+42                          \textcolor{keywordflow}{if}(tab[i] == 7)
+43                            \{                                                   tab\_score[1]+=30;
+44                            \}
+45                            \}
+46                          \}
+47                     \}
+48                       \}
+49                  \}
+50                    \}
+51               \}
+52             \}
+53            \}
+54          \}
+55         \}
+56       \}
+57   \}
+58   \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_abb5b3478ba11cc275d9e53d024a3842a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8c_a05f60c35ae862a429e026d4410326bd0}\label{score_8c_a05f60c35ae862a429e026d4410326bd0}} 
+\index{score.\+c@{score.\+c}!test\+Yahtzee@{test\+Yahtzee}}
+\index{test\+Yahtzee@{test\+Yahtzee}!score.\+c@{score.\+c}}
+\subsubsection{\texorpdfstring{test\+Yahtzee()}{testYahtzee()}}
+{\footnotesize\ttfamily void test\+Yahtzee (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{int $\ast$}]{tab\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file score.\+c.
+
+
+
+Referenced by test\+Combinatoire().
+
+
+\begin{DoxyCode}
+3                                           \{
+4   \textcolor{comment}{// verif Yahtzee}
+5   \textcolor{keywordflow}{if}(tab[0] == tab[1]) \{
+6     \textcolor{keywordflow}{if}(tab[1] == tab[2]) \{
+7       \textcolor{keywordflow}{if}(tab[2] == tab[3]) \{
+8     \textcolor{keywordflow}{if}(tab[3] == tab[4]) \{
+9       \textcolor{keywordflow}{if}(tab[4] == tab[5]) \{
+10         \textcolor{keywordflow}{if}(tab[5] == tab[6]) \{
+11         tab\_score[0]+= 50;
+12           \}
+13           \}
+14       \}
+15     \}
+16       \}
+17     \}
+18 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8c_a05f60c35ae862a429e026d4410326bd0_icgraph}
+\end{center}
+\end{figure}

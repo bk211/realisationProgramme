@@ -1,0 +1,135 @@
+\hypertarget{score_8h}{}\section{score.\+h File Reference}
+\label{score_8h}\index{score.\+h@{score.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for score.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{score_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{score_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{score_8h_a54d088aca7937ae9e67dabbe160f5254}{display\+Score} (int $\ast$tab\+\_\+score, int $\ast$tab)
+\item 
+void \hyperlink{score_8h_aeeb20f2b14b47a496fadd754abda5317}{compare\+Score} (int a, int b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{score_8h_aeeb20f2b14b47a496fadd754abda5317}\label{score_8h_aeeb20f2b14b47a496fadd754abda5317}} 
+\index{score.\+h@{score.\+h}!compare\+Score@{compare\+Score}}
+\index{compare\+Score@{compare\+Score}!score.\+h@{score.\+h}}
+\subsubsection{\texorpdfstring{compare\+Score()}{compareScore()}}
+{\footnotesize\ttfamily void compare\+Score (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 323 of file score.\+c.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+323                                \{
+324     \textcolor{keywordflow}{if}(a > b)\{
+325         printf(\textcolor{stringliteral}{"Bravo! le joueur 1 remporte la partie\(\backslash\)n"});
+326     \}
+327     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (b > a)\{
+328         printf(\textcolor{stringliteral}{"Bravo! le joueur 2 remporte la partie\(\backslash\)n"});
+329     \}
+330     \textcolor{keywordflow}{else}\{
+331         printf(\textcolor{stringliteral}{"Match nul\(\backslash\)n"});  
+332     \}   
+333 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{score_8h_aeeb20f2b14b47a496fadd754abda5317_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{score_8h_a54d088aca7937ae9e67dabbe160f5254}\label{score_8h_a54d088aca7937ae9e67dabbe160f5254}} 
+\index{score.\+h@{score.\+h}!display\+Score@{display\+Score}}
+\index{display\+Score@{display\+Score}!score.\+h@{score.\+h}}
+\subsubsection{\texorpdfstring{display\+Score()}{displayScore()}}
+{\footnotesize\ttfamily void display\+Score (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab\+\_\+score,  }\item[{int $\ast$}]{tab }\end{DoxyParamCaption})}
+
+
+
+Definition at line 288 of file score.\+c.
+
+
+
+References test\+Combinatoire().
+
+
+
+Referenced by complete\+Turn().
+
+
+\begin{DoxyCode}
+288                                           \{
+289     \textcolor{keywordtype}{int} i,score=0,somme=0;
+290 
+291 
+292 
+293     \hyperlink{score_8c_a6428b1a4b981622ea3a67b168f1c3c9f}{testCombinatoire}(tab\_score,tab);
+294 
+295     printf(\textcolor{stringliteral}{"voici le score pour Yatzee : %d\(\backslash\)n"},tab\_score[0]);
+296            
+297     printf(\textcolor{stringliteral}{"voici le score pour Petite Suite : %d\(\backslash\)n"},tab\_score[1]);
+298            
+299     printf(\textcolor{stringliteral}{"voici le score pour Grande Suite : %d\(\backslash\)n"},tab\_score[2]);
+300              
+301     printf(\textcolor{stringliteral}{"voici le score pour Brelan : %d\(\backslash\)n"},tab\_score[3]);
+302              
+303     printf(\textcolor{stringliteral}{"voici le score pour Full : %d\(\backslash\)n"},tab\_score[4]);
+304     
+305     \textcolor{keywordflow}{for}(i=0;i<8;i++)\{ \textcolor{comment}{// somme de tout les dés}
+306       score+=(tab[i]);
+307     \}
+308 
+309     printf(\textcolor{stringliteral}{"voici le score des dés :%d\(\backslash\)n"},score);
+310     
+311     \textcolor{keywordflow}{for}(i=0;i<5;i++)
+312       \{
+313         somme+=(tab\_score[i]);
+314       \}
+315     somme+=score;
+316 
+317     printf(\textcolor{stringliteral}{"voici le score total : %d\(\backslash\)n"},somme);
+318 
+319     tab\_score[6] = somme;
+320     \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{score_8h_a54d088aca7937ae9e67dabbe160f5254_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{score_8h_a54d088aca7937ae9e67dabbe160f5254_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$proto_8c.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="104,157,205,184"/>
+<area shape="rect" id="node3" href="$mecanismeJeu_8c.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="askDices" alt="" coords="263,5,341,32"/>
+<area shape="rect" id="node4" href="$mecanismeJeu_8c.html#af34915129a343bf4c2718354a681f1fb" title="boucle_de_saisie" alt="" coords="399,31,521,57"/>
+<area shape="rect" id="node5" href="$proto_8c.html#a270db6d766abade9ad6e54cc58e9822b" title="beginTurn" alt="" coords="263,107,341,133"/>
+<area shape="rect" id="node6" href="$mecanismeJeu_8c.html#ad9ebcce43b3be9b75d300f961d53d329" title="displayDices" alt="" coords="253,157,351,184"/>
+<area shape="rect" id="node7" href="$score_8c.html#a54d088aca7937ae9e67dabbe160f5254" title="displayScore" alt="" coords="253,208,351,235"/>
+<area shape="rect" id="node15" href="$mecanismeJeu_8c.html#acfee2b60324d906c1d4174e6e51b92d3" title="refreshDices" alt="" coords="254,259,350,285"/>
+<area shape="rect" id="node16" href="$mecanismeJeu_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="265,309,339,336"/>
+<area shape="rect" id="node8" href="$score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="399,208,521,235"/>
+<area shape="rect" id="node9" href="$score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="581,81,673,108"/>
+<area shape="rect" id="node10" href="$score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="573,132,681,159"/>
+<area shape="rect" id="node11" href="$score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="569,183,685,209"/>
+<area shape="rect" id="node12" href="$score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="587,233,668,260"/>
+<area shape="rect" id="node13" href="$score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="588,284,667,311"/>
+<area shape="rect" id="node14" href="$score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="588,335,667,361"/>
+<area shape="rect" id="node17" href="$mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076" title="tirage" alt="" coords="433,309,487,336"/>
+</map>

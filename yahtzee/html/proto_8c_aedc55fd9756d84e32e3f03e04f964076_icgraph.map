@@ -1,0 +1,5 @@
+<map id="tirage" name="tirage">
+<area shape="rect" id="node2" href="$proto_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="108,5,181,32"/>
+<area shape="rect" id="node3" href="$proto_8c.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="229,5,331,32"/>
+<area shape="rect" id="node4" href="$proto_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="379,5,429,32"/>
+</map>
