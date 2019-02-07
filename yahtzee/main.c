@@ -2,14 +2,17 @@
 #include "mecanismeJeu.h"
 #include "score.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
+	/**
+	* Boucle main qui lance le jeu
+	*/
 	Player player1;
 	Player player2;
 	initPlayer(&player1);
   	initPlayer(&player2);
   
-	int nombreTour=1;
+	int nombreTour=15;
 
 	//int nombreJoueur;
 	//printf("Entrez le nombre de joueur\n");
@@ -27,6 +30,7 @@ int main(int argc, char const *argv[])
 //		comparerScore(joueur1,joueur2);
 		//compare le score des 2, donne le gagnant du tour
 		//>> incremente score gagant
+
 		--nombreTour;
 	}
 
@@ -35,6 +39,5 @@ int main(int argc, char const *argv[])
 	compareScore(player1.tabScore[6],player2.tabScore[6]);
 	freePlayer(&player1);
 	//freePlayer(&player2);
-	printf("here\n");
 	return 0;
 }
