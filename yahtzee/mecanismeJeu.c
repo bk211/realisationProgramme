@@ -10,8 +10,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "mecanismeJeu.h"
-#include "score.h"
-#include "metsaisit.c"
+#include "score.c"
+
+
 /**
  *\fn int tirage(int max)
  * \brief      donne la valeur de dée
@@ -34,7 +35,7 @@ int tirage(int max){
  **/
 void rollDices(Player *p){
   srand((unsigned)time(NULL));//set Seed pour le tirage
-  for(int i = 0 ; i < 8; ++i){
+  for(int i = 0 ; i < 7; ++i){
     if (p->dicesAllowed[i]){
       p->dices[i] = tirage(8) ;
       //printf(">>>de %d tire%d\n",i,p->dices[i] );
@@ -50,7 +51,7 @@ void rollDices(Player *p){
  */
 void refreshDices(Player *p){
 
-  for(int i = 0 ; i < 8 ; ++i){
+  for(int i = 0 ; i < 7 ; ++i){
     p->dices[i] = 0 ;
     p->dicesAllowed[i]=1;
   } 
@@ -83,7 +84,7 @@ int boucle_de_saisie(int a, int b){
  * \param    p le joueur.
  */
 void displayDices(Player *p){
-  for(int i = 0 ; i < 8 ; ++i){
+  for(int i = 0 ; i < 7 ; ++i){
     printf("%d ", p->dices[i]) ;
   }
   
@@ -97,7 +98,7 @@ void displayDices(Player *p){
  * \param    p le joueur.
  */
 void askDices(Player *p){
-  for (int i = 0; i <8; ++i)
+  for (int i = 0; i <7; ++i)
   {displayDices(p);
     if(p-> dicesAllowed[i]==1){
       
@@ -115,16 +116,20 @@ void askDices(Player *p){
  * \param    p le joueur.
  */
 void completeTurn(Player *p){
-  //refreshDices(p) ;
+  refreshDices(p) ;
   //rollDices(p) ;   
-  resetpartie(p)//< a faire
+  //resetpartie(p)//< a faire
   int end = 0,answer=1;
   do{
     printf("Lance de dees :\n") ;
     rollDices(p) ;   
-    displayDices(p) ; 
+    displayDices(p) ;
     printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
+    printf("Score temporaire :\n");
+    displayScore(p->tabScore,p->dices);
     if(p->nbrRollRemain>0){
+
+
         printf("Voulez vous relancer des dees ? ") ;
         answer = boucle_de_saisie(0,1) ;
         if(!answer){
@@ -134,10 +139,10 @@ void completeTurn(Player *p){
             askDices(p);
         }
     }
-  }while(p->nbrRollRemain != 0)
+  }while(p->nbrRollRemain != 0);
     // fin des lance il doit choisir une case du tabScoreFinal a remplir
-  saisitScore(p);//
-  displayScoreFinal(p->tabScoreFinal);//affiche son score final
+  saisitScore(p->tabScore,p->tabScoreFinal);//
+  displayTabScore(p->tabScoreFinal);//affiche son score final
 }
 
 /**
@@ -161,14 +166,15 @@ void initPlayer(Player *p){
   //askName();
  
  
-  p->dices = malloc(sizeof(int)*8);
-  p->dicesAllowed = malloc(sizeof(int)*8);
+  p->dices = malloc(sizeof(int)*7);
+  p->dicesAllowed = malloc(sizeof(int)*7);
   p->nbrRollRemain = 6 ;
-  p->score = 0;
-  p->tabScore = malloc(sizeof(int)*6);
-  for (int i = 0; i < 6; ++i)
+  p->tabScore = malloc(sizeof(int)*20);
+  p->tabScoreFinal = malloc(sizeof(int)*20);
+  for (int i = 0; i < 20; ++i)
   {
   	p->tabScore[i]= 0;
+    p->tabScoreFinal[i]=-1;
   }
 }
 

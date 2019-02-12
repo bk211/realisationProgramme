@@ -192,7 +192,7 @@ int testBrelan(int *tab) {
 	    	brelan1=i+1; // permet de connaitre quel brelan on a ( 1 ou 2 ou 3 ...)
 	    	for(j=i+1;j<8;j++)
 	      	{
-				if(tab_occurence[j] == 3)
+				if(tab_occurence[j] == 3 && j !=i)
 		  		{
 		    	brelan2=j+1;  // permet de connaitre quel brelan on a ( 1 ou 2 ou 3 ...)
 		  		}
@@ -389,43 +389,15 @@ void testCombinatoire(int *tab_score, int *tab_dee){
  * \details    Appel la fonction TestCombinatoire qui s'occupe de remplir le tableau des score, puis affiche les scores
  *                  
  * \param    *tab_score        tableau contenant les scores
- * \param    *tab              tableau contenant les des
+ * \param    *tab_dee              tableau contenant les des
  
  */
 
-void displayScore(int* tab_score,int *tab){
-	int i,score=0,somme=0;
+void displayScore(int* tab_score,int *tab_dee){
+	testCombinatoire(tab_score,tab_dee);
+	displayTabScore(tab_score);
 
-
-
-	testCombinatoire(tab_score,tab);
-
-	printf("voici le score pour Yatzee : %d\n",tab_score[0]);
-	       
-	printf("voici le score pour Petite Suite : %d\n",tab_score[1]);
-           
-	printf("voici le score pour Grande Suite : %d\n",tab_score[2]);
-             
-	printf("voici le score pour Brelan : %d\n",tab_score[3]);
-             
-	printf("voici le score pour Full : %d\n",tab_score[4]);
-	
-	for(i=0;i<8;i++){ // somme de tout les dés
-	  score+=(tab[i]);
-	}
-
-	printf("voici le score des dés :%d\n",score);
-	
-	for(i=0;i<5;i++)
-	  {
-	    somme+=(tab_score[i]);
-	  }
-	somme+=score;
-
-	printf("voici le score total : %d\n",somme);
-
-	tab_score[6] = somme;
-    }
+}
 
 
 /**
@@ -461,13 +433,45 @@ int sommeScore(int * tab){
 
 
 
-int displayTabScore(int *tab){
+void displayTabScore(int *tab){
+	printf("========================================================\n" );
+	printf("%-4s %-12s: %d\n"," 1 >>", "AS", tab[0]);
+	printf("%-4s %-12s: %d\n"," 2 >>", "DEUX", tab[1]);
+	printf("%-4s %-12s: %d\n"," 3 >>", "TROIS", tab[2]);
+	printf("%-4s %-12s: %d\n"," 4 >>", "QUATRE", tab[3]);
+	printf("%-4s %-12s: %d\n"," 5 >>", "CINQ", tab[4]);
+	printf("%-4s %-12s: %d\n"," 6 >>", "SIX", tab[5]);
+	printf("%-4s %-12s: %d\n"," 7 >>", "SEPT", tab[6]);
+	printf("%-4s %-12s: %d\n"," 8 >>", "HUIT", tab[7]);
+	printf("%-4s %-12s: %d\n"," 9 >>", "BRELAN", tab[8]);
+	printf("%-4s %-12s: %d\n","10 >>", "SUITE(1-6)", tab[9]);
+	printf("%-4s %-12s: %d\n","11 >>", "SUITE(2-7)", tab[10]);
+	//printf("%-4s %-12s: %d\n","12 >>", "CARRE", tab[11]);
+	printf("%-4s %-12s: %d\n","13 >>", "FULL(2+5)", tab[12]);
+	printf("%-4s %-12s: %d\n","14 >>", "FULL(3+4)", tab[13]);
+	printf("%-4s %-12s: %d\n","15 >>", "YAHTZEE", tab[14]);
 	
+	printf("========================================================\n" );
+
+}
+
+int saisitScore(int *tab,int *tabFinal){
+	int answer;
+	while(1){
+		
+		printf("Saisissez le numero de la case que vous voulez remplir  \n");
+		scanf("%d",&answer);
+		--answer;
+		if(tabFinal[answer] >= 0){
+			printf("La case est deja remplit, merci de choisir une autre\n");
+		}
+		else{
+			tabFinal[answer] = tab[answer];
+			return 1;
+		}
+
+	}
 }
 
 
 
- int main(int argc, char const *argv[])
-{
-	return 0;
-}

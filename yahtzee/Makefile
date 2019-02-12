@@ -1,45 +1,25 @@
-#NOM : CAI Chaolei
-#NUMERO : 17812776
-#EMAIL : chaoleicai@gmail.com
-
 SHELL = /bin/sh
-#définition des commandes utilisees
+#définition des commandes utilisees(
 CC = gcc
-ECHO = echo
 RM = rm -rf
-TAR = tar
-MKDIR = mkdir
-CHMOD = chmod
 CP = rsync -R
 #déclaration des options pour gcc
 CFLAGS = -Wall
-CPPFLAGS = -I. #ajouter un chemin pour les includes
-LDFLAGS = -L/usr/lib -lm
-#définition des fichiers et dossiers
 PROGNAME = Yahtzee
-PACKAGE=$(PROGNAME)
-VERSION = 1.0.0
-distdir = $(PACKAGE)-$(VERSION)
 HEADERS = mecanismeJeu.h
 SOURCES = main.c mecanismeJeu.c score.c
-OBJS = $(SOURCES:.c=.o)
-DISTFILES = $(SOURCES) Makefile $(HEADERS)
-all: $(PROGNAME)
+all:jeu
 
-$(PROGNAME): $(OBJS)
-	$(CC) $(OBJS) $(LDFLAGS) -o $(PROGNAME)
+jeu:main.o score.o mecanismeJeu.o
+	$(CC) $^ -o $(PROGNAME)
+main.o: main.c
+	$(CC) $(CFLAGS) -c $@
 
-%.o: %.c #dependence
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+score.o: score.c score.h
+	$(CC) $(CFLAGS) -c $@
 
-dist: distdir
-	$(CHMOD) -R a+r $(distdir)
-	$(TAR) zcvf $(distdir).tgz $(distdir)
-	$(RM) $(distdir)
-distdir: $(DISTFILES)
-	$(RM) $(distdir)
-	$(MKDIR) $(distdir)
-	$(CHMOD) 777 $(distdir)
-	$(CP) $(DISTFILES) $(distdir)/
-clean:
-	$(RM) $(PROGNAME) $(OBJS) *~ $(distdir).tgz
+mecanismeJeu.o: mecanismeJeu.c mecanismeJeu.h
+	$(CC) $(CFLAGS) -c $@
+
+clean: 
+	$(RM) mecanismeJeu.o score.o main.o Yahtzee

@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "mecanismeJeu.h"
-#include "score.h"
+#include "mecanismeJeu.c"
+
 
 int main()
 {
@@ -33,10 +33,10 @@ int main()
 
 		--nombreTour;
 	}
+	compareScore(player1.tabScore[6],player2.tabScore[6]);
 
 //	fin des tours 
 	//>> felicite le gagant en affichant le score des 2
-	compareScore(player1.tabScore[6],player2.tabScore[6]);
 	freePlayer(&player1);
 	//freePlayer(&player2);
 	return 0;
