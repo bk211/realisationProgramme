@@ -7,11 +7,7 @@
  *
  *                  
  */
-#include<stdio.h>
-#include<stdlib.h>
 #include "mecanismeJeu.h"
-#include "score.c"
-
 
 /**
  *\fn int tirage(int max)

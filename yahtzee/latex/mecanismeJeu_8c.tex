@@ -4,8 +4,7 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}mecanisme\+Jeu.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
-Include dependency graph for mecanisme\+Jeu.\+c\+:
-\nopagebreak
+Include dependency graph for mecanisme\+Jeu.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,11 +43,11 @@ void \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{init\+Player}
 
 
 
-Definition at line 51 of file mecanisme\+Jeu.\+c.
+Definition at line 52 of file mecanisme\+Jeu.\+c.
 
 
 
-References boucle\+\_\+de\+\_\+saisie().
+References boucle\+\_\+de\+\_\+saisie(), Player\+::dices, and display\+Dices().
 
 
 
@@ -56,27 +55,26 @@ Referenced by complete\+Turn().
 
 
 \begin{DoxyCode}
-51                         \{
-52   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <8; ++i)
-53   \{
-54     \textcolor{keywordflow}{if}(p-> dicesAllowed[i]==1)\{
-55       printf(\textcolor{stringliteral}{"voulez vous relancer le de %d ?\(\backslash\)n"},i+1 );
-56       p-> dicesAllowed[i]= \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1);
-57     \} 
-58   \}
-59 
-60 \}
+52                         \{
+53   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <8; ++i)
+54   \{\hyperlink{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}{displayDices}(p);
+55     \textcolor{keywordflow}{if}(p-> dicesAllowed[i]==1)\{
+56       
+57       printf(\textcolor{stringliteral}{"voulez vous relancer le de %d ?\(\backslash\)n"},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i] );
+58       p-> dicesAllowed[i]= \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1);
+59     \} 
+60   \}
+61 
+62 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=266pt]{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,14 +102,14 @@ Referenced by ask\+Dices(), and complete\+Turn().
 34     \textcolor{keywordtype}{int} i;
 35     \textcolor{keywordflow}{do}\{
 36         fflush(stdin);
-37         printf(\textcolor{stringliteral}{"merci de saisir un nombre compris entre %d et %d\(\backslash\)n"}, a, b);
-38         scanf(\textcolor{stringliteral}{"%d"},&i);
-39     \}\textcolor{keywordflow}{while}( i <a || i>b ||\textcolor{keyword}{sizeof}(i) != \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) );
-40     \textcolor{keywordflow}{return} i;
-41 \}
+37         
+38         printf(\textcolor{stringliteral}{"merci de saisir un nombre compris entre %d et %d\(\backslash\)n"}, a, b);
+39         scanf(\textcolor{stringliteral}{"%d"},&i);
+40     \}\textcolor{keywordflow}{while}( i <a || i>b ||\textcolor{keyword}{sizeof}(i) != \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) );
+41     \textcolor{keywordflow}{return} i;
+42 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -126,7 +124,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 63 of file mecanisme\+Jeu.\+c.
+Definition at line 65 of file mecanisme\+Jeu.\+c.
 
 
 
@@ -134,38 +132,39 @@ Referenced by main().
 
 
 \begin{DoxyCode}
-63                             \{
-64   \textcolor{keywordtype}{int} v = 1 ;
-65   \hyperlink{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}{refreshDices}(p) ;
-66   \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;   
-67 
-68   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
-69   \textcolor{keywordflow}{while}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} != 0)\{
-70     printf(\textcolor{stringliteral}{"Lancé de dée :\(\backslash\)n"}) ;
-71     \hyperlink{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}{displayDices}(p) ;
-72     printf(\textcolor{stringliteral}{"Voulez vous relancer des dées ? "}) ;
-73     v = \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1) ;
-74     \textcolor{keywordflow}{if}(v == 0) \{ \textcolor{comment}{// cas fin de lance}
-75       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 0 ; 
-76       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
-77       \} 
-78     
-79 
-80     \textcolor{keywordflow}{else}\{ \textcolor{comment}{//cas relance de}
-81       \textcolor{keywordflow}{if}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} !=6)printf(\textcolor{stringliteral}{"lequelles one ? "}) ;
-82       \hyperlink{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}{askDices}(p);
-83       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
-84       \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;
-85       printf(\textcolor{stringliteral}{"Vous avez relancé des dées :\(\backslash\)n"}) ;
-86       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
-87       printf(\textcolor{stringliteral}{"Essaies restante : %d\(\backslash\)n"}, p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain}) ; 
-88     \}
-89   \}
-90   printf(\textcolor{stringliteral}{"Tour du prochain joueur\(\backslash\)n"}) ;
-91 \}
+65                             \{
+66   \textcolor{keywordtype}{int} v = 1 ;
+67   \hyperlink{mecanismeJeu_8c_acfee2b60324d906c1d4174e6e51b92d3}{refreshDices}(p) ;
+68   \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;   
+69 
+70   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
+71   \textcolor{keywordflow}{while}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} != 0)\{
+72     printf(\textcolor{stringliteral}{"Lance de dees :\(\backslash\)n"}) ;
+73     \hyperlink{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329}{displayDices}(p) ;
+74     printf(\textcolor{stringliteral}{"Voulez vous relancer des dees ? "}) ;
+75     v = \hyperlink{mecanismeJeu_8c_af34915129a343bf4c2718354a681f1fb}{boucle\_de\_saisie}(0,1) ;
+76     
+77     \textcolor{keywordflow}{if}(v == 0) \{ \textcolor{comment}{// cas fin de lance}
+78       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 0 ; 
+79       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+80       \} 
+81     
+82 
+83     \textcolor{keywordflow}{else}\{ \textcolor{comment}{//cas relance de}
+84       \textcolor{keywordflow}{if}(p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} !=6)printf(\textcolor{stringliteral}{"lequelles one ? "}) ;
+85       \hyperlink{mecanismeJeu_8c_a9e4530f74b630f0cfcc27b8bddb34ce8}{askDices}(p);
+86       p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} -= 1 ;
+87       \hyperlink{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5}{rollDices}(p) ;
+88       
+89       printf(\textcolor{stringliteral}{"Vous avez relancer des dees :\(\backslash\)n"}) ;
+90       \hyperlink{score_8c_a54d088aca7937ae9e67dabbe160f5254}{displayScore}(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore},p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+91       printf(\textcolor{stringliteral}{"Essaies restante : %d\(\backslash\)n"}, p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain}) ; 
+92     \}
+93   \}
+94   printf(\textcolor{stringliteral}{"Tour du prochain joueur\(\backslash\)n"}) ;
+95 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -180,7 +179,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 43 of file mecanisme\+Jeu.\+c.
+Definition at line 44 of file mecanisme\+Jeu.\+c.
 
 
 
@@ -188,24 +187,23 @@ References Player\+::dices.
 
 
 
-Referenced by complete\+Turn().
+Referenced by ask\+Dices(), and complete\+Turn().
 
 
 \begin{DoxyCode}
-43                             \{
-44   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 8 ; ++i)\{
-45     printf(\textcolor{stringliteral}{"%d "}, p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i]) ;
-46   \}
-47   
-48   printf(\textcolor{stringliteral}{"\(\backslash\)n"}) ;
-49 \}
+44                             \{
+45   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < 8 ; ++i)\{
+46     printf(\textcolor{stringliteral}{"%d "}, p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices}[i]) ;
+47   \}
+48   
+49   printf(\textcolor{stringliteral}{"\(\backslash\)n"}) ;
+50 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=339pt]{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329_icgraph}
+\includegraphics[width=350pt]{mecanismeJeu_8c_ad9ebcce43b3be9b75d300f961d53d329_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}\label{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}} 
@@ -216,7 +214,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 93 of file mecanisme\+Jeu.\+c.
+Definition at line 97 of file mecanisme\+Jeu.\+c.
 
 
 
@@ -228,14 +226,13 @@ Referenced by main().
 
 
 \begin{DoxyCode}
-93                           \{
-94   free(p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
-95   free(p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed});
-96   free(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore});
-97 \}
+97                           \{
+98   free(p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+99   free(p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed});
+100   free(p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore});
+101 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -250,7 +247,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 98 of file mecanisme\+Jeu.\+c.
+Definition at line 102 of file mecanisme\+Jeu.\+c.
 
 
 
@@ -262,21 +259,22 @@ Referenced by main().
 
 
 \begin{DoxyCode}
-98                           \{
-99   \textcolor{comment}{//askName();}
-100   p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
-101   p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
-102   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 6 ;
-103   p->\hyperlink{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}{score} = 0;
-104   p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*6);
-105   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)
-106   \{
-107     p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[i]= 0;
-108   \}
-109 \}
+102                           \{
+103   \textcolor{comment}{//askName();}
+104  
+105  
+106   p->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
+107   p->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*8);
+108   p->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 6 ;
+109   p->\hyperlink{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}{score} = 0;
+110   p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*6);
+111   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; ++i)
+112   \{
+113     p->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[i]= 0;
+114   \}
+115 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -311,8 +309,7 @@ Referenced by complete\+Turn().
 28   \} 
 29 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -349,16 +346,14 @@ Referenced by complete\+Turn().
 20   \}
 21 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=212pt]{mecanismeJeu_8c_ab55e6b5866c616840bef8cccef4952c5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -388,8 +383,7 @@ Referenced by roll\+Dices().
 10     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})(rand()/(double)(RAND\_MAX) * (max))+1;
 11 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

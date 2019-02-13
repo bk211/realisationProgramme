@@ -145,76 +145,26 @@ int testGrandeSuite(int *tab) {
 
 int testBrelan(int *tab) {
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int i,j;
-  int choix=0;
-  int brelan1,brelan2=0;
-  int score =sommeScore(tab);
-
-  for(i=0;i<7;i++) { // parcours du tableau de des et les occurences sont enregistré dans le tab_occurence
-    
-    if(tab[i] == 1){
-      tab_occurence[0]+=1;
+  int find = 0;
+    int tab_occurence[8]={0,0,0,0,0,0,0,0};
+    for (int i = 0; i < 7; ++i)
+    {
+    	++tab_occurence[tab[i]-1];
     }
-    else if(tab[i] == 2)
-      {
-	tab_occurence[1]+=1;
-      }
-    else if(tab[i] == 3)
-      {
-	tab_occurence[2]+=1;
-      }
-    else if(tab[i] == 4)
-      {
-	tab_occurence[3]+=1;
-      }
-    else if(tab[i] == 5)
-      {
-	tab_occurence[4]+=1;
-      }
-    else if(tab[i] == 6)
-      {
-	tab_occurence[5]+=1;
-      }
-    else if(tab[i] == 7)
-      {
-	tab_occurence[6]+=1;
-      }
-    else if(tab[i] == 8)
-      {
-	tab_occurence[7]+=1;
-      }
-  }
-    
-  	for(i=0;i<8;i++) // parcours du tab_occurence
-      {
-		if(tab_occurence[i]==3)
-	  	{
-	    	brelan1=i+1; // permet de connaitre quel brelan on a ( 1 ou 2 ou 3 ...)
-	    	for(j=i+1;j<8;j++)
-	      	{
-				if(tab_occurence[j] == 3 && j !=i)
-		  		{
-		    	brelan2=j+1;  // permet de connaitre quel brelan on a ( 1 ou 2 ou 3 ...)
-		  		}
-	      	}
 
-	    	if(brelan2 =! 0) // s'il y a deux types de brelan, sinon le if est sauté
-	     	{
-				printf("Vous avez deux types de brelan \n");
-				printf("Il y a un Brelan de %d et un Brelan de %d\n",brelan1,brelan2);
-			}
-	    	else{ // si le joueur a décidé de garder le brelan précédent , on oublie celui là
-	     		printf("Il y a un Brelan de %d\n",brelan1);
-	    	}
-	    
-		return score;
-	  }
-	    
-	}
-    
-  return 0;
-}
+    for (i = 0; i < 8; ++i)
+    {
+    	if (tab_occurence[i] == 3)
+    	{
+    		printf("Il y a un Brelan de %d \n",i+1);
+    		++find;
+    	}
+    }
 
+    if(find)
+	   	return sommeScore(tab);
+	return 0;
+}   
 
 /**
  * \brief      Verifie si la figure Full type1 est présente (5des identique + 2des identiques)
@@ -303,7 +253,7 @@ int testFullv2(int *tab){
   int choix;
   int i,j;
   int full1,full2;
-  for(i=0;i<8;i++) {
+  for(i=0;i<7;i++) {
     
     if(tab[i] == 1){
       tab_occurence[0]+=1;
@@ -446,7 +396,7 @@ void displayTabScore(int *tab){
 	printf("%-4s %-12s: %d\n"," 9 >>", "BRELAN", tab[8]);
 	printf("%-4s %-12s: %d\n","10 >>", "SUITE(1-6)", tab[9]);
 	printf("%-4s %-12s: %d\n","11 >>", "SUITE(2-7)", tab[10]);
-	//printf("%-4s %-12s: %d\n","12 >>", "CARRE", tab[11]);
+	printf("%-4s %-12s: %d\n","12 >>", "CARRE", tab[11]);
 	printf("%-4s %-12s: %d\n","13 >>", "FULL(2+5)", tab[12]);
 	printf("%-4s %-12s: %d\n","14 >>", "FULL(3+4)", tab[13]);
 	printf("%-4s %-12s: %d\n","15 >>", "YAHTZEE", tab[14]);
@@ -475,3 +425,32 @@ int saisitScore(int *tab,int *tabFinal){
 
 
 
+//fct pour utiliser qsort
+int comparer(void const *a, void const *b)
+{
+   int const *pa = a;
+   int const *pb = b;
+
+   return *pa - *pb;
+}
+
+int testCarre(int *tab){
+    int tab_occurence[8]={0,0,0,0,0,0,0,0};
+    for (int i = 0; i < 7; ++i)
+    {
+    	++tab_occurence[tab[i]-1];
+    }
+
+    for (i = 0; i < 8; ++i)
+    {
+    	if (tab_occurence[i] == 4)
+    	{
+    		printf("Il y a un Carre de %d \n",i+1);
+    		return sommeScore(tab);
+    	}
+    }
+
+    return 0;
+
+
+}

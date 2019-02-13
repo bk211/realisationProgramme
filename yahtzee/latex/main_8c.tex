@@ -3,8 +3,7 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}mecanisme\+Jeu.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,7 +13,7 @@ Include dependency graph for main.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$\hyperlink{affichage_8c_a6e043f967ef585fb48889d29b027b9bc}{argv}\mbox{[}$\,$\mbox{]})
+int \hyperlink{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
@@ -25,7 +24,7 @@ int \hyperlink{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char 
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-
+Boucle main qui lance le jeu
 
 Definition at line 5 of file main.\+c.
 
@@ -36,43 +35,42 @@ References compare\+Score(), complete\+Turn(), free\+Player(), init\+Player(), a
 
 \begin{DoxyCode}
 6 \{
-7     \hyperlink{structPlayer}{Player} player1;
-8     \hyperlink{structPlayer}{Player} player2;
-9     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player1);
-10     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player2);
-11   
-12     \textcolor{keywordtype}{int} nombreTour=1;
-13 
-14     \textcolor{comment}{//int nombreJoueur;}
-15     \textcolor{comment}{//printf("Entrez le nombre de joueur\(\backslash\)n");}
-16     \textcolor{comment}{//scanf("%d",&nombreJoueur); }
-17 \textcolor{comment}{// en option, pour le moment le developpement se limite a 2 joueur}
-18 \textcolor{comment}{//  printf("Entrez le nombre de tour\(\backslash\)n");}
-19 \textcolor{comment}{//  scanf("%d",&nombreTour); }
-20 
-21     \textcolor{keywordflow}{while} (nombreTour > 0)\{
-22         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 1 de jouer ===============!\(\backslash\)n"});
-23         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player1);
-24         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 2 de jouer ===============!\(\backslash\)n"});
-25         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player2);
-26 
-27 \textcolor{comment}{//      comparerScore(joueur1,joueur2);}
-28         \textcolor{comment}{//compare le score des 2, donne le gagnant du tour}
-29         \textcolor{comment}{//>> incremente score gagant}
-30         --nombreTour;
-31     \}
-32 
-33 \textcolor{comment}{//  fin des tours }
-34     \textcolor{comment}{//>> felicite le gagant en affichant le score des 2}
-35     \hyperlink{score_8c_aeeb20f2b14b47a496fadd754abda5317}{compareScore}(player1.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6],player2.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6]);
-36     \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{freePlayer}(&player1);
-37     \textcolor{comment}{//freePlayer(&player2);}
-38     printf(\textcolor{stringliteral}{"here\(\backslash\)n"});
-39     \textcolor{keywordflow}{return} 0;
-40 \}
+10     \hyperlink{structPlayer}{Player} player1;
+11     \hyperlink{structPlayer}{Player} player2;
+12     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player1);
+13     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player2);
+14   
+15     \textcolor{keywordtype}{int} nombreTour=15;
+16 
+17     \textcolor{comment}{//int nombreJoueur;}
+18     \textcolor{comment}{//printf("Entrez le nombre de joueur\(\backslash\)n");}
+19     \textcolor{comment}{//scanf("%d",&nombreJoueur); }
+20 \textcolor{comment}{// en option, pour le moment le developpement se limite a 2 joueur}
+21 \textcolor{comment}{//  printf("Entrez le nombre de tour\(\backslash\)n");}
+22 \textcolor{comment}{//  scanf("%d",&nombreTour); }
+23 
+24     \textcolor{keywordflow}{while} (nombreTour > 0)\{
+25         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 1 de jouer ===============!\(\backslash\)n"});
+26         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player1);
+27         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 2 de jouer ===============!\(\backslash\)n"});
+28         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player2);
+29 
+30 \textcolor{comment}{//      comparerScore(joueur1,joueur2);}
+31         \textcolor{comment}{//compare le score des 2, donne le gagnant du tour}
+32         \textcolor{comment}{//>> incremente score gagant}
+33 
+34         --nombreTour;
+35     \}
+36 
+37 \textcolor{comment}{//  fin des tours }
+38     \textcolor{comment}{//>> felicite le gagant en affichant le score des 2}
+39     \hyperlink{score_8c_aeeb20f2b14b47a496fadd754abda5317}{compareScore}(player1.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6],player2.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6]);
+40     \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{freePlayer}(&player1);
+41     \textcolor{comment}{//freePlayer(&player2);}
+42     \textcolor{keywordflow}{return} 0;
+43 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
