@@ -1,25 +1,21 @@
-SHELL = /bin/sh
 #définition des commandes utilisees(
 CC = gcc
 RM = rm -rf
-CP = rsync -R
 #déclaration des options pour gcc
 CFLAGS = -Wall
 PROGNAME = Yahtzee
-HEADERS = mecanismeJeu.h
-SOURCES = main.c mecanismeJeu.c score.c
-all:jeu
 
-jeu:main.o score.o mecanismeJeu.o
-	$(CC) $^ -o $(PROGNAME)
-main.o: main.c
-	$(CC) $(CFLAGS) -c $@
+all: main score mecanismeJeu
+	$(CC) $(CFLAGS) -o $(PROGNAME) main.o score.o mecanismeJeu.o 
 
-score.o: score.c score.h
-	$(CC) $(CFLAGS) -c $@
+main: main.c
+	$(CC) $(CFLAGS) -c $@.c
 
-mecanismeJeu.o: mecanismeJeu.c mecanismeJeu.h
-	$(CC) $(CFLAGS) -c $@
+score: score.c score.h
+	$(CC) $(CFLAGS) -c $@.c
+
+mecanismeJeu: mecanismeJeu.c mecanismeJeu.h
+	$(CC) $(CFLAGS) -c $@.c
 
 clean: 
-	$(RM) mecanismeJeu.o score.o main.o Yahtzee
+	$(RM) mecanismeJeu.o score.o main.o $(PROGNAME)

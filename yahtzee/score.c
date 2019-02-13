@@ -1,4 +1,5 @@
 #include "score.h"
+#include <assert.h>
 /**
  * \brief      Verifie si la figure Yahtzee est présente
  * \details    Si la premiere des est équivalente a la suivante,on verifie si la suivante est équivalente à la prochaine de celle ci, ainsi de suite
@@ -10,7 +11,6 @@
 
 int testYahtzee(int *tab) {
   // verif Yahtzee
-  int choix;
   if(tab[0] == tab[1]
   	  &&tab[1] == tab[2]
       &&tab[2] == tab[3]
@@ -33,7 +33,6 @@ int testYahtzee(int *tab) {
  */
 int testPetiteSuite(int *tab) {
     int i;
-    int choix;
     // verif petite suite
   for(i=0;i<7;i++){
         if(tab[i] == 1)
@@ -86,7 +85,7 @@ int testPetiteSuite(int *tab) {
 
 int testGrandeSuite(int *tab) {
     int i;
-    int choix;
+    
     
   // verif grande suite
    for(i=0;i<7;i++){
@@ -145,9 +144,8 @@ int testGrandeSuite(int *tab) {
 
 int testBrelan(int *tab) {
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int find = 0;
-    int tab_occurence[8]={0,0,0,0,0,0,0,0};
-    for (int i = 0; i < 7; ++i)
+  int find = 0,i;
+    for (i = 0; i < 7; ++i)
     {
     	++tab_occurence[tab[i]-1];
     }
@@ -179,7 +177,7 @@ int testFullv1(int *tab){
 
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
   int i,j;
-  int choix;
+  
   int full1,full2;
   for(i=0;i<7;i++) {
     
@@ -250,7 +248,7 @@ int testFullv1(int *tab){
 
 int testFullv2(int *tab){
   int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int choix;
+  
   int i,j;
   int full1,full2;
   for(i=0;i<7;i++) {
@@ -325,7 +323,7 @@ void testCombinatoire(int *tab_score, int *tab_dee){
 	tab_score[8] = testBrelan(tab_dee);
 	tab_score[9] = testPetiteSuite(tab_dee);
 	tab_score[10] = testGrandeSuite(tab_dee);
-	//tab_score[11] = testCarre(tab_dee);
+	tab_score[11] = testCarre(tab_dee);
 	tab_score[12] = testFullv1(tab_dee);
 	tab_score[13] = testFullv2(tab_dee);
 	tab_score[14] = testYahtzee(tab_dee);
@@ -406,16 +404,23 @@ void displayTabScore(int *tab){
 }
 
 int saisitScore(int *tab,int *tabFinal){
-	int answer;
+	int answer=0;
 	while(1){
-		
 		printf("Saisissez le numero de la case que vous voulez remplir  \n");
 		scanf("%d",&answer);
 		--answer;
+		printf("%d\n",answer );
+
+		printf("after sacnaf\n");
+		printf("%d\n",tabFinal[answer] );
+		printf("BK1\n");
+
 		if(tabFinal[answer] >= 0){
 			printf("La case est deja remplit, merci de choisir une autre\n");
+			printf("BK3\n");
 		}
 		else{
+			printf("BK2\n");
 			tabFinal[answer] = tab[answer];
 			return 1;
 		}
@@ -435,8 +440,9 @@ int comparer(void const *a, void const *b)
 }
 
 int testCarre(int *tab){
+	int i;
     int tab_occurence[8]={0,0,0,0,0,0,0,0};
-    for (int i = 0; i < 7; ++i)
+    for (i = 0; i < 7; ++i)
     {
     	++tab_occurence[tab[i]-1];
     }

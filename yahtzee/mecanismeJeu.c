@@ -8,7 +8,7 @@
  *                  
  */
 #include "mecanismeJeu.h"
-
+#include <assert.h>
 /**
  *\fn int tirage(int max)
  * \brief      donne la valeur de dée
@@ -64,9 +64,7 @@ void refreshDices(Player *p){
 int boucle_de_saisie(int a, int b){
     //
     int i;
-    do{
-        fflush(stdin);
-        
+    do{        
         printf("merci de saisir un nombre compris entre %d et %d\n", a, b);
         scanf("%d",&i);
     }while( i <a || i>b ||sizeof(i) != sizeof(int) );
@@ -115,7 +113,7 @@ void completeTurn(Player *p){
   refreshDices(p) ;
   //rollDices(p) ;   
   //resetpartie(p)//< a faire
-  int end = 0,answer=1;
+  int answer=1;
   do{
     printf("Lance de dees :\n") ;
     rollDices(p) ;   
@@ -137,9 +135,13 @@ void completeTurn(Player *p){
     }
   }while(p->nbrRollRemain != 0);
     // fin des lance il doit choisir une case du tabScoreFinal a remplir
-  saisitScore(p->tabScore,p->tabScoreFinal);//
+  //printf("bkloop\n");
+  saisitScore(p->tabScore,p->tabScoreFinal);
+  printf("BK5\n");
   displayTabScore(p->tabScoreFinal);//affiche son score final
 }
+
+
 
 /**
  *\fn void freePlayer(Player *p)
@@ -147,30 +149,29 @@ void completeTurn(Player *p){
  * \details    libere la memoire allouer pour les joueurs .
  * \param    p le joueur.
  */
+
 void freePlayer(Player *p){
-  free(p->dices);
-  free(p->dicesAllowed);
-  free(p->tabScore);
-}
-/**
- *\fn void initPlayer(Player *p)
- * \brief      initialise les joueurs .
- * \details    initialise la memoire allouer pour les joueurs .
- * \param    p le joueur.
- */
-void initPlayer(Player *p){
-  //askName();
- 
- 
-  p->dices = malloc(sizeof(int)*7);
-  p->dicesAllowed = malloc(sizeof(int)*7);
-  p->nbrRollRemain = 6 ;
-  p->tabScore = malloc(sizeof(int)*20);
-  p->tabScoreFinal = malloc(sizeof(int)*20);
-  for (int i = 0; i < 20; ++i)
-  {
-  	p->tabScore[i]= 0;
-    p->tabScoreFinal[i]=-1;
-  }
+  		free(p->dices);
+  		free(p->dicesAllowed);
+  		free(p->tabScore);
+  		free(p->tabScoreFinal);
 }
 
+
+/*
+void initPlayer(Player * p){
+	p = malloc(sizeof (Player*));
+	p->dices = malloc(sizeof(int)*7);
+	p->dicesAllowed = malloc(sizeof(int)*7);
+	p->nbrRollRemain = 6 ;
+	p->tabScore = malloc(sizeof(int)* MAX_COMBINATOIRE);
+	p->tabScoreFinal = malloc(sizeof(int)* MAX_COMBINATOIRE);
+  		
+  	for (int i = 0; i < MAX_COMBINATOIRE; ++i)
+  	{
+  		p->tabScore[i]= 0;
+   		p->tabScoreFinal[i]=-1;
+	}
+}
+
+*/
