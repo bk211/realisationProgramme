@@ -6,6 +6,9 @@ void red () {
 void yellow() {
   printf("\033[1;33m");
 }
+void green() {
+  printf("\033[1;32m");
+}
 
 void resetColor () {
   printf("\033[0m");
@@ -20,8 +23,9 @@ int main () {
   printf("Hello ");
   yellow();
   printf("world\n");
+  green();
+  printf("my dear\n");
   resetColor();
   return 0;
 }
-
 */

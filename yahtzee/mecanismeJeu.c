@@ -54,24 +54,6 @@ void refreshDices(Player *p){
 }
 
 /**
- *\fn int boucle_de_saisie(int a, int b)
- * \brief      controle de saisie de clavier.
- * \details    retourne l'entier i ssi il est compris dans intervalle [a,b].
- * \param    a    la valeur 0 
- * \param    a    la valeur 1
- * \return    Un int.
- */
-int boucle_de_saisie(int a, int b){
-    //
-    int i;
-    do{        
-        printf("merci de saisir un nombre compris entre %d et %d\n", a, b);
-        scanf("%d",&i);
-    }while( i <a || i>b ||sizeof(i) != sizeof(int) );
-    return i;
-}
-
-/**
  *\fn void displayDices(Player *p)
  * \brief      affichage des dées.
  * \details   afficher tout les dées.
@@ -97,7 +79,7 @@ void askDices(Player *p){
     if(p-> dicesAllowed[i]==1){
       
       printf("voulez vous relancer le de %d ?\n",p->dices[i] );
-      p-> dicesAllowed[i]= boucle_de_saisie(0,1);
+      boucle_de_saisie(&(p->dicesAllowed[i]),0,1);
     } 
   }
 
@@ -111,8 +93,6 @@ void askDices(Player *p){
  */
 void completeTurn(Player *p){
   refreshDices(p) ;
-  //rollDices(p) ;   
-  //resetpartie(p)//< a faire
   int answer=1;
   do{
     printf("Lance de dees :\n") ;
@@ -120,12 +100,12 @@ void completeTurn(Player *p){
     displayDices(p) ;
     printf("Essaies restante : %d\n", p->nbrRollRemain) ; 
     printf("Score temporaire :\n");
-    displayScore(p->tabScore,p->dices);
+    displayScore(p->tabScore, p->dices,p->tabScoreFinal);
+
     if(p->nbrRollRemain>0){
 
-
         printf("Voulez vous relancer des dees ? ") ;
-        answer = boucle_de_saisie(0,1) ;
+        boucle_de_saisie(&answer,0,1) ;
         if(!answer){
             p->nbrRollRemain =0;
         }
@@ -133,12 +113,15 @@ void completeTurn(Player *p){
             askDices(p);
         }
     }
-  }while(p->nbrRollRemain != 0);
-    // fin des lance il doit choisir une case du tabScoreFinal a remplir
-  //printf("bkloop\n");
-  saisitScore(p->tabScore,p->tabScoreFinal);
-  printf("BK5\n");
-  displayTabScore(p->tabScoreFinal);//affiche son score final
+  }while(p->nbrRollRemain >= 0);
+
+  	saisitScore(p->tabScore,p->tabScoreFinal);
+	for (int i = 0; i < 20; ++i)
+	{
+		printf("%d\n", p->tabScoreFinal[i] );
+	}
+
+  displayTabScore(p->tabScore,p->tabScoreFinal);//affiche son score final
 }
 
 

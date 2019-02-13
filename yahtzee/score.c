@@ -1,5 +1,6 @@
 #include "score.h"
 #include <assert.h>
+#include "color.c"
 /**
  * \brief      Verifie si la figure Yahtzee est présente
  * \details    Si la premiere des est équivalente a la suivante,on verifie si la suivante est équivalente à la prochaine de celle ci, ainsi de suite
@@ -320,6 +321,12 @@ int testFullv2(int *tab){
 
 void testCombinatoire(int *tab_score, int *tab_dee){
 	/*test et remplit le tableau des score*/
+	int i;
+	for (i = 0; i < 7; ++i)
+    {
+    	tab_score[tab_dee[i]-1] += tab_dee[i] ;
+    }
+
 	tab_score[8] = testBrelan(tab_dee);
 	tab_score[9] = testPetiteSuite(tab_dee);
 	tab_score[10] = testGrandeSuite(tab_dee);
@@ -341,9 +348,11 @@ void testCombinatoire(int *tab_score, int *tab_dee){
  
  */
 
-void displayScore(int* tab_score,int *tab_dee){
+void displayScore(int* tab_score,int *tab_dee,int * tabFinal){
 	testCombinatoire(tab_score,tab_dee);
-	displayTabScore(tab_score);
+	
+	displayTabScore(tab_score, tabFinal);
+
 
 }
 
@@ -381,25 +390,42 @@ int sommeScore(int * tab){
 
 
 
-void displayTabScore(int *tab){
+void displayTabScore(int *tab_score, int* tabFinal){
 	printf("========================================================\n" );
-	printf("%-4s %-12s: %d\n"," 1 >>", "AS", tab[0]);
-	printf("%-4s %-12s: %d\n"," 2 >>", "DEUX", tab[1]);
-	printf("%-4s %-12s: %d\n"," 3 >>", "TROIS", tab[2]);
-	printf("%-4s %-12s: %d\n"," 4 >>", "QUATRE", tab[3]);
-	printf("%-4s %-12s: %d\n"," 5 >>", "CINQ", tab[4]);
-	printf("%-4s %-12s: %d\n"," 6 >>", "SIX", tab[5]);
-	printf("%-4s %-12s: %d\n"," 7 >>", "SEPT", tab[6]);
-	printf("%-4s %-12s: %d\n"," 8 >>", "HUIT", tab[7]);
-	printf("%-4s %-12s: %d\n"," 9 >>", "BRELAN", tab[8]);
-	printf("%-4s %-12s: %d\n","10 >>", "SUITE(1-6)", tab[9]);
-	printf("%-4s %-12s: %d\n","11 >>", "SUITE(2-7)", tab[10]);
-	printf("%-4s %-12s: %d\n","12 >>", "CARRE", tab[11]);
-	printf("%-4s %-12s: %d\n","13 >>", "FULL(2+5)", tab[12]);
-	printf("%-4s %-12s: %d\n","14 >>", "FULL(3+4)", tab[13]);
-	printf("%-4s %-12s: %d\n","15 >>", "YAHTZEE", tab[14]);
+	(tabFinal[0] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 1 >>", "AS", tab_score[0]);
+	(tabFinal[1] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 2 >>", "DEUX", tab_score[1]);
+	(tabFinal[2] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 3 >>", "TROIS", tab_score[2]);
+	(tabFinal[3] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 4 >>", "QUATRE", tab_score[3]);
+	(tabFinal[4] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 5 >>", "CINQ", tab_score[4]);
+	(tabFinal[5] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 6 >>", "SIX", tab_score[5]);
+	(tabFinal[6] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 7 >>", "SEPT", tab_score[6]);
+	(tabFinal[7] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 8 >>", "HUIT", tab_score[7]);
+	(tabFinal[8] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n"," 9 >>", "BRELAN", tab_score[8]);
+	(tabFinal[9] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","10 >>", "SUITE(1-6)", tab_score[9]);
+	(tabFinal[10] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","11 >>", "SUITE(2-7)", tab_score[10]);
+	(tabFinal[11] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","12 >>", "CARRE", tab_score[11]);
+	(tabFinal[12] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","13 >>", "FULL(2+5)", tab_score[12]);
+	(tabFinal[13] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","14 >>", "FULL(3+4)", tab_score[13]);
+	(tabFinal[14] == -1)? green(): red();
+	printf("%-4s %-12s: %d\n","15 >>", "YAHTZEE", tab_score[14]);
 	
+	resetColor();
 	printf("========================================================\n" );
+
 
 }
 
@@ -407,20 +433,12 @@ int saisitScore(int *tab,int *tabFinal){
 	int answer=0;
 	while(1){
 		printf("Saisissez le numero de la case que vous voulez remplir  \n");
-		scanf("%d",&answer);
+		boucle_de_saisie(&answer,1,15);
 		--answer;
-		printf("%d\n",answer );
-
-		printf("after sacnaf\n");
-		printf("%d\n",tabFinal[answer] );
-		printf("BK1\n");
-
 		if(tabFinal[answer] >= 0){
 			printf("La case est deja remplit, merci de choisir une autre\n");
-			printf("BK3\n");
 		}
 		else{
-			printf("BK2\n");
 			tabFinal[answer] = tab[answer];
 			return 1;
 		}
@@ -457,6 +475,35 @@ int testCarre(int *tab){
     }
 
     return 0;
+}
 
+/**
+ *\fn int boucle_de_saisie(int p,int a, int b)
+ * \brief      controle de saisie de clavier.
+ * \details    l'entier p est affecte de la valeur saisit s'il est compris dans intervalle [a,b] et la fct retourne 1
+ * \param    a    la valeur 0 
+ * \param    a    la valeur 1
+ * \return    Un int.
+ */
 
+int boucle_de_saisie( int * p, int low, int high ) {
+    while(1) {
+        const int BUFSIZE = 256;
+        char buf[BUFSIZE];
+        printf("merci de saisir un nombre compris entre %d et %d\n", low, high);
+
+        if ( fgets( buf, BUFSIZE, stdin ) == NULL ) {
+            return 0;      // almost certainly EOF
+        }
+        if ( sscanf( buf, "%d", p ) != 1 ) {
+            printf( "Merci de saisir un entier\n" );
+        }
+        else if ( * p < low || * p > high )  {
+        	printf("valeur saisie hors borne\n");
+        }
+        else {
+            break;
+        }
+    }
+    return 1;
 }
