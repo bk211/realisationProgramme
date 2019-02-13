@@ -1,12 +1,19 @@
+/**
+ * \file       main.c
+ * \author    groupe3
+ * \version   1.0
+ * \date       07 fevrier 2019
+ * \brief       Boucle main qui lance le jeu
+ *
+ *                  
+ */
 #include "mecanismeJeu.h"
 #include <assert.h>
 #define MAX_PLAYER 2
 
 int main()
 {
-	/**
-	* Boucle main qui lance le jeu
-	*/
+	
 	Player *player1;
 	player1 = malloc(sizeof (Player));
 	player1->dices = malloc(sizeof(int)*7);

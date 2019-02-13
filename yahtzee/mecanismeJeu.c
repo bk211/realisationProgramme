@@ -1,5 +1,5 @@
 /**
- * \file         mecanismedJeu.c
+ * \file         mecanismeJeu.c
  * \author    groupe3
  * \version   1.0
  * \date       07 fevrier 2019
@@ -140,21 +140,3 @@ void freePlayer(Player *p){
   		free(p->tabScoreFinal);
 }
 
-
-/*
-void initPlayer(Player * p){
-	p = malloc(sizeof (Player*));
-	p->dices = malloc(sizeof(int)*7);
-	p->dicesAllowed = malloc(sizeof(int)*7);
-	p->nbrRollRemain = 6 ;
-	p->tabScore = malloc(sizeof(int)* MAX_COMBINATOIRE);
-	p->tabScoreFinal = malloc(sizeof(int)* MAX_COMBINATOIRE);
-  		
-  	for (int i = 0; i < MAX_COMBINATOIRE; ++i)
-  	{
-  		p->tabScore[i]= 0;
-   		p->tabScoreFinal[i]=-1;
-	}
-}
-
-*/
