@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: score.h File Reference</title>
+<title>Yahzee: score.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Yahzee
    </div>
   </td>
  </tr>
@@ -65,6 +65,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for score.h:</div>
 <div class="dyncontent">
@@ -77,9 +78,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="score_8h__dep__incl.png" border="0" usemap="#score_8hdep" alt=""/></div>
 <map name="score_8hdep" id="score_8hdep">
-<area shape="rect" id="node2" href="main_8c.html" title="main.c" alt="" coords="5,80,67,107"/>
-<area shape="rect" id="node3" href="mecanismeJeu_8c.html" title="mecanismeJeu.c" alt="" coords="91,80,213,107"/>
-<area shape="rect" id="node4" href="score_8c.html" title="score.c" alt="" coords="237,80,302,107"/>
+<area shape="rect" id="node2" href="mecanismeJeu_8h.html" title="mecanismeJeu.h" alt="" coords="33,80,154,107"/>
+<area shape="rect" id="node5" href="score_8c.html" title="score.c" alt="" coords="178,80,243,107"/>
+<area shape="rect" id="node3" href="main_8c.html" title="main.c" alt="" coords="5,155,67,181"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8c.html" title="mecanismeJeu.c" alt="" coords="91,155,213,181"/>
 </map>
 </div>
 </div>
@@ -87,12 +89,94 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a54d088aca7937ae9e67dabbe160f5254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a54d088aca7937ae9e67dabbe160f5254">displayScore</a> (int *tab_score, int *tab)</td></tr>
-<tr class="separator:a54d088aca7937ae9e67dabbe160f5254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ec34acaa060220076ff1ea848fa5e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a78ec34acaa060220076ff1ea848fa5e8">testYahtzee</a> (int *tab)</td></tr>
+<tr class="memdesc:a78ec34acaa060220076ff1ea848fa5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure Yahtzee est présente.  <a href="#a78ec34acaa060220076ff1ea848fa5e8">More...</a><br /></td></tr>
+<tr class="separator:a78ec34acaa060220076ff1ea848fa5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c11471a13d62102c59ba9fb2952b50c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a1c11471a13d62102c59ba9fb2952b50c">testPetiteSuite</a> (int *tab)</td></tr>
+<tr class="memdesc:a1c11471a13d62102c59ba9fb2952b50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure PetiteSuite est présente.  <a href="#a1c11471a13d62102c59ba9fb2952b50c">More...</a><br /></td></tr>
+<tr class="separator:a1c11471a13d62102c59ba9fb2952b50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a57bf3af663b62c4333328a171bf52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a35a57bf3af663b62c4333328a171bf52">testGrandeSuite</a> (int *tab)</td></tr>
+<tr class="memdesc:a35a57bf3af663b62c4333328a171bf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure GrandeSuite est présente.  <a href="#a35a57bf3af663b62c4333328a171bf52">More...</a><br /></td></tr>
+<tr class="separator:a35a57bf3af663b62c4333328a171bf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae216d5ca602d234646713a4b42599138"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#ae216d5ca602d234646713a4b42599138">testBrelan</a> (int *tab)</td></tr>
+<tr class="memdesc:ae216d5ca602d234646713a4b42599138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure Brelan est présente.  <a href="#ae216d5ca602d234646713a4b42599138">More...</a><br /></td></tr>
+<tr class="separator:ae216d5ca602d234646713a4b42599138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71287ee22e8bcb7fcc5f86ed8dd9270b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a71287ee22e8bcb7fcc5f86ed8dd9270b">testCarre</a> (int *tab)</td></tr>
+<tr class="separator:a71287ee22e8bcb7fcc5f86ed8dd9270b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f6bac52baf36c250c6a75efa0d7ee1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#ad7f6bac52baf36c250c6a75efa0d7ee1">testFullv1</a> (int *tab)</td></tr>
+<tr class="memdesc:ad7f6bac52baf36c250c6a75efa0d7ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure Full type1 est présente (5des identique + 2des identiques)  <a href="#ad7f6bac52baf36c250c6a75efa0d7ee1">More...</a><br /></td></tr>
+<tr class="separator:ad7f6bac52baf36c250c6a75efa0d7ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a538c39d3fd42bf3276fb75bf980ba200"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a538c39d3fd42bf3276fb75bf980ba200">testFullv2</a> (int *tab)</td></tr>
+<tr class="memdesc:a538c39d3fd42bf3276fb75bf980ba200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifie si la figure Full type2 est présente (3des identique + 4des identiques)  <a href="#a538c39d3fd42bf3276fb75bf980ba200">More...</a><br /></td></tr>
+<tr class="separator:a538c39d3fd42bf3276fb75bf980ba200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6428b1a4b981622ea3a67b168f1c3c9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f">testCombinatoire</a> (int *tab_score, int *tab_dee)</td></tr>
+<tr class="memdesc:a6428b1a4b981622ea3a67b168f1c3c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appel a tout les fonctions de verification de figure.  <a href="#a6428b1a4b981622ea3a67b168f1c3c9f">More...</a><br /></td></tr>
+<tr class="separator:a6428b1a4b981622ea3a67b168f1c3c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eab6bc89b1828c4f86d313ad10ecda9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9">displayScore</a> (int *tab_score, int *tab_dee, int *tabFinal)</td></tr>
+<tr class="memdesc:a8eab6bc89b1828c4f86d313ad10ecda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche les scores.  <a href="#a8eab6bc89b1828c4f86d313ad10ecda9">More...</a><br /></td></tr>
+<tr class="separator:a8eab6bc89b1828c4f86d313ad10ecda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeb20f2b14b47a496fadd754abda5317"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#aeeb20f2b14b47a496fadd754abda5317">compareScore</a> (int a, int b)</td></tr>
+<tr class="memdesc:aeeb20f2b14b47a496fadd754abda5317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui décide qui l'emporte.  <a href="#aeeb20f2b14b47a496fadd754abda5317">More...</a><br /></td></tr>
 <tr class="separator:aeeb20f2b14b47a496fadd754abda5317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada51d6f161dc3bd40cfdae9b18855b07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#ada51d6f161dc3bd40cfdae9b18855b07">sommeScore</a> (int *tab)</td></tr>
+<tr class="separator:ada51d6f161dc3bd40cfdae9b18855b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab920728e54ed8e7c6f0481cd7527ba80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#ab920728e54ed8e7c6f0481cd7527ba80">saisitScore</a> (int *tab, int *tabFinal)</td></tr>
+<tr class="separator:ab920728e54ed8e7c6f0481cd7527ba80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ba6e6017af53e5247f75843148f2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a29ba6e6017af53e5247f75843148f2d1">displayTabScore</a> (int *tab_score, int *tabFinal)</td></tr>
+<tr class="separator:a29ba6e6017af53e5247f75843148f2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e229810418844ae6a50ff60d258d017"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="score_8h.html#a1e229810418844ae6a50ff60d258d017">boucle_de_saisie</a> (int *p, int low, int high)</td></tr>
+<tr class="separator:a1e229810418844ae6a50ff60d258d017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1e229810418844ae6a50ff60d258d017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e229810418844ae6a50ff60d258d017">&#9670;&nbsp;</a></span>boucle_de_saisie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int boucle_de_saisie </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00489">489</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mecanismeJeu_8c_source.html#l00076">askDices()</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00094">completeTurn()</a>, and <a class="el" href="score_8c_source.html#l00432">saisitScore()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                                                   {</div><div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keywordflow">while</span>(1) {</div><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> BUFSIZE = 256;</div><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="keywordtype">char</span> buf[BUFSIZE];</div><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        printf(<span class="stringliteral">&quot;merci de saisir un nombre compris entre %d et %d\n&quot;</span>, low, high);</div><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;</div><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="keywordflow">if</span> ( fgets( buf, BUFSIZE, stdin ) == NULL ) {</div><div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="keywordflow">return</span> 0;      <span class="comment">// almost certainly EOF</span></div><div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        }</div><div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <span class="keywordflow">if</span> ( sscanf( buf, <span class="stringliteral">&quot;%d&quot;</span>, p ) != 1 ) {</div><div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            printf( <span class="stringliteral">&quot;Merci de saisir un entier\n&quot;</span> );</div><div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        }</div><div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( * p &lt; low || * p &gt; high )  {</div><div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            printf(<span class="stringliteral">&quot;valeur saisie hors borne\n&quot;</span>);</div><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        }</div><div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            <span class="keywordflow">break</span>;</div><div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        }</div><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    }</div><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a1e229810418844ae6a50ff60d258d017_icgraph.png" border="0" usemap="#score_8h_a1e229810418844ae6a50ff60d258d017_icgraph" alt=""/></div>
+<map name="score_8h_a1e229810418844ae6a50ff60d258d017_icgraph" id="score_8h_a1e229810418844ae6a50ff60d258d017_icgraph">
+<area shape="rect" id="node2" href="mecanismeJeu_8h.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="relance les dées " alt="" coords="181,5,258,32"/>
+<area shape="rect" id="node3" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="311,56,412,83"/>
+<area shape="rect" id="node5" href="score_8h.html#ab920728e54ed8e7c6f0481cd7527ba80" title="saisitScore" alt="" coords="176,107,263,133"/>
+<area shape="rect" id="node4" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="460,56,511,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aeeb20f2b14b47a496fadd754abda5317"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeeb20f2b14b47a496fadd754abda5317">&#9670;&nbsp;</a></span>compareScore()</h2>
 
@@ -119,22 +203,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00323">323</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+<p>Fonction qui décide qui l'emporte. </p>
+<p>Compare le score des deux joueurs et affiche le gagnant ou match nul</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>score du joueur 1 </td></tr>
+    <tr><td class="paramname">b</td><td>score du joueur 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00369">369</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00005">main()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                               {</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span>(a &gt; b){</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        printf(<span class="stringliteral">&quot;Bravo! le joueur 1 remporte la partie\n&quot;</span>);</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &gt; a){</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        printf(<span class="stringliteral">&quot;Bravo! le joueur 2 remporte la partie\n&quot;</span>);</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">else</span>{</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        printf(<span class="stringliteral">&quot;Match nul\n&quot;</span>);  </div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }   </div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                               {</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span>(a &gt; b){</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        printf(<span class="stringliteral">&quot;Bravo! le joueur 1 remporte la partie\n&quot;</span>);</div><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b &gt; a){</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        printf(<span class="stringliteral">&quot;Bravo! le joueur 2 remporte la partie\n&quot;</span>);</div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">else</span>{</div><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        printf(<span class="stringliteral">&quot;Match nul\n&quot;</span>);  </div><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    }   </div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="score_8h_aeeb20f2b14b47a496fadd754abda5317_icgraph.png" border="0" usemap="#score_8h_aeeb20f2b14b47a496fadd754abda5317_icgraph" alt=""/></div>
 <map name="score_8h_aeeb20f2b14b47a496fadd754abda5317_icgraph" id="score_8h_aeeb20f2b14b47a496fadd754abda5317_icgraph">
-<area shape="rect" id="node2" href="main_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="160,5,211,32"/>
+<area shape="rect" id="node2" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="160,5,211,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a54d088aca7937ae9e67dabbe160f5254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54d088aca7937ae9e67dabbe160f5254">&#9670;&nbsp;</a></span>displayScore()</h2>
+<a id="a8eab6bc89b1828c4f86d313ad10ecda9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eab6bc89b1828c4f86d313ad10ecda9">&#9670;&nbsp;</a></span>displayScore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +243,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>tab</em>&#160;</td>
+          <td class="paramname"><em>tab_dee</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tabFinal</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -159,33 +259,583 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00288">288</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+<p>Affiche les scores. </p>
+<p>Appel la fonction TestCombinatoire qui s'occupe de remplir le tableau des score, puis affiche les scores</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab_score</td><td>tableau contenant les scores </td></tr>
+    <tr><td class="paramname">*tab_dee</td><td>tableau contenant les des </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="score_8c_source.html#l00275">testCombinatoire()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00351">351</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mecanismeJeu_8c_source.html#l00063">completeTurn()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                          {</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">int</span> i,score=0,somme=0;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f">testCombinatoire</a>(tab_score,tab);</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    printf(<span class="stringliteral">&quot;voici le score pour Yatzee : %d\n&quot;</span>,tab_score[0]);</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;           </div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    printf(<span class="stringliteral">&quot;voici le score pour Petite Suite : %d\n&quot;</span>,tab_score[1]);</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;           </div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    printf(<span class="stringliteral">&quot;voici le score pour Grande Suite : %d\n&quot;</span>,tab_score[2]);</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;             </div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    printf(<span class="stringliteral">&quot;voici le score pour Brelan : %d\n&quot;</span>,tab_score[3]);</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;             </div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    printf(<span class="stringliteral">&quot;voici le score pour Full : %d\n&quot;</span>,tab_score[4]);</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    </div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;8;i++){ <span class="comment">// somme de tout les dés</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      score+=(tab[i]);</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    printf(<span class="stringliteral">&quot;voici le score des dés :%d\n&quot;</span>,score);</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    </div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;5;i++)</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      {</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        somme+=(tab_score[i]);</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      }</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    somme+=score;</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    printf(<span class="stringliteral">&quot;voici le score total : %d\n&quot;</span>,somme);</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    tab_score[6] = somme;</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    }</div><div class="ttc" id="score_8c_html_a6428b1a4b981622ea3a67b168f1c3c9f"><div class="ttname"><a href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f">testCombinatoire</a></div><div class="ttdeci">void testCombinatoire(int *tab_score, int *tab_dee)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00275">score.c:275</a></div></div>
+<p class="reference">References <a class="el" href="score_8c_source.html#l00393">displayTabScore()</a>, and <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mecanismeJeu_8c_source.html#l00094">completeTurn()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                             {</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <a class="code" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f">testCombinatoire</a>(tab_score,tab_dee);</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    </div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="score_8c.html#a29ba6e6017af53e5247f75843148f2d1">displayTabScore</a>(tab_score, tabFinal);</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div><div class="ttc" id="score_8c_html_a6428b1a4b981622ea3a67b168f1c3c9f"><div class="ttname"><a href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f">testCombinatoire</a></div><div class="ttdeci">void testCombinatoire(int *tab_score, int *tab_dee)</div><div class="ttdoc">Appel a tout les fonctions de verification de figure. </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00322">score.c:322</a></div></div>
+<div class="ttc" id="score_8c_html_a29ba6e6017af53e5247f75843148f2d1"><div class="ttname"><a href="score_8c.html#a29ba6e6017af53e5247f75843148f2d1">displayTabScore</a></div><div class="ttdeci">void displayTabScore(int *tab_score, int *tabFinal)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00393">score.c:393</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="score_8h_a54d088aca7937ae9e67dabbe160f5254_cgraph.png" border="0" usemap="#score_8h_a54d088aca7937ae9e67dabbe160f5254_cgraph" alt=""/></div>
-<map name="score_8h_a54d088aca7937ae9e67dabbe160f5254_cgraph" id="score_8h_a54d088aca7937ae9e67dabbe160f5254_cgraph">
-<area shape="rect" id="node2" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="151,132,272,159"/>
-<area shape="rect" id="node3" href="score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="337,5,419,32"/>
-<area shape="rect" id="node4" href="score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="339,56,417,83"/>
-<area shape="rect" id="node5" href="score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="339,107,417,133"/>
-<area shape="rect" id="node6" href="score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="320,157,436,184"/>
-<area shape="rect" id="node7" href="score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="324,208,432,235"/>
-<area shape="rect" id="node8" href="score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="332,259,424,285"/>
+<div class="center"><img src="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_cgraph.png" border="0" usemap="#score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_cgraph" alt=""/></div>
+<map name="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_cgraph" id="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_cgraph">
+<area shape="rect" id="node2" href="score_8c.html#a29ba6e6017af53e5247f75843148f2d1" title="displayTabScore" alt="" coords="152,81,271,108"/>
+<area shape="rect" id="node6" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="151,284,272,311"/>
+<area shape="rect" id="node3" href="color_8c.html#a0df115437fbb77c0311e65300c65289e" title="green" alt="" coords="351,5,405,32"/>
+<area shape="rect" id="node4" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9" title="red" alt="" coords="358,56,398,83"/>
+<area shape="rect" id="node5" href="color_8c.html#afe00396766eb6b8ca4674de4c5d3d949" title="resetColor" alt="" coords="337,107,419,133"/>
+<area shape="rect" id="node7" href="score_8c.html#ae216d5ca602d234646713a4b42599138" title="Verifie si la figure Brelan est présente. " alt="" coords="337,157,419,184"/>
+<area shape="rect" id="node9" href="score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b" title="testCarre" alt="" coords="340,208,416,235"/>
+<area shape="rect" id="node10" href="score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1" title="Verifie si la figure Full type1 est présente (5des identique + 2des identiques) " alt="" coords="339,259,417,285"/>
+<area shape="rect" id="node11" href="score_8c.html#a538c39d3fd42bf3276fb75bf980ba200" title="Verifie si la figure Full type2 est présente (3des identique + 4des identiques) " alt="" coords="339,309,417,336"/>
+<area shape="rect" id="node12" href="score_8c.html#a35a57bf3af663b62c4333328a171bf52" title="Verifie si la figure GrandeSuite est présente. " alt="" coords="320,360,436,387"/>
+<area shape="rect" id="node13" href="score_8c.html#a1c11471a13d62102c59ba9fb2952b50c" title="Verifie si la figure PetiteSuite est présente. " alt="" coords="324,411,432,437"/>
+<area shape="rect" id="node14" href="score_8c.html#a78ec34acaa060220076ff1ea848fa5e8" title="Verifie si la figure Yahtzee est présente. " alt="" coords="332,461,424,488"/>
+<area shape="rect" id="node8" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07" title="sommeScore" alt="" coords="484,183,583,209"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="score_8h_a54d088aca7937ae9e67dabbe160f5254_icgraph.png" border="0" usemap="#score_8h_a54d088aca7937ae9e67dabbe160f5254_icgraph" alt=""/></div>
-<map name="score_8h_a54d088aca7937ae9e67dabbe160f5254_icgraph" id="score_8h_a54d088aca7937ae9e67dabbe160f5254_icgraph">
-<area shape="rect" id="node2" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="151,5,252,32"/>
-<area shape="rect" id="node3" href="main_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="300,5,351,32"/>
+<div class="center"><img src="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_icgraph.png" border="0" usemap="#score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_icgraph" alt=""/></div>
+<map name="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_icgraph" id="score_8h_a8eab6bc89b1828c4f86d313ad10ecda9_icgraph">
+<area shape="rect" id="node2" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="151,5,252,32"/>
+<area shape="rect" id="node3" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="300,5,351,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a29ba6e6017af53e5247f75843148f2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ba6e6017af53e5247f75843148f2d1">&#9670;&nbsp;</a></span>displayTabScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayTabScore </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab_score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tabFinal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00393">393</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">References <a class="el" href="color_8c_source.html#l00009">green()</a>, <a class="el" href="color_8c_source.html#l00002">red()</a>, and <a class="el" href="color_8c_source.html#l00013">resetColor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mecanismeJeu_8c_source.html#l00094">completeTurn()</a>, and <a class="el" href="score_8c_source.html#l00351">displayScore()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                                   {</div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    printf(<span class="stringliteral">&quot;========================================================\n&quot;</span> );</div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    (tabFinal[0] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 1 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;AS&quot;</span>, tab_score[0]);</div><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    (tabFinal[1] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 2 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;DEUX&quot;</span>, tab_score[1]);</div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    (tabFinal[2] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 3 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;TROIS&quot;</span>, tab_score[2]);</div><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    (tabFinal[3] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 4 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;QUATRE&quot;</span>, tab_score[3]);</div><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    (tabFinal[4] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 5 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;CINQ&quot;</span>, tab_score[4]);</div><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    (tabFinal[5] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 6 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;SIX&quot;</span>, tab_score[5]);</div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    (tabFinal[6] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 7 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;SEPT&quot;</span>, tab_score[6]);</div><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    (tabFinal[7] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 8 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;HUIT&quot;</span>, tab_score[7]);</div><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    (tabFinal[8] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot; 9 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;BRELAN&quot;</span>, tab_score[8]);</div><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    (tabFinal[9] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;10 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;SUITE(1-6)&quot;</span>, tab_score[9]);</div><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    (tabFinal[10] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;11 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;SUITE(2-7)&quot;</span>, tab_score[10]);</div><div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    (tabFinal[11] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;12 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;CARRE&quot;</span>, tab_score[11]);</div><div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    (tabFinal[12] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;13 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;FULL(2+5)&quot;</span>, tab_score[12]);</div><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    (tabFinal[13] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;14 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;FULL(3+4)&quot;</span>, tab_score[13]);</div><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    (tabFinal[14] == -1)? <a class="code" href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a>(): <a class="code" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a>();</div><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    printf(<span class="stringliteral">&quot;%-4s %-12s: %d\n&quot;</span>,<span class="stringliteral">&quot;15 &gt;&gt;&quot;</span>, <span class="stringliteral">&quot;YAHTZEE&quot;</span>, tab_score[14]);</div><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    </div><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="color_8c.html#afe00396766eb6b8ca4674de4c5d3d949">resetColor</a>();</div><div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    printf(<span class="stringliteral">&quot;========================================================\n&quot;</span> );</div><div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div><div class="ttc" id="color_8c_html_afe00396766eb6b8ca4674de4c5d3d949"><div class="ttname"><a href="color_8c.html#afe00396766eb6b8ca4674de4c5d3d949">resetColor</a></div><div class="ttdeci">void resetColor()</div><div class="ttdef"><b>Definition:</b> <a href="color_8c_source.html#l00013">color.c:13</a></div></div>
+<div class="ttc" id="color_8c_html_a39abd40f68d03c40857be1e74407efb9"><div class="ttname"><a href="color_8c.html#a39abd40f68d03c40857be1e74407efb9">red</a></div><div class="ttdeci">void red()</div><div class="ttdef"><b>Definition:</b> <a href="color_8c_source.html#l00002">color.c:2</a></div></div>
+<div class="ttc" id="color_8c_html_a0df115437fbb77c0311e65300c65289e"><div class="ttname"><a href="color_8c.html#a0df115437fbb77c0311e65300c65289e">green</a></div><div class="ttdeci">void green()</div><div class="ttdef"><b>Definition:</b> <a href="color_8c_source.html#l00009">color.c:9</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a29ba6e6017af53e5247f75843148f2d1_cgraph.png" border="0" usemap="#score_8h_a29ba6e6017af53e5247f75843148f2d1_cgraph" alt=""/></div>
+<map name="score_8h_a29ba6e6017af53e5247f75843148f2d1_cgraph" id="score_8h_a29ba6e6017af53e5247f75843148f2d1_cgraph">
+<area shape="rect" id="node2" href="color_8c.html#a0df115437fbb77c0311e65300c65289e" title="green" alt="" coords="186,5,241,32"/>
+<area shape="rect" id="node3" href="color_8c.html#a39abd40f68d03c40857be1e74407efb9" title="red" alt="" coords="193,56,233,83"/>
+<area shape="rect" id="node4" href="color_8c.html#afe00396766eb6b8ca4674de4c5d3d949" title="resetColor" alt="" coords="172,107,255,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a29ba6e6017af53e5247f75843148f2d1_icgraph.png" border="0" usemap="#score_8h_a29ba6e6017af53e5247f75843148f2d1_icgraph" alt=""/></div>
+<map name="score_8h_a29ba6e6017af53e5247f75843148f2d1_icgraph" id="score_8h_a29ba6e6017af53e5247f75843148f2d1_icgraph">
+<area shape="rect" id="node2" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="317,5,419,32"/>
+<area shape="rect" id="node4" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="172,31,269,57"/>
+<area shape="rect" id="node3" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="467,5,517,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab920728e54ed8e7c6f0481cd7527ba80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab920728e54ed8e7c6f0481cd7527ba80">&#9670;&nbsp;</a></span>saisitScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int saisitScore </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tabFinal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00432">432</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">References <a class="el" href="score_8c_source.html#l00489">boucle_de_saisie()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mecanismeJeu_8c_source.html#l00094">completeTurn()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                       {</div><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">int</span> answer=0;</div><div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">while</span>(1){</div><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        printf(<span class="stringliteral">&quot;Saisissez le numero de la case que vous voulez remplir  \n&quot;</span>);</div><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <a class="code" href="score_8c.html#a1e229810418844ae6a50ff60d258d017">boucle_de_saisie</a>(&amp;answer,1,15);</div><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        --answer;</div><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">if</span>(tabFinal[answer] &gt;= 0){</div><div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            printf(<span class="stringliteral">&quot;La case est deja remplit, merci de choisir une autre\n&quot;</span>);</div><div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        }</div><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">else</span>{</div><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            tabFinal[answer] = tab[answer];</div><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        }</div><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;</div><div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    }</div><div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div><div class="ttc" id="score_8c_html_a1e229810418844ae6a50ff60d258d017"><div class="ttname"><a href="score_8c.html#a1e229810418844ae6a50ff60d258d017">boucle_de_saisie</a></div><div class="ttdeci">int boucle_de_saisie(int *p, int low, int high)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00489">score.c:489</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_cgraph.png" border="0" usemap="#score_8h_ab920728e54ed8e7c6f0481cd7527ba80_cgraph" alt=""/></div>
+<map name="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_cgraph" id="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_cgraph">
+<area shape="rect" id="node2" href="score_8c.html#a1e229810418844ae6a50ff60d258d017" title="boucle_de_saisie" alt="" coords="140,5,263,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_icgraph.png" border="0" usemap="#score_8h_ab920728e54ed8e7c6f0481cd7527ba80_icgraph" alt=""/></div>
+<map name="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_icgraph" id="score_8h_ab920728e54ed8e7c6f0481cd7527ba80_icgraph">
+<area shape="rect" id="node2" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="140,5,241,32"/>
+<area shape="rect" id="node3" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="289,5,340,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ada51d6f161dc3bd40cfdae9b18855b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada51d6f161dc3bd40cfdae9b18855b07">&#9670;&nbsp;</a></span>sommeScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sommeScore </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00382">382</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00146">testBrelan()</a>, and <a class="el" href="score_8c_source.html#l00460">testCarre()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                         {</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordtype">int</span> somme = 0;</div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 7; ++i)</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        somme += tab[i];</div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> somme;</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ada51d6f161dc3bd40cfdae9b18855b07_icgraph.png" border="0" usemap="#score_8h_ada51d6f161dc3bd40cfdae9b18855b07_icgraph" alt=""/></div>
+<map name="score_8h_ada51d6f161dc3bd40cfdae9b18855b07_icgraph" id="score_8h_ada51d6f161dc3bd40cfdae9b18855b07_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#ae216d5ca602d234646713a4b42599138" title="Verifie si la figure Brelan est présente. " alt="" coords="152,5,233,32"/>
+<area shape="rect" id="node7" href="score_8h.html#a71287ee22e8bcb7fcc5f86ed8dd9270b" title="testCarre" alt="" coords="155,56,231,83"/>
+<area shape="rect" id="node3" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="281,31,403,57"/>
+<area shape="rect" id="node4" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="451,31,548,57"/>
+<area shape="rect" id="node5" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="596,31,697,57"/>
+<area shape="rect" id="node6" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="745,31,796,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae216d5ca602d234646713a4b42599138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae216d5ca602d234646713a4b42599138">&#9670;&nbsp;</a></span>testBrelan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testBrelan </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure Brelan est présente. </p>
+<p>On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il n'y a pas d'occurence de 4, alors on a un Brelan .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00146">146</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">References <a class="el" href="score_8c_source.html#l00382">sommeScore()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                         {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">int</span> tab_occurence[8]={0,0,0,0,0,0,0,0};</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordtype">int</span> find = 0,i;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 7; ++i)</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        ++tab_occurence[tab[i]-1];</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 8; ++i)</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (tab_occurence[i] == 3)</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            printf(<span class="stringliteral">&quot;Il y a un Brelan de %d \n&quot;</span>,i+1);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            ++find;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span>(find)</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07">sommeScore</a>(tab);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}   </div><div class="ttc" id="score_8c_html_ada51d6f161dc3bd40cfdae9b18855b07"><div class="ttname"><a href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07">sommeScore</a></div><div class="ttdeci">int sommeScore(int *tab)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00382">score.c:382</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ae216d5ca602d234646713a4b42599138_cgraph.png" border="0" usemap="#score_8h_ae216d5ca602d234646713a4b42599138_cgraph" alt=""/></div>
+<map name="score_8h_ae216d5ca602d234646713a4b42599138_cgraph" id="score_8h_ae216d5ca602d234646713a4b42599138_cgraph">
+<area shape="rect" id="node2" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07" title="sommeScore" alt="" coords="135,5,233,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ae216d5ca602d234646713a4b42599138_icgraph.png" border="0" usemap="#score_8h_ae216d5ca602d234646713a4b42599138_icgraph" alt=""/></div>
+<map name="score_8h_ae216d5ca602d234646713a4b42599138_icgraph" id="score_8h_ae216d5ca602d234646713a4b42599138_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="135,5,256,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="304,5,401,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="449,5,551,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="599,5,649,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a71287ee22e8bcb7fcc5f86ed8dd9270b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71287ee22e8bcb7fcc5f86ed8dd9270b">&#9670;&nbsp;</a></span>testCarre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testCarre </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00460">460</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">References <a class="el" href="score_8c_source.html#l00382">sommeScore()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                       {</div><div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordtype">int</span> tab_occurence[8]={0,0,0,0,0,0,0,0};</div><div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 7; ++i)</div><div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    {</div><div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        ++tab_occurence[tab[i]-1];</div><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    }</div><div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;</div><div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 8; ++i)</div><div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div><div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">if</span> (tab_occurence[i] == 4)</div><div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        {</div><div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            printf(<span class="stringliteral">&quot;Il y a un Carre de %d \n&quot;</span>,i+1);</div><div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07">sommeScore</a>(tab);</div><div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        }</div><div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    }</div><div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div><div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div><div class="ttc" id="score_8c_html_ada51d6f161dc3bd40cfdae9b18855b07"><div class="ttname"><a href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07">sommeScore</a></div><div class="ttdeci">int sommeScore(int *tab)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00382">score.c:382</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_cgraph.png" border="0" usemap="#score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_cgraph" alt=""/></div>
+<map name="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_cgraph" id="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_cgraph">
+<area shape="rect" id="node2" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07" title="sommeScore" alt="" coords="129,5,228,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_icgraph.png" border="0" usemap="#score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_icgraph" alt=""/></div>
+<map name="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_icgraph" id="score_8h_a71287ee22e8bcb7fcc5f86ed8dd9270b_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="129,5,251,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="299,5,396,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="444,5,545,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="593,5,644,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6428b1a4b981622ea3a67b168f1c3c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6428b1a4b981622ea3a67b168f1c3c9f">&#9670;&nbsp;</a></span>testCombinatoire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testCombinatoire </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab_score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab_dee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Appel a tout les fonctions de verification de figure. </p>
+<p>Appel tout les fonctions de verification de figure et remplissage  tableau de score</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab_score</td><td>tableau contenant les scores </td></tr>
+    <tr><td class="paramname">*tab_dee</td><td>tableau contenant les des </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00322">322</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">References <a class="el" href="score_8c_source.html#l00146">testBrelan()</a>, <a class="el" href="score_8c_source.html#l00460">testCarre()</a>, <a class="el" href="score_8c_source.html#l00177">testFullv1()</a>, <a class="el" href="score_8c_source.html#l00250">testFullv2()</a>, <a class="el" href="score_8c_source.html#l00087">testGrandeSuite()</a>, <a class="el" href="score_8c_source.html#l00035">testPetiteSuite()</a>, and <a class="el" href="score_8c_source.html#l00013">testYahtzee()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00351">displayScore()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                   {</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">/*test et remplit le tableau des score*/</span></div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 7; ++i)</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    {</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        tab_score[tab_dee[i]-1] += tab_dee[i] ;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    tab_score[8] = <a class="code" href="score_8c.html#ae216d5ca602d234646713a4b42599138">testBrelan</a>(tab_dee);</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    tab_score[9] = <a class="code" href="score_8c.html#a1c11471a13d62102c59ba9fb2952b50c">testPetiteSuite</a>(tab_dee);</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    tab_score[10] = <a class="code" href="score_8c.html#a35a57bf3af663b62c4333328a171bf52">testGrandeSuite</a>(tab_dee);</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    tab_score[11] = <a class="code" href="score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b">testCarre</a>(tab_dee);</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    tab_score[12] = <a class="code" href="score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1">testFullv1</a>(tab_dee);</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    tab_score[13] = <a class="code" href="score_8c.html#a538c39d3fd42bf3276fb75bf980ba200">testFullv2</a>(tab_dee);</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    tab_score[14] = <a class="code" href="score_8c.html#a78ec34acaa060220076ff1ea848fa5e8">testYahtzee</a>(tab_dee);</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div><div class="ttc" id="score_8c_html_a78ec34acaa060220076ff1ea848fa5e8"><div class="ttname"><a href="score_8c.html#a78ec34acaa060220076ff1ea848fa5e8">testYahtzee</a></div><div class="ttdeci">int testYahtzee(int *tab)</div><div class="ttdoc">Verifie si la figure Yahtzee est présente. </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00013">score.c:13</a></div></div>
+<div class="ttc" id="score_8c_html_ad7f6bac52baf36c250c6a75efa0d7ee1"><div class="ttname"><a href="score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1">testFullv1</a></div><div class="ttdeci">int testFullv1(int *tab)</div><div class="ttdoc">Verifie si la figure Full type1 est présente (5des identique + 2des identiques) </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00177">score.c:177</a></div></div>
+<div class="ttc" id="score_8c_html_a538c39d3fd42bf3276fb75bf980ba200"><div class="ttname"><a href="score_8c.html#a538c39d3fd42bf3276fb75bf980ba200">testFullv2</a></div><div class="ttdeci">int testFullv2(int *tab)</div><div class="ttdoc">Verifie si la figure Full type2 est présente (3des identique + 4des identiques) </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00250">score.c:250</a></div></div>
+<div class="ttc" id="score_8c_html_a35a57bf3af663b62c4333328a171bf52"><div class="ttname"><a href="score_8c.html#a35a57bf3af663b62c4333328a171bf52">testGrandeSuite</a></div><div class="ttdeci">int testGrandeSuite(int *tab)</div><div class="ttdoc">Verifie si la figure GrandeSuite est présente. </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00087">score.c:87</a></div></div>
+<div class="ttc" id="score_8c_html_a1c11471a13d62102c59ba9fb2952b50c"><div class="ttname"><a href="score_8c.html#a1c11471a13d62102c59ba9fb2952b50c">testPetiteSuite</a></div><div class="ttdeci">int testPetiteSuite(int *tab)</div><div class="ttdoc">Verifie si la figure PetiteSuite est présente. </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00035">score.c:35</a></div></div>
+<div class="ttc" id="score_8c_html_ae216d5ca602d234646713a4b42599138"><div class="ttname"><a href="score_8c.html#ae216d5ca602d234646713a4b42599138">testBrelan</a></div><div class="ttdeci">int testBrelan(int *tab)</div><div class="ttdoc">Verifie si la figure Brelan est présente. </div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00146">score.c:146</a></div></div>
+<div class="ttc" id="score_8c_html_a71287ee22e8bcb7fcc5f86ed8dd9270b"><div class="ttname"><a href="score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b">testCarre</a></div><div class="ttdeci">int testCarre(int *tab)</div><div class="ttdef"><b>Definition:</b> <a href="score_8c_source.html#l00460">score.c:460</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_cgraph.png" border="0" usemap="#score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_cgraph" alt=""/></div>
+<map name="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_cgraph" id="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_cgraph">
+<area shape="rect" id="node2" href="score_8c.html#ae216d5ca602d234646713a4b42599138" title="Verifie si la figure Brelan est présente. " alt="" coords="192,5,273,32"/>
+<area shape="rect" id="node4" href="score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b" title="testCarre" alt="" coords="195,56,271,83"/>
+<area shape="rect" id="node5" href="score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1" title="Verifie si la figure Full type1 est présente (5des identique + 2des identiques) " alt="" coords="193,107,272,133"/>
+<area shape="rect" id="node6" href="score_8c.html#a538c39d3fd42bf3276fb75bf980ba200" title="Verifie si la figure Full type2 est présente (3des identique + 4des identiques) " alt="" coords="193,157,272,184"/>
+<area shape="rect" id="node7" href="score_8c.html#a35a57bf3af663b62c4333328a171bf52" title="Verifie si la figure GrandeSuite est présente. " alt="" coords="175,208,291,235"/>
+<area shape="rect" id="node8" href="score_8c.html#a1c11471a13d62102c59ba9fb2952b50c" title="Verifie si la figure PetiteSuite est présente. " alt="" coords="179,259,287,285"/>
+<area shape="rect" id="node9" href="score_8c.html#a78ec34acaa060220076ff1ea848fa5e8" title="Verifie si la figure Yahtzee est présente. " alt="" coords="187,309,279,336"/>
+<area shape="rect" id="node3" href="score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07" title="sommeScore" alt="" coords="339,31,437,57"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_icgraph.png" border="0" usemap="#score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_icgraph" alt=""/></div>
+<map name="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_icgraph" id="score_8h_a6428b1a4b981622ea3a67b168f1c3c9f_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="175,5,272,32"/>
+<area shape="rect" id="node3" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="320,5,421,32"/>
+<area shape="rect" id="node4" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="469,5,520,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7f6bac52baf36c250c6a75efa0d7ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f6bac52baf36c250c6a75efa0d7ee1">&#9670;&nbsp;</a></span>testFullv1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testFullv1 </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure Full type1 est présente (5des identique + 2des identiques) </p>
+<p>On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 5 dans le tableau d'occurence ET qu'il y a une occurence de 2, alors on a un Full type1 .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00177">177</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        {</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">int</span> tab_occurence[8]={0,0,0,0,0,0,0,0};</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">int</span> i,j;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  </div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordtype">int</span> full1,full2;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">for</span>(i=0;i&lt;7;i++) {</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    </div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span>(tab[i] == 1){</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      tab_occurence[0]+=1;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 2)</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      {</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    tab_occurence[1]+=1;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      }</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 3)</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      {</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    tab_occurence[2]+=1;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      }</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 4)</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      {</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    tab_occurence[3]+=1;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      }</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 5)</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      {</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    tab_occurence[4]+=1;</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      }</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 6)</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      {</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    tab_occurence[5]+=1;</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      }</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 7)</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      {</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    tab_occurence[6]+=1;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      }</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 8)</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      {</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    tab_occurence[7]+=1;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      }</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  }</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    </div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;8;i++)</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      {</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span>(tab_occurence[i]==5)</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        full1=i+1;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span>(j=0;j&lt;8;j++)</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;          {</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">if</span>(tab_occurence[j]==2)</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;          {</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            full2=j+1;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            printf(<span class="stringliteral">&quot;Il y a un Full de %d et %d\n&quot;</span>,full1,full2);</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">return</span> 25;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;         </div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;           </div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;          }</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          }</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      }</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      }</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    </div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_ad7f6bac52baf36c250c6a75efa0d7ee1_icgraph.png" border="0" usemap="#score_8h_ad7f6bac52baf36c250c6a75efa0d7ee1_icgraph" alt=""/></div>
+<map name="score_8h_ad7f6bac52baf36c250c6a75efa0d7ee1_icgraph" id="score_8h_ad7f6bac52baf36c250c6a75efa0d7ee1_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="132,5,253,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="301,5,399,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="447,5,548,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="596,5,647,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a538c39d3fd42bf3276fb75bf980ba200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538c39d3fd42bf3276fb75bf980ba200">&#9670;&nbsp;</a></span>testFullv2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testFullv2 </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure Full type2 est présente (3des identique + 4des identiques) </p>
+<p>On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il y a une occurence de 4, alors on a un Full type2 .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00250">250</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        {</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">int</span> tab_occurence[8]={0,0,0,0,0,0,0,0};</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  </div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordtype">int</span> i,j;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">int</span> full1,full2;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordflow">for</span>(i=0;i&lt;7;i++) {</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    </div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span>(tab[i] == 1){</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      tab_occurence[0]+=1;</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 2)</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      {</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    tab_occurence[1]+=1;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      }</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 3)</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      {</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    tab_occurence[2]+=1;</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      }</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 4)</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      {</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    tab_occurence[3]+=1;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      }</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 5)</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      {</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    tab_occurence[4]+=1;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      }</div><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 6)</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      {</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    tab_occurence[5]+=1;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      }</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 7)</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      {</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    tab_occurence[6]+=1;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      }</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tab[i] == 8)</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      {</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    tab_occurence[7]+=1;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      }</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    </div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;8;i++)</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      {</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span>(tab_occurence[i]==3)</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        full1=i+1;</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">for</span>(j=0;j&lt;8;j++)</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          {</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">if</span>(tab_occurence[j]==4)</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            full2=j+1;</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            printf(<span class="stringliteral">&quot;Il y a un Full de %d et %d\n&quot;</span>,full1,full2);</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;             <span class="keywordflow">return</span> 25;</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    </div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            </div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;          }</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;          }</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      }</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      }</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a538c39d3fd42bf3276fb75bf980ba200_icgraph.png" border="0" usemap="#score_8h_a538c39d3fd42bf3276fb75bf980ba200_icgraph" alt=""/></div>
+<map name="score_8h_a538c39d3fd42bf3276fb75bf980ba200_icgraph" id="score_8h_a538c39d3fd42bf3276fb75bf980ba200_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="132,5,253,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="301,5,399,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="447,5,548,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="596,5,647,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35a57bf3af663b62c4333328a171bf52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a57bf3af663b62c4333328a171bf52">&#9670;&nbsp;</a></span>testGrandeSuite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testGrandeSuite </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure GrandeSuite est présente. </p>
+<p>S'il y a une des qui vaut 2, on regard s'il y a une des qui vaut 3, ainsi de suite jusqu'a 7, si 7 est présent, alors il y a GrandeSuite</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00087">87</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                              {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// verif grande suite</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span>(tab[i] == 2)</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;          <span class="keywordflow">if</span>(tab[i] == 3)</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;           <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;             <span class="keywordflow">if</span>(tab[i] == 4)</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span>(tab[i] == 5)</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                   {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                 <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                   <span class="keywordflow">if</span>(tab[i] == 6)</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                      {</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                      <span class="keywordflow">if</span>(tab[i] == 7)</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                         {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                           <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                         <span class="keywordflow">if</span>(tab[i] == 8)</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                           {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                              printf(<span class="stringliteral">&quot;Il y a une GrandeSuite\n&quot;</span>);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        </div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                             <span class="keywordflow">return</span> 40;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                            </div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                            </div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                              </div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                           }</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                           }</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                         }</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    }</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                      }</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 }</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                   }</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;              }</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;           }</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;         }</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      }</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   }</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;   <span class="keywordflow">return</span> 0;  </div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a35a57bf3af663b62c4333328a171bf52_icgraph.png" border="0" usemap="#score_8h_a35a57bf3af663b62c4333328a171bf52_icgraph" alt=""/></div>
+<map name="score_8h_a35a57bf3af663b62c4333328a171bf52_icgraph" id="score_8h_a35a57bf3af663b62c4333328a171bf52_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="169,5,291,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="339,5,436,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="484,5,585,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="633,5,684,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1c11471a13d62102c59ba9fb2952b50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c11471a13d62102c59ba9fb2952b50c">&#9670;&nbsp;</a></span>testPetiteSuite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testPetiteSuite </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure PetiteSuite est présente. </p>
+<p>S'il y a une des qui vaut 1, on regard s'il y a une des qui vaut 2, ainsi de suite jusqu'a 7,si 7 est présent, alors on a une PetiteSuite</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00035">35</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                              {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> i;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// verif petite suite</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span>(tab[i] == 1)</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          <span class="keywordflow">if</span>(tab[i] == 2)</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;           <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             <span class="keywordflow">if</span>(tab[i] == 3)</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;              <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span>(tab[i] == 4)</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                   {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                 <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                   <span class="keywordflow">if</span>(tab[i] == 5)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                      {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                      <span class="keywordflow">if</span>(tab[i] == 6)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                         {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                           <span class="keywordflow">for</span>(i=0;i&lt;7;i++){</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                         <span class="keywordflow">if</span>(tab[i] == 7)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                           {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                             printf(<span class="stringliteral">&quot;Il y a une PetiteSuite\n&quot;</span>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                             <span class="keywordflow">return</span> 30;              </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                           }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                           }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                         }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                 }</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;              }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;           }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      }</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a1c11471a13d62102c59ba9fb2952b50c_icgraph.png" border="0" usemap="#score_8h_a1c11471a13d62102c59ba9fb2952b50c_icgraph" alt=""/></div>
+<map name="score_8h_a1c11471a13d62102c59ba9fb2952b50c_icgraph" id="score_8h_a1c11471a13d62102c59ba9fb2952b50c_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="161,5,283,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="331,5,428,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="476,5,577,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="625,5,676,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a78ec34acaa060220076ff1ea848fa5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ec34acaa060220076ff1ea848fa5e8">&#9670;&nbsp;</a></span>testYahtzee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testYahtzee </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>tab</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifie si la figure Yahtzee est présente. </p>
+<p>Si la premiere des est équivalente a la suivante,on verifie si la suivante est équivalente à la prochaine de celle ci, ainsi de suite</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*tab</td><td>tableau content les des. </td></tr>
+    <tr><td class="paramname">*tab_score</td><td>tableau dans lequel on insere le score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="score_8c_source.html#l00013">13</a> of file <a class="el" href="score_8c_source.html">score.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="score_8c_source.html#l00322">testCombinatoire()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                          {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="comment">// verif Yahtzee</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span>(tab[0] == tab[1]</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      &amp;&amp;tab[1] == tab[2]</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      &amp;&amp;tab[2] == tab[3]</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      &amp;&amp;tab[3] == tab[4]</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      &amp;&amp;tab[4] == tab[5]</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      &amp;&amp;tab[5] == tab[6]){</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        printf(<span class="stringliteral">&quot;Il y a un Yahtzee de %d\n&quot;</span>,tab[0]);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> 50;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="score_8h_a78ec34acaa060220076ff1ea848fa5e8_icgraph.png" border="0" usemap="#score_8h_a78ec34acaa060220076ff1ea848fa5e8_icgraph" alt=""/></div>
+<map name="score_8h_a78ec34acaa060220076ff1ea848fa5e8_icgraph" id="score_8h_a78ec34acaa060220076ff1ea848fa5e8_icgraph">
+<area shape="rect" id="node2" href="score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="145,5,267,32"/>
+<area shape="rect" id="node3" href="score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="315,5,412,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="460,5,561,32"/>
+<area shape="rect" id="node5" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="609,5,660,32"/>
 </map>
 </div>
 

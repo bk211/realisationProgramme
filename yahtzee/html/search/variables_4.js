@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['score',['score',['../structPlayer.html#ace6abae8d66534ad0a1fd6458f786a6e',1,'Player']]]
+  ['tabscore',['tabScore',['../structPlayer.html#a7d5c0f37c78c868e4721cc8ceece92a6',1,'Player']]]
 ];

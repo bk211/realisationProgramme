@@ -193,7 +193,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="proto_8c_source.html#l00073">73</a> of file <a class="el" href="proto_8c_source.html">proto.c</a>.</p>
 
-<p class="reference">References <a class="el" href="mecanismeJeu_8c_source.html#l00051">askDices()</a>, <a class="el" href="proto_8c_source.html#l00041">beginTurn()</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00032">boucle_de_saisie()</a>, <a class="el" href="mecanismeJeu_8h_source.html#l00006">Player::dices</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00043">displayDices()</a>, <a class="el" href="score_8c_source.html#l00288">displayScore()</a>, <a class="el" href="mecanismeJeu_8h_source.html#l00008">Player::nbrRollRemain</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00023">refreshDices()</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00013">rollDices()</a>, and <a class="el" href="mecanismeJeu_8h_source.html#l00011">Player::tabScore</a>.</p>
+<p class="reference">References <a class="el" href="mecanismeJeu_8c_source.html#l00052">askDices()</a>, <a class="el" href="proto_8c_source.html#l00041">beginTurn()</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00032">boucle_de_saisie()</a>, <a class="el" href="mecanismeJeu_8h_source.html#l00006">Player::dices</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00044">displayDices()</a>, <a class="el" href="score_8c_source.html#l00288">displayScore()</a>, <a class="el" href="mecanismeJeu_8h_source.html#l00008">Player::nbrRollRemain</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00023">refreshDices()</a>, <a class="el" href="mecanismeJeu_8c_source.html#l00013">rollDices()</a>, and <a class="el" href="mecanismeJeu_8h_source.html#l00011">Player::tabScore</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="proto_8c_source.html#l00104">main()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                            {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">int</span> v = 1 ;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> i = 0 ;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b">beginTurn</a>(p) ;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">while</span>(p-&gt;<a class="code" href="structPlayer.html#ae4c871b61a2af583a8b5975d736bea5d">nbrRollRemain</a> != 0){</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    printf(<span class="stringliteral">&quot;Actual outcome :\n&quot;</span>) ;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="proto_8c.html#ad9ebcce43b3be9b75d300f961d53d329">displayDices</a>(p) ;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    printf(<span class="stringliteral">&quot;Retoss some dice ? &quot;</span>) ;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//scanf(&quot;%d&quot;, &amp;v) ;</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    v = <a class="code" href="proto_8c.html#af34915129a343bf4c2718354a681f1fb">boucle_de_saisie</a>(0,1) ;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span>(v == 0) { p-&gt;<a class="code" href="structPlayer.html#ae4c871b61a2af583a8b5975d736bea5d">nbrRollRemain</a> = 0 ; } <span class="comment">//TODO appeler l&#39;affichage de la grille</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">else</span>{</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordtype">int</span> roll = 1 ;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">while</span>(roll == 1 &amp;&amp; p-&gt;<a class="code" href="structPlayer.html#ae4c871b61a2af583a8b5975d736bea5d">nbrRollRemain</a> != 0){</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    printf(<span class="stringliteral">&quot;Which one ? &quot;</span>) ;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;p-&gt;wannaRoll[i]) ;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ++i ;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    printf(<span class="stringliteral">&quot;Select one other dice ? &quot;</span>) ;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;roll) ;     </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      }</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      p-&gt;<a class="code" href="structPlayer.html#ae4c871b61a2af583a8b5975d736bea5d">nbrRollRemain</a> -= 1 ;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="proto_8c.html#ab55e6b5866c616840bef8cccef4952c5">rollDices</a>(p) ;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      printf(<span class="stringliteral">&quot;You&#39;ve toss %d dice(s) again :\nOUTCOME\n&quot;</span>, i) ;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="proto_8c.html#ad9ebcce43b3be9b75d300f961d53d329">displayDices</a>(p) ;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      printf(<span class="stringliteral">&quot;Remaining try : %d\n&quot;</span>, p-&gt;<a class="code" href="structPlayer.html#ae4c871b61a2af583a8b5975d736bea5d">nbrRollRemain</a>) ; </div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  printf(<span class="stringliteral">&quot;Next turn\n&quot;</span>) ;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div><div class="ttc" id="proto_8c_html_a270db6d766abade9ad6e54cc58e9822b"><div class="ttname"><a href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b">beginTurn</a></div><div class="ttdeci">void beginTurn(Player *p)</div><div class="ttdef"><b>Definition:</b> <a href="proto_8c_source.html#l00041">proto.c:41</a></div></div>
@@ -206,21 +206,21 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="proto_8c_a9ccbcda936f74ce7cb8471cc41b8415e_cgraph.png" border="0" usemap="#proto_8c_a9ccbcda936f74ce7cb8471cc41b8415e_cgraph" alt=""/></div>
 <map name="proto_8c_a9ccbcda936f74ce7cb8471cc41b8415e_cgraph" id="proto_8c_a9ccbcda936f74ce7cb8471cc41b8415e_cgraph">
-<area shape="rect" id="node2" href="mecanismeJeu_8c.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="askDices" alt="" coords="165,5,242,32"/>
-<area shape="rect" id="node3" href="mecanismeJeu_8c.html#af34915129a343bf4c2718354a681f1fb" title="boucle_de_saisie" alt="" coords="300,31,423,57"/>
-<area shape="rect" id="node4" href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b" title="beginTurn" alt="" coords="164,107,243,133"/>
-<area shape="rect" id="node5" href="mecanismeJeu_8c.html#ad9ebcce43b3be9b75d300f961d53d329" title="displayDices" alt="" coords="155,157,252,184"/>
-<area shape="rect" id="node6" href="score_8c.html#a54d088aca7937ae9e67dabbe160f5254" title="displayScore" alt="" coords="155,208,252,235"/>
-<area shape="rect" id="node14" href="mecanismeJeu_8c.html#acfee2b60324d906c1d4174e6e51b92d3" title="refreshDices" alt="" coords="155,259,251,285"/>
-<area shape="rect" id="node15" href="mecanismeJeu_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="167,309,240,336"/>
-<area shape="rect" id="node7" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="301,208,422,235"/>
-<area shape="rect" id="node8" href="score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="483,81,575,108"/>
-<area shape="rect" id="node9" href="score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="475,132,583,159"/>
-<area shape="rect" id="node10" href="score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="471,183,587,209"/>
-<area shape="rect" id="node11" href="score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="488,233,569,260"/>
-<area shape="rect" id="node12" href="score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="489,284,568,311"/>
-<area shape="rect" id="node13" href="score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="489,335,568,361"/>
-<area shape="rect" id="node16" href="mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076" title="tirage" alt="" coords="334,309,389,336"/>
+<area shape="rect" id="node2" href="mecanismeJeu_8c.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="askDices" alt="" coords="165,43,242,69"/>
+<area shape="rect" id="node3" href="mecanismeJeu_8c.html#af34915129a343bf4c2718354a681f1fb" title="boucle_de_saisie" alt="" coords="300,5,423,32"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8c.html#ad9ebcce43b3be9b75d300f961d53d329" title="displayDices" alt="" coords="313,68,410,95"/>
+<area shape="rect" id="node5" href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b" title="beginTurn" alt="" coords="164,144,243,171"/>
+<area shape="rect" id="node6" href="score_8c.html#a54d088aca7937ae9e67dabbe160f5254" title="displayScore" alt="" coords="155,195,252,221"/>
+<area shape="rect" id="node14" href="mecanismeJeu_8c.html#acfee2b60324d906c1d4174e6e51b92d3" title="refreshDices" alt="" coords="155,245,251,272"/>
+<area shape="rect" id="node15" href="mecanismeJeu_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="167,296,240,323"/>
+<area shape="rect" id="node7" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="301,195,422,221"/>
+<area shape="rect" id="node8" href="score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="483,68,575,95"/>
+<area shape="rect" id="node9" href="score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="475,119,583,145"/>
+<area shape="rect" id="node10" href="score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="471,169,587,196"/>
+<area shape="rect" id="node11" href="score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="488,220,569,247"/>
+<area shape="rect" id="node12" href="score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="489,271,568,297"/>
+<area shape="rect" id="node13" href="score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="489,321,568,348"/>
+<area shape="rect" id="node16" href="mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076" title="tirage" alt="" coords="334,296,389,323"/>
 </map>
 </div>
 <div class="dynheader">
@@ -295,22 +295,22 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="proto_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#proto_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
 <map name="proto_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="proto_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" id="node2" href="proto_8c.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="104,157,205,184"/>
-<area shape="rect" id="node3" href="mecanismeJeu_8c.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="askDices" alt="" coords="263,5,341,32"/>
-<area shape="rect" id="node4" href="mecanismeJeu_8c.html#af34915129a343bf4c2718354a681f1fb" title="boucle_de_saisie" alt="" coords="399,31,521,57"/>
-<area shape="rect" id="node5" href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b" title="beginTurn" alt="" coords="263,107,341,133"/>
-<area shape="rect" id="node6" href="mecanismeJeu_8c.html#ad9ebcce43b3be9b75d300f961d53d329" title="displayDices" alt="" coords="253,157,351,184"/>
-<area shape="rect" id="node7" href="score_8c.html#a54d088aca7937ae9e67dabbe160f5254" title="displayScore" alt="" coords="253,208,351,235"/>
-<area shape="rect" id="node15" href="mecanismeJeu_8c.html#acfee2b60324d906c1d4174e6e51b92d3" title="refreshDices" alt="" coords="254,259,350,285"/>
-<area shape="rect" id="node16" href="mecanismeJeu_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="265,309,339,336"/>
-<area shape="rect" id="node8" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="399,208,521,235"/>
-<area shape="rect" id="node9" href="score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="581,81,673,108"/>
-<area shape="rect" id="node10" href="score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="573,132,681,159"/>
-<area shape="rect" id="node11" href="score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="569,183,685,209"/>
-<area shape="rect" id="node12" href="score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="587,233,668,260"/>
-<area shape="rect" id="node13" href="score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="588,284,667,311"/>
-<area shape="rect" id="node14" href="score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="588,335,667,361"/>
-<area shape="rect" id="node17" href="mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076" title="tirage" alt="" coords="433,309,487,336"/>
+<area shape="rect" id="node2" href="proto_8c.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="104,144,205,171"/>
+<area shape="rect" id="node3" href="mecanismeJeu_8c.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="askDices" alt="" coords="263,43,341,69"/>
+<area shape="rect" id="node4" href="mecanismeJeu_8c.html#af34915129a343bf4c2718354a681f1fb" title="boucle_de_saisie" alt="" coords="399,5,521,32"/>
+<area shape="rect" id="node5" href="mecanismeJeu_8c.html#ad9ebcce43b3be9b75d300f961d53d329" title="displayDices" alt="" coords="411,68,509,95"/>
+<area shape="rect" id="node6" href="proto_8c.html#a270db6d766abade9ad6e54cc58e9822b" title="beginTurn" alt="" coords="263,144,341,171"/>
+<area shape="rect" id="node7" href="score_8c.html#a54d088aca7937ae9e67dabbe160f5254" title="displayScore" alt="" coords="253,195,351,221"/>
+<area shape="rect" id="node15" href="mecanismeJeu_8c.html#acfee2b60324d906c1d4174e6e51b92d3" title="refreshDices" alt="" coords="254,245,350,272"/>
+<area shape="rect" id="node16" href="mecanismeJeu_8c.html#ab55e6b5866c616840bef8cccef4952c5" title="rollDices" alt="" coords="265,296,339,323"/>
+<area shape="rect" id="node8" href="score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="testCombinatoire" alt="" coords="399,195,521,221"/>
+<area shape="rect" id="node9" href="score_8c.html#a05f60c35ae862a429e026d4410326bd0" title="testYahtzee" alt="" coords="581,68,673,95"/>
+<area shape="rect" id="node10" href="score_8c.html#abb5b3478ba11cc275d9e53d024a3842a" title="testPetiteSuite" alt="" coords="573,119,681,145"/>
+<area shape="rect" id="node11" href="score_8c.html#a00fb7cc0b89113a887c8cba45a47910a" title="testGrandeSuite" alt="" coords="569,169,685,196"/>
+<area shape="rect" id="node12" href="score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388" title="testBrelan" alt="" coords="587,220,668,247"/>
+<area shape="rect" id="node13" href="score_8c.html#ae2a977f6be696efb8370167ae21268dd" title="testFullv1" alt="" coords="588,271,667,297"/>
+<area shape="rect" id="node14" href="score_8c.html#adc172179b41ffc44c1c39c50a4b922e1" title="testFullv2" alt="" coords="588,321,667,348"/>
+<area shape="rect" id="node17" href="mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076" title="tirage" alt="" coords="433,296,487,323"/>
 </map>
 </div>
 

@@ -1,0 +1,15 @@
+<map id="displayScore" name="displayScore">
+<area shape="rect" id="node2" href="$score_8c.html#a29ba6e6017af53e5247f75843148f2d1" title="displayTabScore" alt="" coords="152,81,271,108"/>
+<area shape="rect" id="node6" href="$score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="151,284,272,311"/>
+<area shape="rect" id="node3" href="$color_8c.html#a0df115437fbb77c0311e65300c65289e" title="green" alt="" coords="351,5,405,32"/>
+<area shape="rect" id="node4" href="$color_8c.html#a39abd40f68d03c40857be1e74407efb9" title="red" alt="" coords="358,56,398,83"/>
+<area shape="rect" id="node5" href="$color_8c.html#afe00396766eb6b8ca4674de4c5d3d949" title="resetColor" alt="" coords="337,107,419,133"/>
+<area shape="rect" id="node7" href="$score_8c.html#ae216d5ca602d234646713a4b42599138" title="Verifie si la figure Brelan est présente. " alt="" coords="337,157,419,184"/>
+<area shape="rect" id="node9" href="$score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b" title="testCarre" alt="" coords="340,208,416,235"/>
+<area shape="rect" id="node10" href="$score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1" title="Verifie si la figure Full type1 est présente (5des identique + 2des identiques) " alt="" coords="339,259,417,285"/>
+<area shape="rect" id="node11" href="$score_8c.html#a538c39d3fd42bf3276fb75bf980ba200" title="Verifie si la figure Full type2 est présente (3des identique + 4des identiques) " alt="" coords="339,309,417,336"/>
+<area shape="rect" id="node12" href="$score_8c.html#a35a57bf3af663b62c4333328a171bf52" title="Verifie si la figure GrandeSuite est présente. " alt="" coords="320,360,436,387"/>
+<area shape="rect" id="node13" href="$score_8c.html#a1c11471a13d62102c59ba9fb2952b50c" title="Verifie si la figure PetiteSuite est présente. " alt="" coords="324,411,432,437"/>
+<area shape="rect" id="node14" href="$score_8c.html#a78ec34acaa060220076ff1ea848fa5e8" title="Verifie si la figure Yahtzee est présente. " alt="" coords="332,461,424,488"/>
+<area shape="rect" id="node8" href="$score_8c.html#ada51d6f161dc3bd40cfdae9b18855b07" title="sommeScore" alt="" coords="484,183,583,209"/>
+</map>

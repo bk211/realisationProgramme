@@ -1,12 +1,14 @@
 var searchData=
 [
   ['tabscore',['tabScore',['../structPlayer.html#a7d5c0f37c78c868e4721cc8ceece92a6',1,'Player']]],
-  ['testbrelan',['testBrelan',['../score_8c.html#ab37e17a8d1ec2908a09f6a690ba25388',1,'score.c']]],
-  ['testcombinatoire',['testCombinatoire',['../score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f',1,'score.c']]],
-  ['testfullv1',['testFullv1',['../score_8c.html#ae2a977f6be696efb8370167ae21268dd',1,'score.c']]],
-  ['testfullv2',['testFullv2',['../score_8c.html#adc172179b41ffc44c1c39c50a4b922e1',1,'score.c']]],
-  ['testgrandesuite',['testGrandeSuite',['../score_8c.html#a00fb7cc0b89113a887c8cba45a47910a',1,'score.c']]],
-  ['testpetitesuite',['testPetiteSuite',['../score_8c.html#abb5b3478ba11cc275d9e53d024a3842a',1,'score.c']]],
-  ['testyahtzee',['testYahtzee',['../score_8c.html#a05f60c35ae862a429e026d4410326bd0',1,'score.c']]],
-  ['tirage',['tirage',['../mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076',1,'tirage(int max):&#160;mecanismeJeu.c'],['../proto_8c.html#aedc55fd9756d84e32e3f03e04f964076',1,'tirage(int max):&#160;proto.c']]]
+  ['tabscorefinal',['tabScoreFinal',['../structPlayer.html#a7c377df37ea43f041207fc4de5ac0a93',1,'Player']]],
+  ['testbrelan',['testBrelan',['../score_8c.html#ae216d5ca602d234646713a4b42599138',1,'testBrelan(int *tab):&#160;score.c'],['../score_8h.html#ae216d5ca602d234646713a4b42599138',1,'testBrelan(int *tab):&#160;score.c']]],
+  ['testcarre',['testCarre',['../score_8c.html#a71287ee22e8bcb7fcc5f86ed8dd9270b',1,'testCarre(int *tab):&#160;score.c'],['../score_8h.html#a71287ee22e8bcb7fcc5f86ed8dd9270b',1,'testCarre(int *tab):&#160;score.c']]],
+  ['testcombinatoire',['testCombinatoire',['../score_8c.html#a6428b1a4b981622ea3a67b168f1c3c9f',1,'testCombinatoire(int *tab_score, int *tab_dee):&#160;score.c'],['../score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f',1,'testCombinatoire(int *tab_score, int *tab_dee):&#160;score.c']]],
+  ['testfullv1',['testFullv1',['../score_8c.html#ad7f6bac52baf36c250c6a75efa0d7ee1',1,'testFullv1(int *tab):&#160;score.c'],['../score_8h.html#ad7f6bac52baf36c250c6a75efa0d7ee1',1,'testFullv1(int *tab):&#160;score.c']]],
+  ['testfullv2',['testFullv2',['../score_8c.html#a538c39d3fd42bf3276fb75bf980ba200',1,'testFullv2(int *tab):&#160;score.c'],['../score_8h.html#a538c39d3fd42bf3276fb75bf980ba200',1,'testFullv2(int *tab):&#160;score.c']]],
+  ['testgrandesuite',['testGrandeSuite',['../score_8c.html#a35a57bf3af663b62c4333328a171bf52',1,'testGrandeSuite(int *tab):&#160;score.c'],['../score_8h.html#a35a57bf3af663b62c4333328a171bf52',1,'testGrandeSuite(int *tab):&#160;score.c']]],
+  ['testpetitesuite',['testPetiteSuite',['../score_8c.html#a1c11471a13d62102c59ba9fb2952b50c',1,'testPetiteSuite(int *tab):&#160;score.c'],['../score_8h.html#a1c11471a13d62102c59ba9fb2952b50c',1,'testPetiteSuite(int *tab):&#160;score.c']]],
+  ['testyahtzee',['testYahtzee',['../score_8c.html#a78ec34acaa060220076ff1ea848fa5e8',1,'testYahtzee(int *tab):&#160;score.c'],['../score_8h.html#a78ec34acaa060220076ff1ea848fa5e8',1,'testYahtzee(int *tab):&#160;score.c']]],
+  ['tirage',['tirage',['../mecanismeJeu_8c.html#aedc55fd9756d84e32e3f03e04f964076',1,'tirage(int max):&#160;mecanismeJeu.c'],['../mecanismeJeu_8h.html#aedc55fd9756d84e32e3f03e04f964076',1,'tirage(int max):&#160;mecanismeJeu.c']]]
 ];

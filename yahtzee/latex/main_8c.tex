@@ -1,28 +1,46 @@
 \hypertarget{main_8c}{}\section{main.\+c File Reference}
 \label{main_8c}\index{main.\+c@{main.\+c}}
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}mecanisme\+Jeu.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
-Include dependency graph for main.\+c\+:\nopagebreak
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{main_8c__incl}
+\includegraphics[width=273pt]{main_8c__incl}
 \end{center}
 \end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a4e9afb5e609dc54a28608e950d481fb1}{M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER}~2
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
 \end{DoxyCompactItemize}
 
 
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a4e9afb5e609dc54a28608e950d481fb1}\label{main_8c_a4e9afb5e609dc54a28608e950d481fb1}} 
+\index{main.\+c@{main.\+c}!M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER@{M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER}}
+\index{M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER@{M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER}{MAX\_PLAYER}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+P\+L\+A\+Y\+ER~2}
+
+
+
+Definition at line 3 of file main.\+c.
+
+
+
 \subsection{Function Documentation}
-\mbox{\Hypertarget{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}\label{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{main.\+c@{main.\+c}!main@{main}}
 \index{main@{main}!main.\+c@{main.\+c}}
 \subsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Boucle main qui lance le jeu
 
@@ -30,50 +48,73 @@ Definition at line 5 of file main.\+c.
 
 
 
-References compare\+Score(), complete\+Turn(), free\+Player(), init\+Player(), and Player\+::tab\+Score.
+References compare\+Score(), complete\+Turn(), Player\+::dices, Player\+::dices\+Allowed, free\+Player(), M\+A\+X\+\_\+\+C\+O\+M\+B\+I\+N\+A\+T\+O\+I\+RE, Player\+::nbr\+Roll\+Remain, Player\+::score\+Final, Player\+::tab\+Score, and Player\+::tab\+Score\+Final.
 
 
 \begin{DoxyCode}
 6 \{
-10     \hyperlink{structPlayer}{Player} player1;
-11     \hyperlink{structPlayer}{Player} player2;
-12     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player1);
-13     \hyperlink{mecanismeJeu_8c_a666fd7e17272b378e2cc99b811be39a5}{initPlayer}(&player2);
-14   
-15     \textcolor{keywordtype}{int} nombreTour=15;
-16 
-17     \textcolor{comment}{//int nombreJoueur;}
-18     \textcolor{comment}{//printf("Entrez le nombre de joueur\(\backslash\)n");}
-19     \textcolor{comment}{//scanf("%d",&nombreJoueur); }
-20 \textcolor{comment}{// en option, pour le moment le developpement se limite a 2 joueur}
-21 \textcolor{comment}{//  printf("Entrez le nombre de tour\(\backslash\)n");}
-22 \textcolor{comment}{//  scanf("%d",&nombreTour); }
-23 
-24     \textcolor{keywordflow}{while} (nombreTour > 0)\{
-25         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 1 de jouer ===============!\(\backslash\)n"});
-26         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player1);
-27         printf(\textcolor{stringliteral}{"=============== C'est au Joueur 2 de jouer ===============!\(\backslash\)n"});
-28         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(&player2);
-29 
-30 \textcolor{comment}{//      comparerScore(joueur1,joueur2);}
-31         \textcolor{comment}{//compare le score des 2, donne le gagnant du tour}
-32         \textcolor{comment}{//>> incremente score gagant}
-33 
-34         --nombreTour;
-35     \}
-36 
-37 \textcolor{comment}{//  fin des tours }
-38     \textcolor{comment}{//>> felicite le gagant en affichant le score des 2}
-39     \hyperlink{score_8c_aeeb20f2b14b47a496fadd754abda5317}{compareScore}(player1.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6],player2.\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[6]);
-40     \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{freePlayer}(&player1);
-41     \textcolor{comment}{//freePlayer(&player2);}
-42     \textcolor{keywordflow}{return} 0;
-43 \}
+10     \hyperlink{structPlayer}{Player} *player1;
+11     player1 = malloc(\textcolor{keyword}{sizeof} (\hyperlink{structPlayer}{Player}));
+12     player1->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*7);
+13     player1->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*7);
+14     player1->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 6 ;
+15     player1->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})* \hyperlink{mecanismeJeu_8h_ac4569f5d2f9012ccdd6e3d25e9dbf7c5}{MAX\_COMBINATOIRE});
+16     player1->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})* \hyperlink{mecanismeJeu_8h_ac4569f5d2f9012ccdd6e3d25e9dbf7c5}{MAX\_COMBINATOIRE});
+17     assert(player1->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+18     assert(player1->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed});
+19     assert(player1->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore});
+20     assert(player1->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal});
+21 
+22     \hyperlink{structPlayer}{Player} *player2;
+23     player2 = malloc(\textcolor{keyword}{sizeof} (\hyperlink{structPlayer}{Player}));
+24     player2->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*7);
+25     player2->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})*7);
+26     player2->\hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbrRollRemain} = 6 ;
+27     player2->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*)* \hyperlink{mecanismeJeu_8h_ac4569f5d2f9012ccdd6e3d25e9dbf7c5}{MAX\_COMBINATOIRE});
+28     player2->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal} = malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*)* \hyperlink{mecanismeJeu_8h_ac4569f5d2f9012ccdd6e3d25e9dbf7c5}{MAX\_COMBINATOIRE});
+29     assert(player2->\hyperlink{structPlayer_a676bd9687aaa50806f419c4ae170bcb2}{dices});
+30     assert(player2->\hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dicesAllowed});
+31     assert(player2->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore});
+32     assert(player2->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal});
+33         
+34     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{mecanismeJeu_8h_ac4569f5d2f9012ccdd6e3d25e9dbf7c5}{MAX\_COMBINATOIRE}; ++i)
+35     \{
+36         player1->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[i]= 0;
+37         player1->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal}[i]=-1;
+38         player2->\hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tabScore}[i]= 0;
+39         player2->\hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tabScoreFinal}[i]=-1;
+40     \}
+41     
+42     \textcolor{keywordtype}{int} nombreTour=12;
+43 
+44 
+45 
+46     \textcolor{keywordflow}{while} (nombreTour > 0)\{
+47         printf(\textcolor{stringliteral}{"=============== C'est au Joueur %d de jouer ===============!\(\backslash\)n"}, 1);
+48         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(player1);
+49         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});
+50         printf(\textcolor{stringliteral}{"=============== C'est au Joueur %d de jouer ===============!\(\backslash\)n"}, 2);
+51         
+52         \hyperlink{mecanismeJeu_8c_a9ccbcda936f74ce7cb8471cc41b8415e}{completeTurn}(player2);
+53         
+54         --nombreTour;
+55     \}
+56     \hyperlink{score_8c_aeeb20f2b14b47a496fadd754abda5317}{compareScore}(player1->\hyperlink{structPlayer_a44cb6ebf8f95f9bd12f5985c9e5dfd99}{scoreFinal},player2->\hyperlink{structPlayer_a44cb6ebf8f95f9bd12f5985c9e5dfd99}{scoreFinal});
+57 
+58 \textcolor{comment}{//  fin des tours }
+59     \textcolor{comment}{//>> felicite le gagant en affichant son score;}
+60     
+61     \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{freePlayer}(player1);
+62     \hyperlink{mecanismeJeu_8c_afb996747437467dc9e569a34c469d31b}{freePlayer}(player2);
+63 
+64     \textcolor{keywordflow}{return} 0;
+65 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=234pt]{main_8c_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph}
+\includegraphics[width=350pt]{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
 \end{center}
 \end{figure}

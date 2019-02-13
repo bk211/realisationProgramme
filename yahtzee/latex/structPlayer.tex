@@ -13,18 +13,18 @@ int $\ast$ \hyperlink{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}{dices\+All
 \item 
 int \hyperlink{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}{nbr\+Roll\+Remain}
 \item 
-int \hyperlink{structPlayer_a05e05f3a23de78da7ec032ec2bcf8c6c}{id}
-\item 
-int \hyperlink{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}{score}
+int \hyperlink{structPlayer_a44cb6ebf8f95f9bd12f5985c9e5dfd99}{score\+Final}
 \item 
 int $\ast$ \hyperlink{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}{tab\+Score}
+\item 
+int $\ast$ \hyperlink{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}{tab\+Score\+Final}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 5 of file mecanisme\+Jeu.\+h.
+Definition at line 9 of file mecanisme\+Jeu.\+h.
 
 
 
@@ -37,11 +37,11 @@ Definition at line 5 of file mecanisme\+Jeu.\+h.
 
 
 
-Definition at line 6 of file mecanisme\+Jeu.\+h.
+Definition at line 10 of file mecanisme\+Jeu.\+h.
 
 
 
-Referenced by ask\+Dices(), begin\+Turn(), complete\+Turn(), display\+Dices(), free\+Player(), init\+Player(), main(), refresh\+Dices(), and roll\+Dices().
+Referenced by ask\+Dices(), complete\+Turn(), display\+Dices(), free\+Player(), main(), refresh\+Dices(), and roll\+Dices().
 
 \mbox{\Hypertarget{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}\label{structPlayer_adb33524b9364f3e0bcfc5bd098cdaaf0}} 
 \index{Player@{Player}!dices\+Allowed@{dices\+Allowed}}
@@ -51,21 +51,11 @@ Referenced by ask\+Dices(), begin\+Turn(), complete\+Turn(), display\+Dices(), f
 
 
 
-Definition at line 7 of file mecanisme\+Jeu.\+h.
+Definition at line 11 of file mecanisme\+Jeu.\+h.
 
 
 
-Referenced by begin\+Turn(), free\+Player(), init\+Player(), refresh\+Dices(), and roll\+Dices().
-
-\mbox{\Hypertarget{structPlayer_a05e05f3a23de78da7ec032ec2bcf8c6c}\label{structPlayer_a05e05f3a23de78da7ec032ec2bcf8c6c}} 
-\index{Player@{Player}!id@{id}}
-\index{id@{id}!Player@{Player}}
-\subsubsection{\texorpdfstring{id}{id}}
-{\footnotesize\ttfamily int Player\+::id}
-
-
-
-Definition at line 9 of file mecanisme\+Jeu.\+h.
+Referenced by ask\+Dices(), free\+Player(), main(), refresh\+Dices(), and roll\+Dices().
 
 \mbox{\Hypertarget{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}\label{structPlayer_ae4c871b61a2af583a8b5975d736bea5d}} 
 \index{Player@{Player}!nbr\+Roll\+Remain@{nbr\+Roll\+Remain}}
@@ -75,25 +65,25 @@ Definition at line 9 of file mecanisme\+Jeu.\+h.
 
 
 
-Definition at line 8 of file mecanisme\+Jeu.\+h.
+Definition at line 12 of file mecanisme\+Jeu.\+h.
 
 
 
-Referenced by begin\+Turn(), complete\+Turn(), and init\+Player().
+Referenced by complete\+Turn(), main(), and roll\+Dices().
 
-\mbox{\Hypertarget{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}\label{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}} 
-\index{Player@{Player}!score@{score}}
-\index{score@{score}!Player@{Player}}
-\subsubsection{\texorpdfstring{score}{score}}
-{\footnotesize\ttfamily int Player\+::score}
-
-
-
-Definition at line 10 of file mecanisme\+Jeu.\+h.
+\mbox{\Hypertarget{structPlayer_a44cb6ebf8f95f9bd12f5985c9e5dfd99}\label{structPlayer_a44cb6ebf8f95f9bd12f5985c9e5dfd99}} 
+\index{Player@{Player}!score\+Final@{score\+Final}}
+\index{score\+Final@{score\+Final}!Player@{Player}}
+\subsubsection{\texorpdfstring{score\+Final}{scoreFinal}}
+{\footnotesize\ttfamily int Player\+::score\+Final}
 
 
 
-Referenced by init\+Player().
+Definition at line 13 of file mecanisme\+Jeu.\+h.
+
+
+
+Referenced by main().
 
 \mbox{\Hypertarget{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}\label{structPlayer_a7d5c0f37c78c868e4721cc8ceece92a6}} 
 \index{Player@{Player}!tab\+Score@{tab\+Score}}
@@ -103,11 +93,25 @@ Referenced by init\+Player().
 
 
 
-Definition at line 11 of file mecanisme\+Jeu.\+h.
+Definition at line 14 of file mecanisme\+Jeu.\+h.
 
 
 
-Referenced by complete\+Turn(), free\+Player(), init\+Player(), and main().
+Referenced by complete\+Turn(), free\+Player(), and main().
+
+\mbox{\Hypertarget{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}\label{structPlayer_a7c377df37ea43f041207fc4de5ac0a93}} 
+\index{Player@{Player}!tab\+Score\+Final@{tab\+Score\+Final}}
+\index{tab\+Score\+Final@{tab\+Score\+Final}!Player@{Player}}
+\subsubsection{\texorpdfstring{tab\+Score\+Final}{tabScoreFinal}}
+{\footnotesize\ttfamily int$\ast$ Player\+::tab\+Score\+Final}
+
+
+
+Definition at line 15 of file mecanisme\+Jeu.\+h.
+
+
+
+Referenced by complete\+Turn(), free\+Player(), and main().
 
 
 
