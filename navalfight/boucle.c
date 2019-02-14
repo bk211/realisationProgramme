@@ -1,3 +1,10 @@
+/**
+ * \file      boucle.c
+ * \brief     Correspond à là boucle principale du jeu.
+ *
+ */
+
+
 #include "navalfight.h"
 
 /**
