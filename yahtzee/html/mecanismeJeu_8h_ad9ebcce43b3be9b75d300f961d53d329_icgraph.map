@@ -1,5 +1,0 @@
-<map id="displayDices" name="displayDices">
-<area shape="rect" id="node2" href="$mecanismeJeu_8h.html#a9e4530f74b630f0cfcc27b8bddb34ce8" title="relance les dées " alt="" coords="151,5,228,32"/>
-<area shape="rect" id="node3" href="$mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="276,31,377,57"/>
-<area shape="rect" id="node4" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="425,31,476,57"/>
-</map>

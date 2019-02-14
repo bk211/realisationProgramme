@@ -1,6 +1,0 @@
-<map id="testCarre" name="testCarre">
-<area shape="rect" id="node2" href="$score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="129,5,251,32"/>
-<area shape="rect" id="node3" href="$score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="299,5,396,32"/>
-<area shape="rect" id="node4" href="$mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="444,5,545,32"/>
-<area shape="rect" id="node5" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="593,5,644,32"/>
-</map>
