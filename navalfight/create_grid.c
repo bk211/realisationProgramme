@@ -1,3 +1,10 @@
+/**
+ * \file      create_grid.c
+ * \brief     Crée la grille de la bataille navale.
+ *
+ */
+
+
 #include "navalfight.h"
 
 /**
