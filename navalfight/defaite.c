@@ -1,3 +1,9 @@
+/**
+ * \file      defaite.c
+ * \brief     Vérifie si le joueur à perdu.
+ *
+ */
+
 #include "navalfight.h"
 /**
  * \brief       Test s'il reste au moin un bateau non coulé
