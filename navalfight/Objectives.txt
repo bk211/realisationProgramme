@@ -1,0 +1,4 @@
+1 - agrandir la grille a 25* 25
+2 - mettre les obstacles avant de generer les bateaux
+3 - extendre le nb de jouer a 3, l'attaque se fait en boucle ds ce sens 
+	A >> B >> C >> A  
