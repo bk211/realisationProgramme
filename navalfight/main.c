@@ -1,3 +1,9 @@
+/**
+ * \file      main.c
+ * \brief     Le main du programme.
+ *
+ */
+
 #include "navalfight.h"
 /**
  * \brief      Le main du programme
