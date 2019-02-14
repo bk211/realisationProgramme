@@ -1,0 +1,4 @@
+<map id="ft_boat_1_3" name="ft_boat_1_3">
+<area shape="rect" id="node2" href="$create__grid_8c.html#a511ac0e8a778edf1199b8347dd5de11a" title="Test s&#39;il y a un bateau. " alt="" coords="144,5,235,32"/>
+<area shape="rect" id="node3" href="$create__grid_8c.html#a57c56b39d4f1b08bbea701fb78cded57" title="Vérifie si on reste bien dans la grille. " alt="" coords="144,56,235,83"/>
+</map>

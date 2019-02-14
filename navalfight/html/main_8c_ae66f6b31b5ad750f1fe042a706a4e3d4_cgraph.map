@@ -1,0 +1,33 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$boucle_8c.html#aa133b3a5752e0f31d236ecd5fd9b02b0" title="Boucle principal du jeu. " alt="" coords="122,265,182,291"/>
+<area shape="rect" id="node21" href="$create__grid_8c.html#ac16a8f7ee082d16ed2ef3b6b44377e5a" title="Fonction qui crée la grille. " alt="" coords="104,398,200,425"/>
+<area shape="rect" id="node3" href="$afficha_8c.html#a1eeb5989ccea2f6e0c5f7d47a1ad1f72" title="Fonction qui affiche le tableau. " alt="" coords="257,189,322,215"/>
+<area shape="rect" id="node4" href="$boucle_8c.html#a671b4c4829e8d9d19dfcd73780499c56" title="Phase d&#39;attaque. " alt="" coords="255,239,324,266"/>
+<area shape="rect" id="node20" href="$boucle_8c.html#ab56fa477cd369727fe25696226b21492" title="Saisis les noms des joueurs. " alt="" coords="248,290,331,317"/>
+<area shape="rect" id="node5" href="$boucle_8c.html#a0effa34499dff942b960719c7942af80" title="Vérifie les positions attaqué " alt="" coords="409,189,467,215"/>
+<area shape="rect" id="node19" href="$boucle_8c.html#a0704e8649fdc8746c6835545d3cf1b64" title="Fonction qui vide un buffer. " alt="" coords="397,239,479,266"/>
+<area shape="rect" id="node6" href="$boucle_8c.html#abd3feb4035fc2534fed95d914968cfdf" title="Vérifie si les bateaux sont touchés. " alt="" coords="563,189,618,215"/>
+<area shape="rect" id="node7" href="$navalfight_8h.html#a6a150142edc759701092fb021f17f6f1" title="Appel de toute les fonctions coulées . " alt="" coords="715,109,772,135"/>
+<area shape="rect" id="node12" href="$boucle_8c.html#a72edc3a616c70410cc1167a423a602c2" title="Termine la partie. " alt="" coords="702,163,785,190"/>
+<area shape="rect" id="node13" href="$defaite_8c.html#a9eaef87c7c2346d616fc7d21c80a8274" title="Test s&#39;il reste au moin un bateau non coulé " alt="" coords="684,214,803,241"/>
+<area shape="rect" id="node14" href="$navalfight_8h.html#ad2cd88586557de2599a6d11bbd4e44de" title="Appel toute les fonctions put_couler . " alt="" coords="702,277,785,303"/>
+<area shape="rect" id="node8" href="$test__couler_8c.html#a99d06545e690f5bd02ac03208846bbd0" title="Verifie s&#39;il y a un bateau coulé coté droit. " alt="" coords="863,58,959,85"/>
+<area shape="rect" id="node9" href="$test__couler_8c.html#a68b58fb72daca2068430cbc3fc01d0fe" title="Verifie s&#39;il y a un bateau coulé coté bas . " alt="" coords="1033,109,1118,135"/>
+<area shape="rect" id="node10" href="$test__couler_8c.html#a1368ca8f0c5781e50d43b307378ca39c" title="Verifie s&#39;il y a un bateau coulé coté gauche . " alt="" coords="1191,109,1297,135"/>
+<area shape="rect" id="node11" href="$test__couler_8c.html#ae97b18cdf6e989d5bcc603df89175beb" title="Verifie s&#39;il y a un bateau coulé coté haut . " alt="" coords="1370,46,1459,73"/>
+<area shape="rect" id="node15" href="$put__couler_8c.html#a7a7779fa119239f4736dd15872f5fcf5" title="Applique si coulé coté droit . " alt="" coords="851,277,972,303"/>
+<area shape="rect" id="node16" href="$put__couler_8c.html#a956f0dee8280449fcb85b4691e450f4e" title="Applique si coulé coté bas . " alt="" coords="1020,335,1131,362"/>
+<area shape="rect" id="node17" href="$put__couler_8c.html#ab9e2052682771de1d470617045aa89d5" title="Applique si coulé coté gauche . " alt="" coords="1179,335,1309,362"/>
+<area shape="rect" id="node18" href="$put__couler_8c.html#a401206327fd8bae46350cb45d493b2ca" title="Applique si coulé coté haut . " alt="" coords="1357,273,1472,299"/>
+<area shape="rect" id="node22" href="$create__grid_8c.html#a4ff4eed59df6782b58919f029f646e5e" title="Fonction qui remplie la grille. " alt="" coords="250,442,329,469"/>
+<area shape="rect" id="node23" href="$create__grid_8c.html#ae62f73efae8236835c41b1000015d670" title="Place un bateau de dimension 2. " alt="" coords="393,391,483,418"/>
+<area shape="rect" id="node26" href="$create__grid_8c.html#aabf17b682397f24229951e665dab2db1" title="Place un bateau de dimension 3. " alt="" coords="393,442,483,469"/>
+<area shape="rect" id="node27" href="$create__grid_8c.html#a73bc57bde041aec03774b608867a7ee7" title="Place un bateau de dimension 4. " alt="" coords="393,493,483,519"/>
+<area shape="rect" id="node28" href="$create__grid_8c.html#aae44906f8e7ff316ae203650969ec373" title="Place un bateau de dimension 6. " alt="" coords="379,543,497,570"/>
+<area shape="rect" id="node29" href="$create__grid_8c.html#a8063abbc7051e87edca45eb6f2d182f2" title="Place un bateau de dimension 5. " alt="" coords="393,594,483,621"/>
+<area shape="rect" id="node30" href="$create__grid_8c.html#a7ba53d46105af063a6d6db484dad01b2" title="Place un bateau de dimension 6. " alt="" coords="393,645,483,671"/>
+<area shape="rect" id="node31" href="$create__grid_8c.html#a5b433f3adaacb875a419aa87c588ad2f" title="Place un bateau de dimension 4. " alt="" coords="393,290,483,317"/>
+<area shape="rect" id="node32" href="$create__grid_8c.html#ae622f3dae5293a1c1e1382985b294507" title="Place un bateau de dimension 8. " alt="" coords="393,341,483,367"/>
+<area shape="rect" id="node24" href="$create__grid_8c.html#a511ac0e8a778edf1199b8347dd5de11a" title="Test s&#39;il y a un bateau. " alt="" coords="545,493,636,519"/>
+<area shape="rect" id="node25" href="$create__grid_8c.html#a57c56b39d4f1b08bbea701fb78cded57" title="Vérifie si on reste bien dans la grille. " alt="" coords="545,442,636,469"/>
+</map>

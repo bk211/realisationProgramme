@@ -1,0 +1,5 @@
+<map id="couler_haut" name="couler_haut">
+<area shape="rect" id="node2" href="$test__couler_8c.html#a99d06545e690f5bd02ac03208846bbd0" title="Verifie s&#39;il y a un bateau coulé coté droit. " alt="" coords="143,5,239,32"/>
+<area shape="rect" id="node4" href="$test__couler_8c.html#a1368ca8f0c5781e50d43b307378ca39c" title="Verifie s&#39;il y a un bateau coulé coté gauche . " alt="" coords="420,37,527,64"/>
+<area shape="rect" id="node3" href="$test__couler_8c.html#a68b58fb72daca2068430cbc3fc01d0fe" title="Verifie s&#39;il y a un bateau coulé coté bas . " alt="" coords="287,5,372,32"/>
+</map>
