@@ -1,4 +1,12 @@
 #include "navalfight.h"
+
+/**
+ * \brief      Saisis les noms des joueurs
+ * \details   Crée un tableau via malloc pour y saisir le nom des joueurs .
+ *              
+ * \return    Renvoie un char * , qui contient le nom du joueur .
+ */
+
 char * nomjoueur(){
   char *chaine, *temporaire;
   chaine = malloc(20* sizeof(char));
@@ -12,16 +20,42 @@ char * nomjoueur(){
   printf("Vous avez choisi %s\n", chaine);
   return chaine;
 }
+
+/**
+ * \brief      Fonction qui vide un buffer
+ * \details    Vide le buffer qui comporte la ligne et colonne joué pour les réutiliser
+               au prochain tour de boucle.
+ */
 void viderbuffer(void){  
   int c = 0;
   while(c != '\n' && c != EOF){
     c = getchar();
   }
 }
+
+
+/**
+ * \brief       Termine la partie.
+ * \details    Affiche Gagné et termine le programme .
+ *                  des coordonnées des points. (cf #Point)
+ *
+ */
+
 void findepartie(void) {
   printf("Gagne !\n");
   exit(0);
 }
+
+/**
+ * \brief      Vérifie si les bateaux sont touchés.
+ * \details   Si un bateau est touché remplace le '0' par '+' et affiche Gagné sinon Raté et affiche la position par '*'.
+ *            Puis appel les fonction couler et put_couler pour vérifier si le bateau est coulé.
+ *            Verifie ensuite si la partie est gagné .
+ * \param    **grid         La grille.
+ * \param    ligne          Le nombre de ligne de la grille .
+ * \param    colonne        Le nombre de colonne de la grille .
+ */
+
 void insert(char **grid, int ligne  , int colonne){
   int victoire;
   if (grid[ligne][colonne]== 'O'){
@@ -44,6 +78,17 @@ void insert(char **grid, int ligne  , int colonne){
     findepartie();
   }
 }
+
+
+/**
+ * \brief     Vérifie les positions attaqué
+ * \details   Vérifie si les positions attaqué avec la fonction insert, selon les cas 'Raté', 'Touché' ou déjà attaqué.
+ * \param    **grid         La grille.
+ * \param    ligne          Le nombre de ligne de la grille .
+ * \param    colonne        Le nombre de colonne de la grille .
+ * \return   Renvoie un entier, 0 si Touché un bateau ou Raté, sinon 1 .
+ */
+
 int verifie (char **grid, int ligne  , int colonne){
   if(grid[ligne][colonne]== '.'){
     insert(grid, ligne, colonne);
@@ -61,6 +106,15 @@ int verifie (char **grid, int ligne  , int colonne){
   }
   return 1;
 }
+
+/**
+ * \brief      Phase d'attaque
+ * \details    Demande d'entré la ligne et colonne a laquelle le joueur souhaite attaquer.
+ *             Puis appel la fonction verifie, qui s'occupe de voir s'il a touché un bateau.
+ * \param    **grid  Correspond à la grille.
+ * \return    Renvoie un entier qui vaut 0 si le joueur à touché un bateau ou raté, sinon 1.
+ */
+
 int attaquer(char **grid) {
   char ligne;
   int colonne;
@@ -105,6 +159,15 @@ int attaquer(char **grid) {
   }
   return 1;
 }
+
+/**
+ * \brief      Boucle principal du jeu.
+ * \details   C'est la boucle principal du jeu, qui s'occupe d'appeler les différents fonctions .
+ * \param    **grid1        Grille du joueur 1.
+ * \param    **grid2        Grille du joueur 2.
+ */
+
+
 void boucle(char **grid1, char **grid2) {
   int compteurprincipale, compteurjoueurun, compteurjoueurdeux;
   compteurprincipale = 0;
