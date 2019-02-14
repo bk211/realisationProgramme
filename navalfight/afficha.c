@@ -1,3 +1,11 @@
+/**
+ * \file      afficha.c
+ * \brief     Affiche la grille de la bataille navale.
+ *
+ * \details    Cette classe surcharge les accesseurs standards du module_voiture pour
+ *                  convenir aux spécificités des différents modèles possibles.
+ */
+
 #include"navalfight.h"
 
 /**
