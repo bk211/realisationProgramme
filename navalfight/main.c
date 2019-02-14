@@ -1,4 +1,11 @@
 #include "navalfight.h"
+/**
+ * \brief      Le main du programme
+ * \details    Créer les grilles et appel la boucle princpale
+ *              
+ * \return   Renvoie 0, si tout ce passe bien.
+ */
+
 int main() {
 	srand(time(NULL));
 	char ** grid1 = cree_tableau();
