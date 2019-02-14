@@ -1,6 +1,0 @@
-<map id="red" name="red">
-<area shape="rect" id="node2" href="$score_8h.html#a29ba6e6017af53e5247f75843148f2d1" title="displayTabScore" alt="" coords="93,5,212,32"/>
-<area shape="rect" id="node3" href="$mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="405,5,507,32"/>
-<area shape="rect" id="node5" href="$score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="260,31,357,57"/>
-<area shape="rect" id="node4" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="555,5,605,32"/>
-</map>

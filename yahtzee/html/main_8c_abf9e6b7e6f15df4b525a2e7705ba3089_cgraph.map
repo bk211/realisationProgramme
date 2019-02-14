@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node2" href="$score_8c.html#aeeb20f2b14b47a496fadd754abda5317" title="compareScore" alt="" coords="104,5,211,32"/>
-<area shape="rect" id="node3" href="$mecanismeJeu_8c.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="completeTurn" alt="" coords="107,56,208,83"/>
-<area shape="rect" id="node4" href="$mecanismeJeu_8c.html#afb996747437467dc9e569a34c469d31b" title="freePlayer" alt="" coords="117,107,198,133"/>
-<area shape="rect" id="node5" href="$mecanismeJeu_8c.html#a666fd7e17272b378e2cc99b811be39a5" title="initPlayer" alt="" coords="119,157,195,184"/>
-</map>

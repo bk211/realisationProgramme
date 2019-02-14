@@ -1,8 +1,0 @@
-<map id="sommeScore" name="sommeScore">
-<area shape="rect" id="node2" href="$score_8h.html#ae216d5ca602d234646713a4b42599138" title="Verifie si la figure Brelan est présente. " alt="" coords="152,5,233,32"/>
-<area shape="rect" id="node7" href="$score_8h.html#a71287ee22e8bcb7fcc5f86ed8dd9270b" title="testCarre" alt="" coords="155,56,231,83"/>
-<area shape="rect" id="node3" href="$score_8h.html#a6428b1a4b981622ea3a67b168f1c3c9f" title="Appel a tout les fonctions de verification de figure. " alt="" coords="281,31,403,57"/>
-<area shape="rect" id="node4" href="$score_8h.html#a8eab6bc89b1828c4f86d313ad10ecda9" title="Affiche les scores. " alt="" coords="451,31,548,57"/>
-<area shape="rect" id="node5" href="$mecanismeJeu_8h.html#a9ccbcda936f74ce7cb8471cc41b8415e" title="lance une partie de jeu. " alt="" coords="596,31,697,57"/>
-<area shape="rect" id="node6" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="745,31,796,57"/>
-</map>
