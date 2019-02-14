@@ -1,3 +1,9 @@
+/**
+ * \file      put_couler.c
+ * \brief     Se charge d'appliquer quand un bateau est coulé.
+ *
+ */
+
 #include"navalfight.h"
 
 /**
