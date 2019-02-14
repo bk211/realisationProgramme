@@ -1,3 +1,9 @@
+/**
+ * \file      test_couler.c
+ * \brief     Verifie si les bateaux sont coulés.
+ *
+ */
+
 #include"navalfight.h"
 
 /**
