@@ -132,11 +132,11 @@ int attaquer(char **grid) {
   while (conditionligne == 1) {
     printf("Choississez la ligne (lettre minuscule):\n");
     scanf("%c", &ligne);
-    if (ligne >= 97 && ligne <= 113) {
+    if (ligne >= 97 && ligne <= 116) {
       ligne -= 97;
       conditionligne = 0;
     } else {
-      printf("Veuillez saisir une lettre minuscule compris entre a et q\n");
+      printf("Veuillez saisir une lettre minuscule compris entre a et t\n");
     }
     viderbuffer();
   }
@@ -144,16 +144,16 @@ int attaquer(char **grid) {
   while (conditioncolonne == 1) {
     printf("Choississez la colonne (nombre):\n");
     scanf("%d", &colonne);
-    if (colonne >= 0 && colonne <= 16) {
+    if (colonne >= 0 && colonne <= 19) {
       conditioncolonne = 0;
     } else {
-      printf("Veuillez saisir un nombre compris entre 0 et 16\n");
+      printf("Veuillez saisir un nombre compris entre 0 et 19\n");
     }
     viderbuffer();
   }
   conditioncolonne = 1;
-  for (i = 0; i < 17; i++) {
-    for (j = 0; j < 17; j++) {
+  for (i = 0; i < 20; i++) {
+    for (j = 0; j < 20; j++) {
       if (i == ligne && j == colonne) {
         casevalide = verifie(grid, ligne, colonne);
 	if (casevalide == 0) {
