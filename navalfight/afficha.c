@@ -15,7 +15,8 @@
 void afficher(char** grille){
   int ligne, colonne;
   char lettre = 'A';
-  
+  system("clear");
+  system("clear");
   for(colonne = 0 ; colonne <= 19 ; ++colonne)
     if(colonne < 10)
       printf("  %d  ",colonne);
