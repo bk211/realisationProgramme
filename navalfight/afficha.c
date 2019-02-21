@@ -4,7 +4,7 @@
  *
  */
 
-#include"navalfight.h"
+#include"afficha.h"
 
 /**
  * \brief      Fonction qui affiche le tableau

@@ -5,7 +5,7 @@
  */
 
 
-#include "navalfight.h"
+#include "boucle.h"
 
 /**
  * \brief      Saisis les noms des joueurs

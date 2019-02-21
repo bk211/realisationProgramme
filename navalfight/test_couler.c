@@ -4,7 +4,7 @@
  *
  */
 
-#include"navalfight.h"
+#include"test_couler.h"
 
 /**
  * \brief     Verifie s'il y a un bateau coulé coté droit

@@ -4,7 +4,7 @@
  *
  */
 
-#include"navalfight.h"
+#include"put_couler.h"
 
 /**
  * \brief     Applique si coulé coté droit .
