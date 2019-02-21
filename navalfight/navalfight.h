@@ -9,16 +9,7 @@
 #include <time.h>
 #include <string.h>
 #include <unistd.h>
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-=======
 #define Dim 20
 int ft_test_born(int indice_col,int indice_line);
 int ft_test_boat(char **grid, int indice_col, int indice_line);
