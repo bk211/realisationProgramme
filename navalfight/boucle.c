@@ -185,10 +185,12 @@ void boucle(char **grid1, char **grid2, char ** grid3) {
   char *joueur3 = nomjoueur();
   
   while(compteurprincipale == 0) {  
-   
+    
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
     
     while(compteurjoueurun == 0) {  
+      system("clear");
+    system("clear");
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur1);
       afficher(grid1);
       if (attaquer(grid2) == 0) {
@@ -201,7 +203,9 @@ void boucle(char **grid1, char **grid2, char ** grid3) {
     compteurjoueurun = 0;
     
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
-    while(compteurjoueurdeux == 0) {  
+    while(compteurjoueurdeux == 0) {
+      system("clear");
+    system("clear");
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur2);
       afficher(grid2);
       if (attaquer(grid3) == 0) {
@@ -213,7 +217,9 @@ void boucle(char **grid1, char **grid2, char ** grid3) {
     compteurjoueurdeux = 0;
 
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
-    while(compteurjoueurtrois == 0) {  
+    while(compteurjoueurtrois == 0) { 
+      system("clear");
+    system("clear"); 
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur3);
       afficher(grid3);
       if (attaquer(grid1) == 0) {
