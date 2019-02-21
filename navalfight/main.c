@@ -17,6 +17,6 @@ int main() {
 	char ** grid1 = cree_tableau();
 	char ** grid2 = cree_tableau();
 	char ** grid3 = cree_tableau();
-	boucle(grid1, grid2);
+	boucle(grid1, grid2,grid3);
 	return 0;
 }
