@@ -4,7 +4,7 @@
  *
  */
 
-#include "navalfight.h"
+#include "boucle.h"
 /**
  * \brief      Le main du programme
  * \details    Créer les grilles et appel la boucle princpale
