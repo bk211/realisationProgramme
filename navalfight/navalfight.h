@@ -10,7 +10,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#define Dim 20
 int ft_test_born(int indice_col,int indice_line);
 int ft_test_boat(char **grid, int indice_col, int indice_line);
 int ft_boat_1_2(char **grid, int indice_col, int indice_line);
@@ -41,6 +40,5 @@ void findepartie(void);
 void insert(char **grid, int ligne  , int colonne);
 int verifie (char **grid, int ligne  , int colonne);
 int attaquer(char **grid);
-void boucle(char **grid, char**);
+void boucle(char **grid, char**grid,char **grid);
 int main(void);
->>>>>>> af748fef9084a3454ca4192171633445f7986ca2
