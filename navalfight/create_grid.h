@@ -10,7 +10,7 @@
 #include <time.h>
 #include <string.h>
 #include <unistd.h>
-
+#define Dim 20
 int ft_test_born(int indice_col,int indice_line);
 int ft_test_boat(char **grid, int indice_col, int indice_line);
 int ft_boat_1_2(char **grid, int indice_col, int indice_line);

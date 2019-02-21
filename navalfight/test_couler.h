@@ -10,6 +10,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#define Dim 20
 int couler_droite(int x,int y, char ** grid, int conteur);
 int couler_gauche(int x,int y, char ** grid, int conteur);
 int couler_haut(int x,int y, char ** grid, int conteur);
