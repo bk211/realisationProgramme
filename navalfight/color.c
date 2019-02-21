@@ -7,7 +7,7 @@
  *
  *                  
  */
-#include <stdio.h>
+#include "color.h"
 void red () {
   printf("\033[1;31m");
 }
@@ -36,4 +36,3 @@ void cyan() {
 void resetColor () {
   printf("\033[0m");
 }
-
