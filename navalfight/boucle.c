@@ -69,10 +69,12 @@ void insert(char **grid, int ligne  , int colonne){
     grid[ligne][colonne]= '+';
     printf("\nTouché !\n");
     sleep(1);
+   
     if (couler(ligne, colonne, grid) == 0) {
 	  if (put_couler(ligne, colonne, grid) == 0)
 		printf("\nBateau coulé !\n");
       sleep(1);
+     
       victoire = ft_detect_defaite(grid);
     }
   }
@@ -80,6 +82,7 @@ void insert(char **grid, int ligne  , int colonne){
     grid[ligne][colonne]='*';
 	printf("\nRaté !\n");
     sleep(1);
+    
   }
   if (victoire == 0) {
     findepartie();
@@ -152,8 +155,8 @@ int attaquer(char **grid) {
     viderbuffer();
   }
   conditioncolonne = 1;
-  for (i = 0; i < 20; i++) {
-    for (j = 0; j < 20; j++) {
+  for (i = 0; i < Dim ;i++) {
+    for (j = 0; j < Dim ;j++) {
       if (i == ligne && j == colonne) {
         casevalide = verifie(grid, ligne, colonne);
 	if (casevalide == 0) {
@@ -184,6 +187,7 @@ void boucle(char **grid1, char **grid2) {
   char *joueur2 = nomjoueur();
   
   while(compteurprincipale == 0) {  
+   
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
     
     while(compteurjoueurun == 0) {  
