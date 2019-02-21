@@ -11,6 +11,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#define Dim 20
 char * nomjoueur(void);
 void viderbuffer(void);
 void findepartie(void);
