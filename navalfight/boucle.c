@@ -214,7 +214,7 @@ void boucle(char **grid1, char **grid2, char ** grid3) {
 
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
     while(compteurjoueurtrois == 0) {  
-      printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur2);
+      printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur3);
       afficher(grid3);
       if (attaquer(grid1) == 0) {
 	compteurjoueurtrois = 1;

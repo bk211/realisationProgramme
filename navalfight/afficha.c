@@ -4,7 +4,8 @@
  *
  */
 
-#include"afficha.h"
+#include "afficha.h"
+#include "boucle.h"
 
 /**
  * \brief      Fonction qui affiche le tableau

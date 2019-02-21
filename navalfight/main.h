@@ -4,12 +4,9 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <unistd.h>
-
+#define Dim 20
+#include "create_grid.h"
+#include "boucle.h"
 
 
 int main(void);

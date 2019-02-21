@@ -6,17 +6,17 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <unistd.h>
+//#include <stdlib.h>
+//#include <time.h>
+//#include <string.h>
+//#include <unistd.h>
+#include "afficha.h"
 #include "create_grid.h"
-#include "defaite.h"
 #include "put_couler.h"
 #include "test_couler.h"
-#include "afficha.h"
-
+#include "defaite.h"
 #define Dim 20
+
 char * nomjoueur(void);
 void viderbuffer(void);
 void findepartie(void);

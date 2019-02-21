@@ -4,11 +4,6 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <unistd.h>
 
 #define Dim 20
 int put_couler_droite(int x,int y, char ** grid, int conteur);

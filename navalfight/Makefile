@@ -1,11 +1,11 @@
 CC = gcc
 RM = rm -rf
 #déclaration des options pour gcc
-CFLAGS = -Wall
+CFLAGS = -Wall -g
 PROGNAME = Navalfight
 
 all: main.o create_grid.o boucle.o afficha.o defaite.o test_couler.o put_couler.o  
-	$(CC) $(CFLAGS) -o $(PROGNAME) main.o score.o mecanismeJeu.o 
+	$(CC) $(CFLAGS) -o $(PROGNAME) main.o create_grid.o boucle.o afficha.o defaite.o test_couler.o put_couler.o 
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
