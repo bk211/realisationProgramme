@@ -6,6 +6,7 @@
 
 #include "afficha.h"
 #include "boucle.h"
+#include "color.c"
 
 /**
  * \brief      Fonction qui affiche le tableau
@@ -16,7 +17,8 @@
 void afficher(char** grille){
   int ligne, colonne;
   char lettre = 'A';
- 
+  system("clear");
+  system("clear");
   for(colonne = 0 ; colonne <= 19 ; ++colonne)
     if(colonne < 10)
       printf("  %d  ",colonne);
@@ -27,8 +29,28 @@ void afficher(char** grille){
     printf("--------------------------------------------------------------------------------------------------\n");
    
     for(colonne = 0 ; colonne < Dim; ++colonne)
-      printf("| %c  ",grille [ligne][colonne]);
-    printf("\033[0m");
+      if(grille [ligne][colonne] == '0')
+	{
+	  blue();
+	  printf("| %c  ",grille [ligne][colonne]);
+	  resetColor();
+	  printf("\033[0m");
+	}
+     if(grille [ligne][colonne] == '+')
+	{
+	  green();
+	  printf("| %c  ",grille [ligne][colonne]);
+	  resetColor();
+	  printf("\033[0m");
+	}
+      if(grille [ligne][colonne] == '*')
+	{
+	  red();
+	  printf("| %c  ",grille [ligne][colonne]);
+	  resetColor();
+	  printf("\033[0m");
+	}
+    
     
     
     printf("|  %c   ", lettre);
