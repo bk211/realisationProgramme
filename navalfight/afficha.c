@@ -32,20 +32,32 @@ void afficher(char** grille){
     for(colonne = 0 ; colonne < Dim; ++colonne){
 
       if(grille [ligne][colonne] == 'O'){
+        printf("| ");
         blue();
-        printf("| %c  ",grille [ligne][colonne]);
+        printf("%c  ",grille [ligne][colonne]);
+        resetColor();
       }
       else if(grille [ligne][colonne] == '+'){
+        printf("| ");
+        
         green();
-        printf("| %c  ",grille [ligne][colonne]);
+        printf("%c  ",grille [ligne][colonne]);
+        resetColor();
+
       }  
       else if(grille [ligne][colonne] == '*'){
+        printf("| ");
+        
         red();
-        printf("| %c  ",grille [ligne][colonne]);
+        printf("%c  ",grille [ligne][colonne]);
+        resetColor();
+
       }
       else{
+        printf("| ");
         resetColor();
-        printf("| %c  ",grille [ligne][colonne]);
+        printf("%c  ",grille [ligne][colonne]);
+
       }
     }
     
