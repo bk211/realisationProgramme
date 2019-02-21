@@ -28,9 +28,9 @@ int couler_droite(int x,int y, char ** grid, int conteur){
 		return 1;
 	if (grid[x][y] == '.' || grid[x][y] == '*')
 		return 0;
-	if(x + 1 < 20)
+	if(x + 1 < Dim)
 		resultat += couler_droite(x + 1, y, grid, conteur);
-	if (y + 1 < 20)
+	if (y + 1 < Dim)
 		resultat += couler_bas(x, y + 1, grid, conteur);
 	if (y - 1 > -1)
 		resultat += couler_haut(x, y - 1, grid, conteur);
@@ -62,7 +62,7 @@ int couler_gauche(int x,int y, char ** grid, int conteur){
 		return 0;
 	if (x - 1 > -1)
 		resultat += couler_gauche(x - 1, y, grid, conteur);
-	if (y + 1 < 20)
+	if (y + 1 < Dim)
 		resultat += couler_bas(x, y + 1, grid, conteur);
 	if (y - 1 > -1)
 		resultat += couler_haut(x, y - 1, grid, conteur);
@@ -94,7 +94,7 @@ int couler_haut(int x,int y, char ** grid, int conteur){
 		return 0;
 	if (y - 1 > -1)
 		resultat += couler_haut(x, y - 1, grid, conteur);
-	if (x + 1 < 20)
+	if (x + 1 < Dim)
 		resultat += couler_droite(x + 1, y, grid, conteur);
 	if (x - 1 > -1)
 		resultat += couler_gauche(x - 1, y, grid, conteur);
@@ -123,9 +123,9 @@ int couler_bas(int x,int y, char ** grid, int conteur){
 		return 1;
 	if (grid[x][y] == '.' || grid[x][y] == '*')
 		return 0;
-	if (y + 1 < 20)
+	if (y + 1 < Dim)
 		resultat += couler_bas(x, y + 1, grid, conteur);
-	if (x + 1 < 20)
+	if (x + 1 < Dim)
 		resultat += couler_droite(x + 1, y, grid, conteur);
 	if (x - 1 > -1)
 		resultat += couler_gauche(x - 1, y, grid, conteur);
@@ -145,11 +145,11 @@ int couler_bas(int x,int y, char ** grid, int conteur){
 
 int couler(int x,int y,char ** grid){
 	int resultat = 0;
-	if (x + 1 < 20)
+	if (x + 1 < Dim)
 		resultat += couler_droite(x + 1, y, grid, 0);
 	if (x - 1 > -1)
 		resultat += couler_gauche(x - 1, y, grid, 0);
-	if (y + 1 < 20)
+	if (y + 1 < Dim)
 		resultat += couler_bas(x, y + 1, grid, 0);
 	if (y - 1 > -1)
 		resultat += couler_haut(x, y - 1, grid, 0);

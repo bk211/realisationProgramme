@@ -16,11 +16,11 @@
  */
 
 int ft_test_born(int indice_col,int indice_line){
-	if (indice_col > 19)  
+	if (indice_col > Dim-1)  
 		return 1;
 	if (indice_col < 0)
 		return 1;
-	if (indice_line > 19)
+	if (indice_line > Dim-1)
 		return 1;
 	if (indice_line < 0)
 		return 1;
@@ -86,7 +86,7 @@ int ft_boat_1_2(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 1, conteur_line - 1) != 0)
 			return 1;
 	}
-	if (indice_col < 19){
+	if (indice_col < Dim-1){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		return 0;
@@ -144,7 +144,7 @@ int ft_boat_1_3(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 3, conteur_line) != 0)
 			return 1;
 	}
-	if (indice_col < 18){
+	if (indice_col < Dim-2){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		grid[indice_line][indice_col + 2] = 'O';
@@ -221,7 +221,7 @@ int ft_boat_1_4(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col, conteur_line + 4) != 0)
 			return 1;
 	}
-	if (indice_line < 17){
+	if (indice_line < Dim-3){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -311,7 +311,7 @@ int ft_boat_1_5(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col, conteur_line + 5) != 0)
 			return 1;
 	}
-	if (indice_line < 16){
+	if (indice_line < Dim-4){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -414,7 +414,7 @@ if (ft_test_born(conteur_col - 1, conteur_line) == 0){
 		if (ft_test_boat(grid, conteur_col + 6, conteur_line) != 0)
 			return 1;
 	}
-	if (indice_col < 15){
+	if (indice_col < Dim-5){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		grid[indice_line][indice_col + 2] = 'O';
@@ -485,7 +485,7 @@ int ft_boat_2_2(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 1, conteur_line + 2) != 0)
 			return 1;
 	}
-	if (indice_col < 14 && indice_line < 14){
+	if (indice_col < Dim-6 && indice_line < Dim-6){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
@@ -590,7 +590,7 @@ int ft_boat_2_4(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 4, conteur_line + 1) != 0)
 			return 1;
 	}
-	if (indice_col < 16 && indice_line < 18){
+	if (indice_col < Dim-4 && indice_line < Dim-2){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
@@ -690,7 +690,7 @@ int ft_boat_1_4_1_3(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 2, conteur_line + 4) != 0)
 			return 1;
 	}
-	if (indice_line < 19 && indice_col < 17){
+	if (indice_line < Dim-1 && indice_col < Dim-3){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -777,8 +777,8 @@ char **cree_tableau(void){
 	grid = (char **)malloc(sizeof(char *) * 21);
 	for (conteur_col = 0; conteur_col < 21; conteur_col++)
 		grid[conteur_col] = (char *)malloc(sizeof(char) * 21);
-	for (conteur_line = 0; conteur_line < 20; conteur_line++){
-		for (conteur_col = 0; conteur_col < 20; conteur_col++)
+	for (conteur_line = 0; conteur_line < Dim; conteur_line++){
+		for (conteur_col = 0; conteur_col < Dim; conteur_col++)
 			grid[conteur_line][conteur_col] = '.';
 		grid[conteur_line][conteur_col] = '\0';
 	}

@@ -23,10 +23,10 @@ void afficher(char** grille){
     else
       printf(" %d  ",colonne);
   printf("\n");
-  for(ligne = 0 ; ligne < 20 ; ++ligne){
+  for(ligne = 0 ; ligne < Dim ; ++ligne){
     printf("--------------------------------------------------------------------------------------------------\n");
    
-    for(colonne = 0 ; colonne < 20; ++colonne)
+    for(colonne = 0 ; colonne < Dim; ++colonne)
       printf("| %c  ",grille [ligne][colonne]);
     printf("\033[0m");
     
