@@ -10,5 +10,5 @@
 #include <time.h>
 #include <string.h>
 #include <unistd.h>
-
+#define Dim 20
 void afficher(char** grille);
