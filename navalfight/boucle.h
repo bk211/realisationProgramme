@@ -16,6 +16,7 @@
 #include "test_couler.h"
 #include "afficha.h"
 
+#define Dim 20
 char * nomjoueur(void);
 void viderbuffer(void);
 void findepartie(void);
