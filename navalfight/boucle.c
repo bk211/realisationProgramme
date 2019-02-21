@@ -175,13 +175,11 @@ int attaquer(char **grid) {
  */
 
 
-void boucle(char **grid1, char **grid2) {
-  int compteurprincipale, compteurjoueurun, compteurjoueurdeux;
-  compteurprincipale = 0;
-  compteurjoueurun = 0;
-  compteurjoueurdeux = 0;
+void boucle(char **grid1, char **grid2, char ** grid3) {
+  int compteurprincipale = 0, compteurjoueurun = 0, compteurjoueurdeux = 0, compteurjoueurtrois = 0;
   char *joueur1 = nomjoueur();
   char *joueur2 = nomjoueur();
+  char *joueur3 = nomjoueur();
   
   while(compteurprincipale == 0) {  
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
@@ -197,17 +195,32 @@ void boucle(char **grid1, char **grid2) {
       
     }
     compteurjoueurun = 0;
+    
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
     while(compteurjoueurdeux == 0) {  
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur2);
       afficher(grid2);
-      if (attaquer(grid1) == 0) {
+      if (attaquer(grid3) == 0) {
 	compteurjoueurdeux = 1;
       } else {
 	printf("Veuillez ressaisir les coordonnées. \n");
       }
     }
     compteurjoueurdeux = 0;
+
+    printf("\n------------------------------------------------------------------------------------------\n\n\n");
+    while(compteurjoueurtrois == 0) {  
+      printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur2);
+      afficher(grid3);
+      if (attaquer(grid1) == 0) {
+	compteurjoueurtrois = 1;
+      } else {
+	printf("Veuillez ressaisir les coordonnées. \n");
+      }
+    }
+    compteurjoueurtrois = 0;
+
+
   }
   return;
 }
