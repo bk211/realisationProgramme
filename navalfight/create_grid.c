@@ -5,7 +5,7 @@
  */
 
 
-#include "navalfight.h"
+#include "create_grid.h"
 
 /**
  * \brief      Vérifie si on reste bien dans la grille.
