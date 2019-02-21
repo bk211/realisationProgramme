@@ -3,7 +3,7 @@
  * \brief     Le header comportant les includes et prototype des fonctions
  *
  */
-
+#define Dim 20
 
 #include <stdio.h>
 #include <stdlib.h>
