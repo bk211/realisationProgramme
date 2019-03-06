@@ -1,4 +1,15 @@
-#include"navalfight.h"
+/**
+ * \file      afficha.c
+ * \brief     Affiche la grille de la bataille navale.
+ *
+ */
+ #include"navalfight.h"
+/**
+ * \brief      Fonction qui affiche le tableau
+ * \details    Affiche grille de la bataille navale
+ * \param    char**         Grille de la bataille navale 
+ */
+
 void afficher(char** grille){
   int ligne, colonne;
   char lettre = 'A';
