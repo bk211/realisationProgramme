@@ -1,9 +1,0 @@
-<map id="navalfight.h" name="navalfight.h">
-<area shape="rect" id="node2" href="$afficha_8c.html" title="Affiche la grille de la bataille navale. " alt="" coords="5,80,77,107"/>
-<area shape="rect" id="node3" href="$boucle_8c.html" title="Correspond à là boucle principale du jeu. " alt="" coords="102,80,173,107"/>
-<area shape="rect" id="node4" href="$create__grid_8c.html" title="Crée la grille de la bataille navale. " alt="" coords="197,80,294,107"/>
-<area shape="rect" id="node5" href="$defaite_8c.html" title="Vérifie si le joueur à perdu. " alt="" coords="319,80,391,107"/>
-<area shape="rect" id="node6" href="$main_8c.html" title="Le main du programme. " alt="" coords="415,80,476,107"/>
-<area shape="rect" id="node7" href="$put__couler_8c.html" title="Se charge d&#39;appliquer quand un bateau est coulé. " alt="" coords="500,80,593,107"/>
-<area shape="rect" id="node8" href="$test__couler_8c.html" title="Verifie si les bateaux sont coulés. " alt="" coords="618,80,715,107"/>
-</map>

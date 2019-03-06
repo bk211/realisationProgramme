@@ -4,7 +4,7 @@
  *
  */
 
-#include "navalfight.h"
+#include "boucle.h"
 /**
  * \brief      Le main du programme
  * \details    Créer les grilles et appel la boucle princpale
@@ -16,6 +16,7 @@ int main() {
 	srand(time(NULL));
 	char ** grid1 = cree_tableau();
 	char ** grid2 = cree_tableau();
-	boucle(grid1, grid2);
+	char ** grid3 = cree_tableau();
+	boucle(grid1, grid2,grid3);
 	return 0;
 }

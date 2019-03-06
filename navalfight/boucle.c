@@ -5,7 +5,7 @@
  */
 
 
-#include "navalfight.h"
+#include "boucle.h"
 
 /**
  * \brief      Saisis les noms des joueurs
@@ -69,10 +69,12 @@ void insert(char **grid, int ligne  , int colonne){
     grid[ligne][colonne]= '+';
     printf("\nTouché !\n");
     sleep(1);
+   
     if (couler(ligne, colonne, grid) == 0) {
 	  if (put_couler(ligne, colonne, grid) == 0)
 		printf("\nBateau coulé !\n");
       sleep(1);
+     
       victoire = ft_detect_defaite(grid);
     }
   }
@@ -80,6 +82,12 @@ void insert(char **grid, int ligne  , int colonne){
     grid[ligne][colonne]='*';
 	printf("\nRaté !\n");
     sleep(1);
+    
+  }
+  if(grid[ligne][colonne] == '#'){
+    grid[ligne][colonne] = '*' ;
+    printf("\nRécif détruit ! Projection de roches !\n") ;
+    sleep(1) ;
   }
   if (victoire == 0) {
     findepartie();
@@ -105,6 +113,16 @@ int verifie (char **grid, int ligne  , int colonne){
     insert(grid, ligne, colonne);
     return 0;        
   }
+
+  if(grid[ligne][colonne] == '#'){
+    insert(grid, ligne, colonne) ;
+    insert(grid, ligne + 1, colonne);
+    insert(grid, ligne - 1, colonne);
+    insert(grid, ligne, colonne + 1);
+    insert(grid, ligne, colonne - 1) ;
+    return 0 ;
+  }
+  
   if(grid[ligne][colonne]== '*' || grid[ligne][colonne]== '+'|| grid[ligne][colonne]== 'X'){
     sleep(1);
     printf("\nImpossible de jouer, case déjà attaquée !\n");
@@ -132,11 +150,11 @@ int attaquer(char **grid) {
   while (conditionligne == 1) {
     printf("Choississez la ligne (lettre minuscule):\n");
     scanf("%c", &ligne);
-    if (ligne >= 97 && ligne <= 113) {
+    if (ligne >= 97 && ligne <= 116) {
       ligne -= 97;
       conditionligne = 0;
     } else {
-      printf("Veuillez saisir une lettre minuscule compris entre a et q\n");
+      printf("Veuillez saisir une lettre minuscule compris entre a et t\n");
     }
     viderbuffer();
   }
@@ -144,16 +162,16 @@ int attaquer(char **grid) {
   while (conditioncolonne == 1) {
     printf("Choississez la colonne (nombre):\n");
     scanf("%d", &colonne);
-    if (colonne >= 0 && colonne <= 16) {
+    if (colonne >= 0 && colonne <= 19) {
       conditioncolonne = 0;
     } else {
-      printf("Veuillez saisir un nombre compris entre 0 et 16\n");
+      printf("Veuillez saisir un nombre compris entre 0 et 19\n");
     }
     viderbuffer();
   }
   conditioncolonne = 1;
-  for (i = 0; i < 17; i++) {
-    for (j = 0; j < 17; j++) {
+  for (i = 0; i < Dim ;i++) {
+    for (j = 0; j < Dim ;j++) {
       if (i == ligne && j == colonne) {
         casevalide = verifie(grid, ligne, colonne);
 	if (casevalide == 0) {
@@ -175,18 +193,19 @@ int attaquer(char **grid) {
  */
 
 
-void boucle(char **grid1, char **grid2) {
-  int compteurprincipale, compteurjoueurun, compteurjoueurdeux;
-  compteurprincipale = 0;
-  compteurjoueurun = 0;
-  compteurjoueurdeux = 0;
+void boucle(char **grid1, char **grid2, char ** grid3) {
+  int compteurprincipale = 0, compteurjoueurun = 0, compteurjoueurdeux = 0, compteurjoueurtrois = 0;
   char *joueur1 = nomjoueur();
   char *joueur2 = nomjoueur();
+  char *joueur3 = nomjoueur();
   
   while(compteurprincipale == 0) {  
+    
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
     
     while(compteurjoueurun == 0) {  
+      system("clear");
+    system("clear");
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur1);
       afficher(grid1);
       if (attaquer(grid2) == 0) {
@@ -197,17 +216,36 @@ void boucle(char **grid1, char **grid2) {
       
     }
     compteurjoueurun = 0;
+    
     printf("\n------------------------------------------------------------------------------------------\n\n\n");
-    while(compteurjoueurdeux == 0) {  
+    while(compteurjoueurdeux == 0) {
+      system("clear");
+    system("clear");
       printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur2);
       afficher(grid2);
-      if (attaquer(grid1) == 0) {
+      if (attaquer(grid3) == 0) {
 	compteurjoueurdeux = 1;
       } else {
 	printf("Veuillez ressaisir les coordonnées. \n");
       }
     }
     compteurjoueurdeux = 0;
+
+    printf("\n------------------------------------------------------------------------------------------\n\n\n");
+    while(compteurjoueurtrois == 0) { 
+      system("clear");
+    system("clear"); 
+      printf("Grille de %s\nSélectionnez la ligne et la colonne à attaquer :\n", joueur3);
+      afficher(grid3);
+      if (attaquer(grid1) == 0) {
+	compteurjoueurtrois = 1;
+      } else {
+	printf("Veuillez ressaisir les coordonnées. \n");
+      }
+    }
+    compteurjoueurtrois = 0;
+
+
   }
   return;
 }

@@ -5,7 +5,7 @@
  */
 
 
-#include "navalfight.h"
+#include "create_grid.h"
 
 /**
  * \brief      Vérifie si on reste bien dans la grille.
@@ -16,11 +16,11 @@
  */
 
 int ft_test_born(int indice_col,int indice_line){
-	if (indice_col > 16)
+	if (indice_col > Dim-1)  
 		return 1;
 	if (indice_col < 0)
 		return 1;
-	if (indice_line > 16)
+	if (indice_line > Dim-1)
 		return 1;
 	if (indice_line < 0)
 		return 1;
@@ -41,6 +41,29 @@ int ft_test_boat(char **grid, int indice_col, int indice_line){
 	if (grid[indice_line][indice_col] == 'O')
 		return 1;
 	return 0;
+}
+
+
+/**
+ * \brief     Place les obstacles
+ * \details   Verifie s'il y a bateau aux coordonées aléatoirement tirés ou si l'on sort de la grille, si non on place un obstacle
+ * \param     **grid      La grille de la bataille navale.
+ * \param     nbr_col    Nombre de colonne dans la grille. (-1)
+ * \param     nbr_line   Nombre de lignes dans la grille.  (-1)
+ * \param     nbr_odds   Nombre d'obstacles à placer.
+ */
+
+void def_odds(char **grid, int nbr_col, int nbr_line, int nbr_odds){
+  int col, line ;
+  for(int i = 0 ; i < nbr_odds ; ++i){
+    col = (rand() % 20);
+    line = (rand() % 20);
+    if(ft_test_boat(grid, col, line) == 0 && ft_test_born(nbr_col, nbr_line) == 0){
+      grid[line][col] = '#' ;
+    }
+    else
+      nbr_odds++ ;
+  }   
 }
 
 /**
@@ -86,7 +109,7 @@ int ft_boat_1_2(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 1, conteur_line - 1) != 0)
 			return 1;
 	}
-	if (indice_col < 16){
+	if (indice_col < Dim-1){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		return 0;
@@ -96,9 +119,9 @@ int ft_boat_1_2(char **grid, int indice_col, int indice_line){
 
 
 /**
- * \brief     Place un bateau de dimension 3.
- * \details   Vérifie s'il y a des bateaux aux alentours des coordonées passées, si non
- *             un bateau est placé en verifiant que l'on ne sors pas de la grille.      
+ * \brief    Place un bateau de dimension 3.
+ * \details  Vérifie s'il y a des bateaux aux alentours des coordonées passées, si non
+ *           un bateau est placé en verifiant que l'on ne sors pas de la grille.      
  * \param    **grid         Grille de la bataille navale .
  * \param    indice_col     Premiere coordonée.
  * \param    indice_line    Seconde coordonée.
@@ -144,7 +167,7 @@ int ft_boat_1_3(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 3, conteur_line) != 0)
 			return 1;
 	}
-	if (indice_col < 15){
+	if (indice_col < Dim-2){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		grid[indice_line][indice_col + 2] = 'O';
@@ -221,7 +244,7 @@ int ft_boat_1_4(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col, conteur_line + 4) != 0)
 			return 1;
 	}
-	if (indice_line < 14){
+	if (indice_line < Dim-3){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -311,7 +334,7 @@ int ft_boat_1_5(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col, conteur_line + 5) != 0)
 			return 1;
 	}
-	if (indice_line < 13){
+	if (indice_line < Dim-4){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -414,7 +437,7 @@ if (ft_test_born(conteur_col - 1, conteur_line) == 0){
 		if (ft_test_boat(grid, conteur_col + 6, conteur_line) != 0)
 			return 1;
 	}
-	if (indice_col < 12){
+	if (indice_col < Dim-5){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
 		grid[indice_line][indice_col + 2] = 'O';
@@ -485,7 +508,7 @@ int ft_boat_2_2(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 1, conteur_line + 2) != 0)
 			return 1;
 	}
-	if (indice_col < 15 && indice_line < 15){
+	if (indice_col < Dim-6 && indice_line < Dim-6){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
@@ -590,7 +613,7 @@ int ft_boat_2_4(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 4, conteur_line + 1) != 0)
 			return 1;
 	}
-	if (indice_col < 13 && indice_line < 15){
+	if (indice_col < Dim-4 && indice_line < Dim-2){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line][indice_col + 1] = 'O';
@@ -690,7 +713,7 @@ int ft_boat_1_4_1_3(char **grid, int indice_col, int indice_line){
 		if (ft_test_boat(grid, conteur_col + 2, conteur_line + 4) != 0)
 			return 1;
 	}
-	if (indice_line < 13 && indice_col < 14){
+	if (indice_line < Dim-1 && indice_col < Dim-3){
 		grid[indice_line][indice_col] = 'O';
 		grid[indice_line + 1][indice_col] = 'O';
 		grid[indice_line + 2][indice_col] = 'O';
@@ -712,54 +735,55 @@ int ft_boat_1_4_1_3(char **grid, int indice_col, int indice_line){
 
 
 char **ft_fill_grid(char **grid){
-	int indice_col = (rand() % 17);
-	int indice_line = (rand() % 17);
+	int indice_col = (rand() % 20);
+	int indice_line = (rand() % 20);
 	while (ft_boat_1_2(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
-	while (ft_boat_1_3(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
+	while (ft_boat_1_3(grid, indice_col, indice_line) !=0){
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_1_4(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_1_5(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_1_6(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_2_2(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_2_4(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
-	indice_col = (rand() % 17);
-	indice_line = (rand() % 17);
+	indice_col = (rand() % 20);
+	indice_line = (rand() % 20);
 	while (ft_boat_1_4_1_3(grid, indice_col, indice_line) != 0){
-		indice_col = (rand() % 17);
-		indice_line = (rand() % 17);
+		indice_col = (rand() % 20);
+		indice_line = (rand() % 20);
 	}
+	def_odds(grid, 18, 18, 5) ;
 	return grid;
 }
 
@@ -774,11 +798,11 @@ char **cree_tableau(void){
 	char **grid;
 	int conteur_col;
 	int conteur_line;
-	grid = (char **)malloc(sizeof(char *) * 18);
-	for (conteur_col = 0; conteur_col < 18; conteur_col++)
-		grid[conteur_col] = (char *)malloc(sizeof(char) * 18);
-	for (conteur_line = 0; conteur_line < 17; conteur_line++){
-		for (conteur_col = 0; conteur_col < 17; conteur_col++)
+	grid = (char **)malloc(sizeof(char *) * 21);
+	for (conteur_col = 0; conteur_col < 21; conteur_col++)
+		grid[conteur_col] = (char *)malloc(sizeof(char) * 21);
+	for (conteur_line = 0; conteur_line < Dim; conteur_line++){
+		for (conteur_col = 0; conteur_col < Dim; conteur_col++)
 			grid[conteur_line][conteur_col] = '.';
 		grid[conteur_line][conteur_col] = '\0';
 	}
