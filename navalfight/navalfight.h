@@ -1,4 +1,4 @@
-/**
+n/**
  * \file      navalfight.h
  * \brief     Le header comportant les includes et prototype des fonctions
  *
@@ -10,6 +10,7 @@
 #include <string.h>
 #include <unistd.h>
 
+void def_odds(char **grid, int nbr_col, int nbr_line, int nbr_odds) ;
 int ft_test_born(int indice_col,int indice_line);
 int ft_test_boat(char **grid, int indice_col, int indice_line);
 int ft_boat_1_2(char **grid, int indice_col, int indice_line);

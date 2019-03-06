@@ -84,6 +84,11 @@ void insert(char **grid, int ligne  , int colonne){
     sleep(1);
     
   }
+  if(grid[ligne][colonne] == '#'){
+    grid[ligne][colonne] = '*' ;
+    printf("\nRécif détruit ! Projection de roches !\n") ;
+    sleep(1) ;
+  }
   if (victoire == 0) {
     findepartie();
   }
@@ -108,6 +113,16 @@ int verifie (char **grid, int ligne  , int colonne){
     insert(grid, ligne, colonne);
     return 0;        
   }
+
+  if(grid[ligne][colonne] == '#'){
+    insert(grid, ligne, colonne) ;
+    insert(grid, ligne + 1, colonne);
+    insert(grid, ligne - 1, colonne);
+    insert(grid, ligne, colonne + 1);
+    insert(grid, ligne, colonne - 1) ;
+    return 0 ;
+  }
+  
   if(grid[ligne][colonne]== '*' || grid[ligne][colonne]== '+'|| grid[ligne][colonne]== 'X'){
     sleep(1);
     printf("\nImpossible de jouer, case déjà attaquée !\n");

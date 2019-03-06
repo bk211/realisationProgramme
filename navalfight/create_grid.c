@@ -43,6 +43,29 @@ int ft_test_boat(char **grid, int indice_col, int indice_line){
 	return 0;
 }
 
+
+/**
+ * \brief     Place les obstacles
+ * \details   Verifie s'il y a bateau aux coordonées aléatoirement tirés ou si l'on sort de la grille, si non on place un obstacle
+ * \param     **grid      La grille de la bataille navale.
+ * \param     nbr_col    Nombre de colonne dans la grille. (-1)
+ * \param     nbr_line   Nombre de lignes dans la grille.  (-1)
+ * \param     nbr_odds   Nombre d'obstacles à placer.
+ */
+
+void def_odds(char **grid, int nbr_col, int nbr_line, int nbr_odds){
+  int col, line ;
+  for(int i = 0 ; i < nbr_odds ; ++i){
+    col = (rand() % 20);
+    line = (rand() % 20);
+    if(ft_test_boat(grid, col, line) == 0 && ft_test_born(nbr_col, nbr_line) == 0){
+      grid[line][col] = '#' ;
+    }
+    else
+      nbr_odds++ ;
+  }   
+}
+
 /**
  * \brief     Place un bateau de dimension 2.
  * \details   Vérifie s'il y a des bateaux aux alentours des coordonées passées, si non
@@ -96,9 +119,9 @@ int ft_boat_1_2(char **grid, int indice_col, int indice_line){
 
 
 /**
- * \brief     Place un bateau de dimension 3.
- * \details   Vérifie s'il y a des bateaux aux alentours des coordonées passées, si non
- *             un bateau est placé en verifiant que l'on ne sors pas de la grille.      
+ * \brief    Place un bateau de dimension 3.
+ * \details  Vérifie s'il y a des bateaux aux alentours des coordonées passées, si non
+ *           un bateau est placé en verifiant que l'on ne sors pas de la grille.      
  * \param    **grid         Grille de la bataille navale .
  * \param    indice_col     Premiere coordonée.
  * \param    indice_line    Seconde coordonée.
@@ -760,6 +783,7 @@ char **ft_fill_grid(char **grid){
 		indice_col = (rand() % 20);
 		indice_line = (rand() % 20);
 	}
+	def_odds(grid, 18, 18, 5) ;
 	return grid;
 }
 

@@ -53,6 +53,12 @@ void afficher(char** grille){
         resetColor();
 
       }
+      else if(grille[ligne][colonne] == '#'){
+	printf("|  ");
+	magenta() ;
+	printf("%c ", grille[ligne][colonne]) ;
+	resetColor() ;
+      }
       else{
         printf("| ");
         resetColor();
