@@ -2,12 +2,9 @@
 #include <stdlib.h>
 
 int testYahtzee(int *tab) ;
-int testPetiteSuite(int *tab) ;
-int testGrandeSuite(int *tab) ;
-int testBrelan(int *tab) ;
-int testCarre(int *tab);
-int testFullv1(int *tab);
-int testFullv2(int *tab);
+int testSuite(int *tab,int P_G);
+int test3_4(int *tab,int Trois_quatre) ;
+int testFull(int *tab,int fullv1,int fullv2);
 void testCombinatoire(int *tab_score, int *tab_dee);
 void displayScore(int* tab_score,int *tab_dee,int * tabFinal);
 void compareScore(int a, int b);
