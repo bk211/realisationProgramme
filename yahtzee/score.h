@@ -1,3 +1,12 @@
+/**
+ * \file      score.h
+ * \author    groupe3
+ * \date      07 mars 2019
+ * \brief     le header du fichier score.c
+ *
+ *                  
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
