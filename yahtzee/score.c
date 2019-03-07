@@ -1,3 +1,12 @@
+/**
+ * \file      score.c
+ * \author    groupe3
+ * \date      07 mars 2019
+ * \brief     fichier qui comporte les verifications de combinaison
+ *
+ *                  
+ */
+
 #include "score.h"
 #include <assert.h>
 #include "color.c"
