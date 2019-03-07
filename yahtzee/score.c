@@ -1,228 +1,164 @@
 #include "score.h"
 #include <assert.h>
 #include "color.c"
+#define TAB_OCC 8
+#define PTS 1
+#define GDS 2
+
 /**
  * \brief      Verifie si la figure Yahtzee est présente
  * \details    Si la premiere des est équivalente a la suivante,on verifie si la suivante est équivalente à la prochaine de celle ci, ainsi de suite
  *                  
  * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- * 
+ * \return    Un entier, qui correspond au score.
  */
 
 int testYahtzee(int *tab) {
   // verif Yahtzee
   if(tab[0] == tab[1]
-  	  &&tab[1] == tab[2]
-      &&tab[2] == tab[3]
-	  &&tab[3] == tab[4]
-	  &&tab[4] == tab[5]
-	  &&tab[5] == tab[6]){
-	  	printf("Il y a un Yahtzee de %d\n",tab[0]);
-		return 50;
+     &&tab[1] == tab[2]
+     &&tab[2] == tab[3]
+     &&tab[3] == tab[4]
+     &&tab[4] == tab[5]
+     &&tab[5] == tab[6]){
+    printf("Il y a un Yahtzee de %d\n",tab[0]);
+    return 50;
   }
   return 0;
 }
 
 /**
- * \brief      Verifie si la figure PetiteSuite est présente
- * \details    S'il y a une des qui vaut 1, on regard s'il y a une des qui vaut 2, ainsi de suite jusqu'a 7,si 7 est présent, alors on a une PetiteSuite
+ * \brief      Verifie si la figure PetiteSuite ou GrandeSuite est présente
+ * \details    On regard s'il y a la suite de dès allant de 1-7 ou 2-8 . 
  *                  
- * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- 
+ * \param    *tab            tableau content les des.
+ * \param    P_G             vaut 1 pour vérif PetiteSuite, vaut 2 pour vérif
+GrandeSuite.
+ * \return    Un entier, qui correspond au score.
  */
-int testPetiteSuite(int *tab) {
-    int i;
+int testSuite(int *tab,int P_G){
+   int i;
     // verif petite suite
-  for(i=0;i<7;i++){
-        if(tab[i] == 1)
-	  {
-	    for(i=0;i<7;i++){
-	      if(tab[i] == 2)
-		 {
-		   for(i=0;i<7;i++){
-		     if(tab[i] == 3)
-		        {
-			  for(i=0;i<7;i++){
-			    if(tab[i] == 4)
-			       {
-				 for(i=0;i<7;i++){
-				   if(tab[i] == 5)
+    for(i=0;i<7;i++){
+      if(tab[i] == P_G)	  
+	{
+	  P_G++;
+	  for(i=0;i<7;i++){
+	    if(tab[i] == P_G)
+	      {
+		P_G++;
+		for(i=0;i<7;i++){
+		  if(tab[i] == P_G)		       
+		    {
+		      P_G++;
+		      for(i=0;i<7;i++){
+			if(tab[i] == P_G)
+			  {
+			    P_G++;
+			    for(i=0;i<7;i++){			   
+			      if(tab[i] == P_G)
+				{
+				  P_G++;
+				  for(i=0;i<7;i++){
+				    if(tab[i] == P_G)
 				      {
+					P_G++;
 					for(i=0;i<7;i++){
-					  if(tab[i] == 6)
-					     {
-					       for(i=0;i<7;i++){
-						 if(tab[i] == 7)
-						   {
-						     printf("Il y a une PetiteSuite\n");
-						     return 30;			     
-						   }
-					       }
-					     }
+					  if(tab[i] == P_G)
+					    {
+					      if(P_G == 7){
+						printf("Il y a une PetiteSuite\n");
+						return 30;			     }
+					      if(P_G == 8){
+						printf("Il y a une Grande Suite\n");
+						return 40;
+					      }
+					    }
 					}
 				      }
-				 }
-			       }
+				  }
+				}
+			    }
 			  }
-			}
-		   }
-		 }
-	    }
+		      }
+		    }
+		}
+	      }
 	  }
-  }
-  return 0;
-  }
-
-/**
- * \brief      Verifie si la figure GrandeSuite est présente
- * \details    S'il y a une des qui vaut 2, on regard s'il y a une des qui vaut 3, ainsi de suite jusqu'a 7, si 7 est présent, alors il y a GrandeSuite
- *                  
- * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- 
- */
-
-int testGrandeSuite(int *tab) {
-    int i;
-    
-    
-  // verif grande suite
-   for(i=0;i<7;i++){
-        if(tab[i] == 2)
-	  {
-	    for(i=0;i<7;i++){
-	      if(tab[i] == 3)
-		 {
-		   for(i=0;i<7;i++){
-		     if(tab[i] == 4)
-		        {
-			  for(i=0;i<7;i++){
-			    if(tab[i] == 5)
-			       {
-				 for(i=0;i<7;i++){
-				   if(tab[i] == 6)
-				      {
-					for(i=0;i<7;i++){
-					  if(tab[i] == 7)
-					     {
-					       for(i=0;i<7;i++){
-						 if(tab[i] == 8)
-						   {
-
-						      printf("Il y a une GrandeSuite\n");
-						
-						     return 40;
-							
-						    
-						      
-						   }
-					       }
-					     }
-					}
-				      }
-				 }
-			       }
-			  }
-			}
-		   }
-		 }
-	    }
-	  }
-   }
-   return 0;  
+	}
+    }
+    return 0;
 }
 
 /**
- * \brief      Verifie si la figure Brelan est présente
- * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il n'y a pas d'occurence de 4, alors on a un Brelan . 
+ * \brief      Verifie si la figure Brelan ou Carré est présente
+ * \details    On regard s'il y a un triplet de dès ou un quadruplet . 
  *                  
- * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- 
+ * \param    *tab            tableau content les des.
+ * \param    Trois_quatre    vaut 3 pour vérif Brelan, vaut 4 pour vérif
+Carré
+ * \return    Un entier, qui correspond au score.
  */
 
-int testBrelan(int *tab) {
-  int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  int find = 0,i;
+int test3_4(int *tab,int Trois_quatre) {
+  int tab_occurence[TAB_OCC]={0,0,0,0,0,0,0,0};
+  int i;
     for (i = 0; i < 7; ++i)
     {
     	++tab_occurence[tab[i]-1];
     }
 
-    for (i = 0; i < 8; ++i)
-    {
-    	if (tab_occurence[i] == 3)
-    	{
-    		printf("Il y a un Brelan de %d \n",i+1);
-    		++find;
-    	}
-    }
-
-    if(find)
-	   	return sommeScore(tab);
-	return 0;
+    for (i = 0; i < TAB_OCC; ++i)
+      {
+	if(Trois_quatre == 3 ){
+	  if (tab_occurence[i] == Trois_quatre)
+	    {
+	      printf("Il y a un Brelan de %d \n",i+1);
+	      return sommeScore(tab);
+	    }
+	}
+	if(Trois_quatre == 4){
+	  if (tab_occurence[i] == Trois_quatre)
+	    {
+	      printf("Il y a un Carre de %d \n",i+1);
+	      return sommeScore(tab);
+	    }
+	}
+      }
+    
+    return 0;
 }   
 
+
 /**
- * \brief      Verifie si la figure Full type1 est présente (5des identique + 2des identiques)
- * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 5 dans le tableau d'occurence ET qu'il y a une occurence de 2, alors on a un Full type1 . 
+ * \brief      Verifie si la figure Full est présente 
+ * \details    On parcours le tableau d'occurence à la recherche de case contenant soit 5 et 2 ou 4 et 3 .
  *                  
- * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- 
+ * \param    *tab            tableau content les des.
+ * \param    *fullv1         Vaut 5 pour full type1, ou 4 pour full type2
+ * \param    *fullv2         Vaut 2 pour full type1, ou 3 pour full type2
+ * \return    Un entier, qui correspond au score.
  */
 
-int testFullv1(int *tab){
+int testFull(int *tab,int fullv1,int fullv2){
 
-  int tab_occurence[8]={0,0,0,0,0,0,0,0};
+  int tab_occurence[TAB_OCC]={0,0,0,0,0,0,0,0};
   int i,j;
-  
   int full1,full2;
-  for(i=0;i<7;i++) {
-    
-    if(tab[i] == 1){
-      tab_occurence[0]+=1;
+  
+  for (i = 0; i < 7; ++i)
+    {
+      ++tab_occurence[tab[i]-1];
     }
-    else if(tab[i] == 2)
-      {
-	tab_occurence[1]+=1;
-      }
-    else if(tab[i] == 3)
-      {
-	tab_occurence[2]+=1;
-      }
-    else if(tab[i] == 4)
-      {
-	tab_occurence[3]+=1;
-      }
-    else if(tab[i] == 5)
-      {
-	tab_occurence[4]+=1;
-      }
-    else if(tab[i] == 6)
-      {
-	tab_occurence[5]+=1;
-      }
-    else if(tab[i] == 7)
-      {
-	tab_occurence[6]+=1;
-      }
-    else if(tab[i] == 8)
-      {
-	tab_occurence[7]+=1;
-      }
-  }
     
     for(i=0;i<8;i++)
       {
-	if(tab_occurence[i]==5)
+	if(tab_occurence[i]==fullv1)
 	  {
 	    full1=i+1;
 	    for(j=0;j<8;j++)
 	      {
-		if(tab_occurence[j]==2)
+		if(tab_occurence[j]==fullv2)
 		  {
 		    full2=j+1;
 		    printf("Il y a un Full de %d et %d\n",full1,full2);
@@ -238,76 +174,6 @@ int testFullv1(int *tab){
 }
 
 
-/**
- * \brief      Verifie si la figure Full type2 est présente (3des identique + 4des identiques)
- * \details    On parcours le tableau contenant les des, puis a chaque fois que des des réapparaisent, on fais +1 dans le tableau d'occurence. S'il y a une occurence de 3 dans le tableau d'occurence ET qu'il y a une occurence de 4, alors on a un Full type2 . 
- *                  
- * \param    *tab               tableau content les des.
- * \param    *tab_score         tableau dans lequel on insere le score.
- 
- */
-
-int testFullv2(int *tab){
-  int tab_occurence[8]={0,0,0,0,0,0,0,0};
-  
-  int i,j;
-  int full1,full2;
-  for(i=0;i<7;i++) {
-    
-    if(tab[i] == 1){
-      tab_occurence[0]+=1;
-    }
-    else if(tab[i] == 2)
-      {
-	tab_occurence[1]+=1;
-      }
-    else if(tab[i] == 3)
-      {
-	tab_occurence[2]+=1;
-      }
-    else if(tab[i] == 4)
-      {
-	tab_occurence[3]+=1;
-      }
-    else if(tab[i] == 5)
-      {
-	tab_occurence[4]+=1;
-      }
-    else if(tab[i] == 6)
-      {
-	tab_occurence[5]+=1;
-      }
-    else if(tab[i] == 7)
-      {
-	tab_occurence[6]+=1;
-      }
-    else if(tab[i] == 8)
-      {
-	tab_occurence[7]+=1;
-      }
-  }
-    
-    for(i=0;i<8;i++)
-      {
-	if(tab_occurence[i]==3)
-	  {
-	    full1=i+1;
-	    for(j=0;j<8;j++)
-	      {
-		if(tab_occurence[j]==4)
-		  {
-		    full2=j+1;
-		    printf("Il y a un Full de %d et %d\n",full1,full2);
-			 return 25;
-	
-		    
-		  }
-	      }
-	  }
-      }
-    return 0;
-}
-
 
 /**
  * \brief      Appel a tout les fonctions de verification de figure
@@ -316,7 +182,6 @@ int testFullv2(int *tab){
  *                  
  * \param    *tab_score        tableau contenant les scores
  * \param    *tab_dee         tableau contenant les des
- 
  */
 
 void testCombinatoire(int *tab_score, int *tab_dee){
@@ -327,12 +192,12 @@ void testCombinatoire(int *tab_score, int *tab_dee){
     	tab_score[tab_dee[i]-1] += tab_dee[i] ;
     }
 
-	tab_score[8] = testBrelan(tab_dee);
-	tab_score[9] = testPetiteSuite(tab_dee);
-	tab_score[10] = testGrandeSuite(tab_dee);
-	tab_score[11] = testCarre(tab_dee);
-	tab_score[12] = testFullv1(tab_dee);
-	tab_score[13] = testFullv2(tab_dee);
+	tab_score[8] = test3_4(tab_dee,3);
+	tab_score[9] = testSuite(tab_dee,PTS);
+	tab_score[10] = testSuite(tab_dee,GDS);
+	tab_score[11] = test3_4(tab_dee,4);
+	tab_score[12] = testFull(tab_dee,5,2);
+	tab_score[13] = testFull(tab_dee,4,3);
 	tab_score[14] = testYahtzee(tab_dee);
 }
 
@@ -378,6 +243,13 @@ void compareScore(int a, int b){
 	}	
 }
 
+/**
+ * \brief      Fonction qui fais la somme
+ * \details    Fais la somme de tout les dès.
+ *                  
+ * \param   *tab      tableau des dès
+ * \return    Un entier, qui correspond au score.
+ */
 
 int sommeScore(int * tab){
 	int somme = 0;
@@ -388,7 +260,13 @@ int sommeScore(int * tab){
 	return somme;
 }
 
-
+/**
+ * \brief      Fonction qui affiche les scores.
+ * \details    Affiche les scores des joueurs.
+ *                  
+ * \param   *tab_score      tableau des score
+ * \param   *tabFinal       le tableau final
+ */
 
 void displayTabScore(int *tab_score, int* tabFinal){
 	printf("========================================================\n" );
@@ -429,6 +307,15 @@ void displayTabScore(int *tab_score, int* tabFinal){
 
 }
 
+/**
+ * \brief      Fonction qui fais la saisit du score
+ * \details    L'utilisateur saisit son score dans tabFinal
+ *                  
+ * \param   *tab           tableau des dès
+* \param    *tabFinal      tableau final contenant les scores
+ */
+
+
 int saisitScore(int *tab,int *tabFinal){
 	int answer=0;
 	while(1){
@@ -457,28 +344,9 @@ int comparer(void const *a, void const *b)
    return *pa - *pb;
 }
 
-int testCarre(int *tab){
-	int i;
-    int tab_occurence[8]={0,0,0,0,0,0,0,0};
-    for (i = 0; i < 7; ++i)
-    {
-    	++tab_occurence[tab[i]-1];
-    }
 
-    for (i = 0; i < 8; ++i)
-    {
-    	if (tab_occurence[i] == 4)
-    	{
-    		printf("Il y a un Carre de %d \n",i+1);
-    		return sommeScore(tab);
-    	}
-    }
-
-    return 0;
-}
 
 /**
- *\fn int boucle_de_saisie(int p,int a, int b)
  * \brief      controle de saisie de clavier.
  * \details    l'entier p est affecte de la valeur saisit s'il est compris dans intervalle [a,b] et la fct retourne 1
  * \param    a    la valeur 0 
