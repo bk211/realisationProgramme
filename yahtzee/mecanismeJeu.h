@@ -1,3 +1,12 @@
+/**
+ * \file      mecanismeJeu.h
+ * \author    groupe3
+ * \date      07 mars 2019
+ * \brief     Le header du fichier mecanismeJeu.c 
+ *
+ *                  
+ */
+
 #include <stdio.h>
 #include <time.h>
 #include <unistd.h>
