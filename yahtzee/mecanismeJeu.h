@@ -31,3 +31,4 @@ void displayDices(Player *p);
 void askDices(Player *p);
 void completeTurn(Player *p);
 void freePlayer(Player *p);
+void initPlayer(Player *p);

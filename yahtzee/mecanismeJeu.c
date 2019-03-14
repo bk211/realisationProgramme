@@ -140,3 +140,30 @@ void freePlayer(Player *p){
   		free(p->tabScoreFinal);
 }
 
+/**
+ *\fn void initPlayer(Player *p)
+ * \brief      alloue la memoire.
+ * \details    alloue la memoire pour le joueur p .
+ * \param    p le joueur.
+ */
+void initPlayer(Player *p){
+
+  p = malloc(sizeof (Player*));
+  p->dices = malloc(sizeof(int)*7);
+  p->dicesAllowed = malloc(sizeof(int)*7);
+  p->nbrRollRemain = 6 ;
+  p->tabScore = malloc(sizeof(int*)* MAX_COMBINATOIRE);
+  p->tabScoreFinal = malloc(sizeof(int*)* MAX_COMBINATOIRE);
+  assert(p->dices);
+  assert(p->dicesAllowed);
+  assert(p->tabScore);
+  assert(p->tabScoreFinal);
+      
+  for (int i = 0; i < MAX_COMBINATOIRE; ++i)
+  {
+      p->tabScore[i]= 0;
+      p->tabScoreFinal[i]=-1;
+  }
+  
+}
+
