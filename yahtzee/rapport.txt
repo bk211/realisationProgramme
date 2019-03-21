@@ -1,0 +1,20 @@
+Rapport : Groupe 3
+
+Factorisation :
+Nous avions des bouts de code identique dans le fichier score.c,
+comme pour les fonctions brelan et carré , ou encore full type 1 ou type 2.
+On a donc fais une fonction en commun pour brelan et carré ainsi que les deux types de full et petite suite / grande suite .
+En passant un nouveau paramètre aux fonctions, le paramètre définissant si la fonction effectue le brelan ou le carré par exemple .
+Et on passe donc ce parametre aux boucle de parcours ce qui évite du copier coller de code .
+
+On a donc des fonctions sans de bout de code identiques et facilement modulable en changeant un paramètre .
+
+
+Programme de test :
+Donc pour tester si chaque fonction de repérage de combinaison fonctionnait bien.
+On a crée des tableaux correspondant aux differents combinaison .
+Et a l'aide d'un assert , on s'assure que les fonctions TestYahtzee/TestFull etc
+donnent bien la valeur de retour attendu, ce qui signifie qu'ils ont bien repéré la combinaison présente .
+
+Nous avons aussi fais des tableaux où il n'y a pas de combinaison.
+Et on s'assure que les assert renvoie bien 0 puisqu'il n'y a pas de combinaison .
