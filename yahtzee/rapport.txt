@@ -3,18 +3,190 @@ Rapport : Groupe 3
 Factorisation :
 Nous avions des bouts de code identique dans le fichier score.c,
 comme pour les fonctions brelan et carré , ou encore full type 1 ou type 2.
+
+#code :
+La fonction PetiteSuite:
+
+int testPetiteSuite(int *tab) {
+    int i;
+      for(i=0;i<7;i++){
+        if(tab[i] == 1)
+	  {
+	    for(i=0;i<7;i++){
+	      if(tab[i] == 2)
+		 {
+		   for(i=0;i<7;i++){
+		     if(tab[i] == 3)
+		        {
+			  for(i=0;i<7;i++){
+			    if(tab[i] == 4)
+			       {
+				 for(i=0;i<7;i++){
+				   if(tab[i] == 5)
+				      {
+					for(i=0;i<7;i++){
+					  if(tab[i] == 6)
+					     {
+					       for(i=0;i<7;i++){
+						 if(tab[i] == 7)
+						   {
+						     printf("Il y a une PetiteSuite\n");
+						     return 30;			     
+						   }
+					       }
+					     }
+					}
+				      }
+				 }
+			       }
+			  }
+			}
+		   }
+		 }
+	    }
+	  }
+  }
+  return 0;
+  }
+
+La fonction GrandeSuite :
+int testGrandeSuite(int *tab) {
+    int i;
+
+
+  // verif grande suite
+   for(i=0;i<7;i++){
+        if(tab[i] == 2)
+	  {
+	    for(i=0;i<7;i++){
+	      if(tab[i] == 3)
+		 {
+		   for(i=0;i<7;i++){
+		     if(tab[i] == 4)
+		        {
+			  for(i=0;i<7;i++){
+			    if(tab[i] == 5)
+			       {
+				 for(i=0;i<7;i++){
+				   if(tab[i] == 6)
+				      if(tab[i] == 7)
+				      	     {
+					      for(i=0;i<7;i++){
+						 if(tab[i] == 8)
+						   {
+						      printf("Il y a une GrandeSuite\n");
+
+						      return 40;
+						      	  }
+					       }
+					     }
+					}
+				      }
+				 }
+			       }
+			  }
+			}
+		   }
+		 }
+	    }
+	  }
+  }
+  return 0;
+  }					  
+
+
+
 On a donc fais une fonction en commun pour brelan et carré ainsi que les deux types de full et petite suite / grande suite .
-En passant un nouveau paramètre aux fonctions, le paramètre définissant si la fonction effectue le brelan ou le carré par exemple .
+En passant un nouveau paramètre aux fonctions, le paramètre définissant si la fonction effectue la petite suite ou la grande suite par exemple .
 Et on passe donc ce parametre aux boucle de parcours ce qui évite du copier coller de code .
+Nouvelle fonction pour PetiteSuite et GrandeSuite :
+
+int testSuite(int *tab,int P_G){
+   int i;
+    // verif petite suite
+   for(i=0;i<7;i++){   // on parcours le tableau de dès
+     if(tab[i] == P_G)	  // on regard si dans le tableau on a '1' si P_G vaut 1 pour Petite suite ou '2' pour Grande suite
+	{
+	  P_G++; // Si P_G a été trouvé, on l'incrémente 
+	  for(i=0;i<7;i++){
+	    if(tab[i] == P_G) // Puis on vérifie si P_G une fois incrémenté est présent , ainsi de suite .
+	      {
+		P_G++;
+		for(i=0;i<7;i++){
+		  if(tab[i] == P_G)		       
+		    {
+		      P_G++;
+		      for(i=0;i<7;i++){
+			if(tab[i] == P_G)
+			  {
+			    P_G++;
+			    for(i=0;i<7;i++){			   
+			      if(tab[i] == P_G)
+				{
+				  P_G++;
+				  for(i=0;i<7;i++){
+				    if(tab[i] == P_G)
+				      {
+					P_G++;
+					for(i=0;i<7;i++){
+					  if(tab[i] == P_G)
+					    {
+					      if(P_G == 7){ // si P_G vaut 7 a la fin , c'est donc une ptite suite
+						printf("Il y a une PetiteSuite\n");
+						return 30;			     }
+					      if(P_G == 8){ // sinon c'est une Grande suite
+						printf("Il y a une Grande Suite\n");
+						return 40;
+					      }
+					    }
+					}
+				      }
+				  }
+				}
+			    }
+			  }
+		      }
+		    }
+		}
+	      }
+	  }
+	}
+    }
+   return 0; // renvoie 0, si la combinaison n'est pas présente .
+}
+
 
 On a donc des fonctions sans de bout de code identiques et facilement modulable en changeant un paramètre .
+De ce fait , nous avons aussi changer le header de score.h .
 
 
 Programme de test :
 Donc pour tester si chaque fonction de repérage de combinaison fonctionnait bien.
 On a crée des tableaux correspondant aux differents combinaison .
+Exemple de tableau :
+
+ int test_yaht[8]={1,1,1,1,1,1,1};
+ int test_PS[8]={7,3,2,6,5,4,1};
+ int test_GS[8]={8,5,7,3,2,4,6};
+ int test_brelan[8]={4,6,4,8,4,3,7};
+ int test_carre[8]={5,6,5,7,5,5,1};
+ int test_fullv1[8]={8,8,8,3,8,3,8};
+ int test_fullv2[8]={3,2,3,3,2,3,2};
+
+
 Et a l'aide d'un assert , on s'assure que les fonctions TestYahtzee/TestFull etc
 donnent bien la valeur de retour attendu, ce qui signifie qu'ils ont bien repéré la combinaison présente .
 
+Exemple :
+ assert(testYahtzee(test_yaht) == 50);
+
+ assert(testSuite(test_PS,1) == 30);
+
+ assert(testSuite(test_GS,2) == 40);
+
+ assert(test3_4(test_brelan,3) == 36);
+
+
 Nous avons aussi fais des tableaux où il n'y a pas de combinaison.
 Et on s'assure que les assert renvoie bien 0 puisqu'il n'y a pas de combinaison .
+
