@@ -24,14 +24,14 @@
 
 int testYahtzee(int *tab) {
   // verif Yahtzee
-  if(tab[0] == tab[1]
-     &&tab[1] == tab[2]
+  if(tab[0] == tab[1] // on verifie que le premier dès correspond au dès suivant
+     &&tab[1] == tab[2] // le deuxieme dès équivaut au troisieme ainsi de suite
      &&tab[2] == tab[3]
      &&tab[3] == tab[4]
      &&tab[4] == tab[5]
      &&tab[5] == tab[6]){
     printf("Il y a un Yahtzee de %d\n",tab[0]);
-    return 50;
+    return 50; // correspond au score du yahtzee
   }
   return 0;
 }
@@ -48,12 +48,12 @@ GrandeSuite.
 int testSuite(int *tab,int P_G){
    int i;
     // verif petite suite
-    for(i=0;i<7;i++){
-      if(tab[i] == P_G)	  
+   for(i=0;i<7;i++){   // on parcours le tableau de dès
+     if(tab[i] == P_G)	  // on regard si dans le tableau on a '1' si P_G vaut 1 pour Petite suite ou '2' pour Grande suite
 	{
-	  P_G++;
+	  P_G++; // Si P_G a été trouvé, on l'incrémente 
 	  for(i=0;i<7;i++){
-	    if(tab[i] == P_G)
+	    if(tab[i] == P_G) // Puis on vérifie si P_G une fois incrémenté est présent , ainsi de suite .
 	      {
 		P_G++;
 		for(i=0;i<7;i++){
@@ -75,10 +75,10 @@ int testSuite(int *tab,int P_G){
 					for(i=0;i<7;i++){
 					  if(tab[i] == P_G)
 					    {
-					      if(P_G == 7){
+					      if(P_G == 7){ // si P_G vaut 7 a la fin , c'est donc une ptite suite
 						printf("Il y a une PetiteSuite\n");
 						return 30;			     }
-					      if(P_G == 8){
+					      if(P_G == 8){ // sinon c'est une Grande suite
 						printf("Il y a une Grande Suite\n");
 						return 40;
 					      }
@@ -96,7 +96,7 @@ int testSuite(int *tab,int P_G){
 	  }
 	}
     }
-    return 0;
+   return 0; // renvoie 0, si la combinaison n'est pas présente .
 }
 
 /**
@@ -109,24 +109,24 @@ Carré
  * \return    Un entier, qui correspond au score.
  */
 
-int test3_4(int *tab,int Trois_quatre) {
+int test3_4(int *tab,int Trois_quatre) { // fonction brelan ou carré
   int tab_occurence[TAB_OCC]={0,0,0,0,0,0,0,0};
   int i;
     for (i = 0; i < 7; ++i)
     {
-    	++tab_occurence[tab[i]-1];
+      ++tab_occurence[tab[i]-1]; // remplissage de la tab d'occurence si des dès sont présent en plusieurs fois .
     }
 
-    for (i = 0; i < TAB_OCC; ++i)
+    for (i = 0; i < TAB_OCC; ++i) // parcours du tab d'occurence
       {
-	if(Trois_quatre == 3 ){
+	if(Trois_quatre == 3 ){ // si le parametre Trois_quatre vaut 3 = verifBrelan
 	  if (tab_occurence[i] == Trois_quatre)
 	    {
 	      printf("Il y a un Brelan de %d \n",i+1);
 	      return sommeScore(tab);
 	    }
 	}
-	if(Trois_quatre == 4){
+	if(Trois_quatre == 4){ // sinon s'il vaut 4 = VerifCarré
 	  if (tab_occurence[i] == Trois_quatre)
 	    {
 	      printf("Il y a un Carre de %d \n",i+1);
@@ -149,29 +149,29 @@ int test3_4(int *tab,int Trois_quatre) {
  * \return    Un entier, qui correspond au score.
  */
 
-int testFull(int *tab,int fullv1,int fullv2){
+int testFull(int *tab,int fullv1,int fullv2){ // fullv1 = premiere partie du full et fullv2 seconde partie du full
 
   int tab_occurence[TAB_OCC]={0,0,0,0,0,0,0,0};
   int i,j;
   int full1,full2;
   
-  for (i = 0; i < 7; ++i)
+  for (i = 0; i < 7; ++i) 
     {
-      ++tab_occurence[tab[i]-1];
+      ++tab_occurence[tab[i]-1]; // Remplissage du tab d'occurence, si des dès sont présent plusieurs .
     }
     
     for(i=0;i<8;i++)
       {
-	if(tab_occurence[i]==fullv1)
+	if(tab_occurence[i]==fullv1) // on regard si dans le tab d'occurence, il y a un élément qui vaut fullv1 ( qui vaut 5 ou 2 )
 	  {
-	    full1=i+1;
+	    full1=i+1; //+1 pour passer de l'indice de la case à sa valeur
 	    for(j=0;j<8;j++)
 	      {
-		if(tab_occurence[j]==fullv2)
+		if(tab_occurence[j]==fullv2) // et s'il y a un élément qui vaut fullv2 ( qui vaut 2 ou 3 )
 		  {
-		    full2=j+1;
+		    full2=j+1; //+1 pour passer de l'indice de la case à sa valeur
 		    printf("Il y a un Full de %d et %d\n",full1,full2);
-		    return 25;
+		    return 25;  // le score
 		 
 		   
 		  }
@@ -200,7 +200,7 @@ void testCombinatoire(int *tab_score, int *tab_dee){
     {
     	tab_score[tab_dee[i]-1] += tab_dee[i] ;
     }
-
+	// appel de tout les fonctions de test combinaison et enregistre score dans tab_score
 	tab_score[8] = test3_4(tab_dee,3);
 	tab_score[9] = testSuite(tab_dee,PTS);
 	tab_score[10] = testSuite(tab_dee,GDS);
@@ -227,6 +227,7 @@ void displayScore(int* tab_score,int *tab_dee,int * tabFinal){
 	
 	displayTabScore(tab_score, tabFinal);
 
+	//affiche le score
 
 }
 
@@ -264,7 +265,7 @@ int sommeScore(int * tab){
 	int somme = 0;
 	for (int i = 0; i < 7; ++i)
 	{
-		somme += tab[i];
+	  somme += tab[i]; // fais la somme de toute les cases
 	}
 	return somme;
 }
@@ -340,17 +341,6 @@ int saisitScore(int *tab,int *tabFinal){
 		}
 
 	}
-}
-
-
-
-//fct pour utiliser qsort
-int comparer(void const *a, void const *b)
-{
-   int const *pa = a;
-   int const *pb = b;
-
-   return *pa - *pb;
 }
 
 
